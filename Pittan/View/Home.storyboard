@@ -16,10 +16,31 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46a-h9-CrJ">
+                                <rect key="frame" x="338" y="782" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.63529411764705879" green="0.50588235294117645" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MOb-A0-tlX"/>
+                                    <constraint firstAttribute="width" constant="60" id="fdQ-s5-HCC"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="plain" image="add" title=""/>
+                                <connections>
+                                    <action selector="tappedAddPlaceButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CgR-Wv-rjR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="46a-h9-CrJ" secondAttribute="trailing" constant="16" id="WTp-ar-42y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="46a-h9-CrJ" secondAttribute="bottom" constant="20" id="eoM-YC-PPB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="設置場所" id="TfO-qb-VEN"/>
+                    <connections>
+                        <outlet property="addPlaceButton" destination="46a-h9-CrJ" id="BXV-Km-KWC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,6 +66,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
