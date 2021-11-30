@@ -19,6 +19,8 @@
 		7FD5186E2755435000C7642D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5186D2755435000C7642D /* Home.storyboard */; };
 		7FD518702755436000C7642D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5186F2755436000C7642D /* HomeViewController.swift */; };
 		7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD51874275622E400C7642D /* UIView+Extension.swift */; };
+		7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5187A2756254100C7642D /* PlaceCell.swift */; };
+		7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5187B2756254100C7642D /* PlaceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		7FD5186D2755435000C7642D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7FD5186F2755436000C7642D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7FD51874275622E400C7642D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7FD5187A2756254100C7642D /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		7FD5187B2756254100C7642D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 		7FD518762756248100C7642D /* ColectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				7FD5187F2756255C00C7642D /* PlaceCell */,
 			);
 			path = ColectionViewCell;
 			sourceTree = "<group>";
@@ -180,6 +185,15 @@
 				7FD5186D2755435000C7642D /* Home.storyboard */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		7FD5187F2756255C00C7642D /* PlaceCell */ = {
+			isa = PBXGroup;
+			children = (
+				7FD5187A2756254100C7642D /* PlaceCell.swift */,
+				7FD5187B2756254100C7642D /* PlaceCell.xib */,
+			);
+			path = PlaceCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +310,7 @@
 				7FD5186E2755435000C7642D /* Home.storyboard in Resources */,
 				7F0A48F227509B6000866926 /* LaunchScreen.storyboard in Resources */,
 				7F0A48EF27509B6000866926 /* Assets.xcassets in Resources */,
+				7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0A48E627509B5B00866926 /* AppDelegate.swift in Sources */,
+				7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
 				7FD518702755436000C7642D /* HomeViewController.swift in Sources */,
