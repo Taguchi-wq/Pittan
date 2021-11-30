@@ -25,6 +25,8 @@ class PlaceCell: UICollectionViewCell {
     // MARK: - Override Methods
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setupImageView(placeImageView)
     }
     
     
@@ -37,4 +39,10 @@ class PlaceCell: UICollectionViewCell {
         categoryLabel.text    = place.category
     }
 
+    
+    // MARK: - Methods
+    private func setupImageView(_ imageView: UIImageView) {
+        imageView.layer.cornerRadius = 10
+    }
+    
 }
