@@ -73,6 +73,8 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: - CollectionViewLayout
 extension HomeViewController: CollectionViewLayout {
     
+    /// collectionViewのレイアウトを作成する
+    /// - Returns: collectionViewのレイアウト
     func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
@@ -82,6 +84,8 @@ extension HomeViewController: CollectionViewLayout {
         return layout
     }
     
+    /// 設置場所を表示するcollectionViewのセクションレイアウトを作成する
+    /// - Returns: collectionViewのセクションレイアウト
     private func createPlaceSectionLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
