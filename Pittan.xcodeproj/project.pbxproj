@@ -152,8 +152,8 @@
 		7F0A491C27509E2800866926 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7F0A48F027509B6000866926 /* LaunchScreen.storyboard */,
-				7FD5186D2755435000C7642D /* Home.storyboard */,
+				7FD51879275624CD00C7642D /* Screen */,
+				7FD518762756248100C7642D /* ColectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +164,22 @@
 				7FD51874275622E400C7642D /* UIView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7FD518762756248100C7642D /* ColectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ColectionViewCell;
+			sourceTree = "<group>";
+		};
+		7FD51879275624CD00C7642D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A48F027509B6000866926 /* LaunchScreen.storyboard */,
+				7FD5186D2755435000C7642D /* Home.storyboard */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
