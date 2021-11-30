@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PlaceCell" customModule="Pittan" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlaceCell" id="gTV-IL-0wX" customClass="PlaceCell" customModule="Pittan" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="404" height="216"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -77,6 +77,13 @@
                 <constraint firstItem="s3u-Rf-6cm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="tiV-jG-l2X"/>
             </constraints>
             <size key="customSize" width="404" height="216"/>
+            <connections>
+                <outlet property="categoryLabel" destination="FeP-Qu-h77" id="Sds-bU-6iP"/>
+                <outlet property="placeHeightLabel" destination="7ue-sD-39m" id="q8I-O2-suf"/>
+                <outlet property="placeImageView" destination="s3u-Rf-6cm" id="Wb7-eZ-VlG"/>
+                <outlet property="placeNameLabel" destination="YJJ-pN-MQI" id="han-Rb-LXi"/>
+                <outlet property="placeWidthLabel" destination="U0k-hp-GRW" id="dl6-9K-HnR"/>
+            </connections>
             <point key="canvasLocation" x="394.20289855072468" y="164.73214285714286"/>
         </collectionViewCell>
     </objects>
