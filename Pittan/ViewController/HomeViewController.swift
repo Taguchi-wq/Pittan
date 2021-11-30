@@ -34,8 +34,7 @@ class HomeViewController: UIViewController {
     // MARK: - Methods
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "PlaceCell", bundle: nil),
-                                forCellWithReuseIdentifier: "PlaceCell")
+        collectionView.register(cellType: PlaceCell.self)
         collectionView.collectionViewLayout = createLayout()
     }
     
@@ -63,7 +62,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let placeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCell
+        let placeCell = collectionView.reusableCell(with: PlaceCell.self, for: indexPath)
         placeCell.initialize(place: places[indexPath.item])
         return placeCell
     }
