@@ -104,7 +104,6 @@ extension HomeViewController: CollectionViewLayout {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -118,8 +117,8 @@ extension HomeViewController: CollectionViewLayout {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 10
-        section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.interGroupSpacing = 24
+        section.contentInsets = .init(top: 40, leading: 16, bottom: 100, trailing: 16)
         
         return section
     }
