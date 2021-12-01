@@ -32,20 +32,20 @@ class PlaceCell: UICollectionViewCell {
     
     // MARK: - Initialize
     func initialize(place: Place) {
-        placeImageView.image  = UIImage(named: place.imageName)
-        placeNameLabel.text   = place.name
+        placeImageView.image = UIImage(named: place.imageName)
+        placeNameLabel.text = place.name
         placeHeightLabel.text = "\(place.height) mm"
-        placeWidthLabel.text  = "\(place.width) mm"
-        categoryLabel.text    = place.category
+        placeWidthLabel.text = "\(place.width) mm"
+        categoryLabel.text = place.category
     }
 
     
     // MARK: - Methods
     /// PlaceCellのレイアウトを設定する
     private func setupPlaceCellLayout() {
-        layer.cornerRadius                = 20
-        placeImageView.layer.cornerRadius = 10
-        categoryLabel.textColor           = .appMain
+        cornerRadius = 20
+        placeImageView.cornerRadius = 10
+        categoryLabel.textColor = .appMain
         categoryLabel.addBorder(width: 2, color: .appMain, cornerRadius: 17.5)
     }
     

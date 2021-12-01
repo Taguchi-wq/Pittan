@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
     /// UIButtonを設定する
     /// - Parameter button: 設定するUIButton
     private func setupButton(_ button: UIButton) {
-        button.layer.cornerRadius = 16
+        button.cornerRadius = 16
         button.backgroundColor = .appMain
         button.addShadow()
     }

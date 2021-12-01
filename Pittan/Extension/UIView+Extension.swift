@@ -9,6 +9,19 @@ import UIKit
 
 extension UIView {
     
+    // MARK: - Properties
+    /// 角丸
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+    
+    
+    // MARK: - Methods
     /// 影をつける
     /// - Parameters:
     ///   - width: 横の広がり
