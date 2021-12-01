@@ -41,6 +41,8 @@ class PlaceCell: UICollectionViewCell {
 
     
     // MARK: - Methods
+    /// UIImageViewを設定する
+    /// - Parameter imageView: 設定するUIImageView
     private func setupImageView(_ imageView: UIImageView) {
         imageView.layer.cornerRadius = 10
     }
