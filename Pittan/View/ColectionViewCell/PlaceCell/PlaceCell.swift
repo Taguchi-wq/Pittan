@@ -43,15 +43,10 @@ class PlaceCell: UICollectionViewCell {
     // MARK: - Methods
     /// PlaceCellのレイアウトを設定する
     private func setupPlaceCellLayout() {
-        layer.cornerRadius = 20
-        setupImageView(placeImageView)
-        categoryLabel.textColor = .appMain
-    }
-    
-    /// UIImageViewを設定する
-    /// - Parameter imageView: 設定するUIImageView
-    private func setupImageView(_ imageView: UIImageView) {
-        imageView.layer.cornerRadius = 10
+        layer.cornerRadius                = 20
+        placeImageView.layer.cornerRadius = 10
+        categoryLabel.textColor           = .appMain
+        categoryLabel.addBorder(width: 2, color: .appMain, cornerRadius: 17.5)
     }
     
 }
