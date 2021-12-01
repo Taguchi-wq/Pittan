@@ -15,10 +15,7 @@ class HomeViewController: UIViewController {
     /// セントラルお姉さん
     private let centralWoman = UIImageView(appImage: .centralWoman)
     /// 場所を格納する配列
-    private var places: [Place] = [
-//        Place(name: "リビング", imageName: "curtain_dummy", category: "カーテン", height: 3000, width: 900),
-//        Place(name: "洗面台", imageName: "rug_dummy", category: "ラグ", height: 800, width: 1700)
-    ]
+    private var places: [Place] = []
     
     
     // MARK: - @IBOutlets
