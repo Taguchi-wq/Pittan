@@ -27,6 +27,7 @@ class PlaceCell: UICollectionViewCell {
         super.awakeFromNib()
         
         setupImageView(placeImageView)
+        categoryLabel.textColor = .appMain
     }
     
     

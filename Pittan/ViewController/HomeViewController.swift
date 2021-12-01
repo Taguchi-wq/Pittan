@@ -26,30 +26,39 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView(view)
         setupButton(addPlaceButton)
         setupCollectionView(placeCollectionView)
     }
     
     
     // MARK: - Methods
+    /// UIViewを設定する
+    private func setupView(_ view: UIView) {
+        view.backgroundColor = .appBackground
+    }
+    
+    /// UICollectionViewを設置する
+    /// - Parameter collectionView: 設置するUICollectionView
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
         collectionView.register(cellType: PlaceCell.self)
         collectionView.collectionViewLayout = createLayout()
+        collectionView.backgroundColor = .clear
     }
     
     /// UIButtonを設定する
     /// - Parameter button: 設定するUIButton
     private func setupButton(_ button: UIButton) {
         button.layer.cornerRadius = 16
+        button.backgroundColor = .appMain
         button.addShadow()
     }
     
     
     // MARK: - @IBActions
     /// addPlaceButtonを押した時に呼ばれる
-    @IBAction private func tappedAddPlaceButton(_ sender: UIButton) {
-    }
+    @IBAction private func tappedAddPlaceButton(_ sender: UIButton) {}
     
 }
 
