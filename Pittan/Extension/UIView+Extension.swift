@@ -20,4 +20,15 @@ extension UIView {
         layer.shadowOpacity = 0.25
     }
     
+    /// ボーダーをつける
+    /// - Parameters:
+    ///   - width: ボーダーの太さ
+    ///   - color: ボーダーの色
+    ///   - cornerRadius: ボーダーの角丸
+    func addBorder(width: CGFloat = 1, color: UIColor, cornerRadius: CGFloat = 0) {
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
+        layer.cornerRadius = cornerRadius
+    }
+    
 }
