@@ -35,8 +35,8 @@ class PlaceCell: UICollectionViewCell {
     func initialize(place: Place) {
         placeImageView.image  = UIImage(named: place.imageName)
         placeNameLabel.text   = place.name
-        placeHeightLabel.text = "\(place.height)"
-        placeWidthLabel.text  = "\(place.width)"
+        placeHeightLabel.text = "\(place.height) mm"
+        placeWidthLabel.text  = "\(place.width) mm"
         categoryLabel.text    = place.category
     }
 
