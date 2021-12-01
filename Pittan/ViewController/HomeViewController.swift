@@ -10,10 +10,10 @@ import UIKit
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
+    /// 場所を格納する配列
     private var places: [Place] = [
-        Place(name: "name1", imageName: "imageName", category: "category", height: 10.0, width: 10.0),
-        Place(name: "name2", imageName: "imageName", category: "category", height: 10.0, width: 10.0),
-        Place(name: "name3", imageName: "imageName", category: "category", height: 10.0, width: 10.0)
+        Place(name: "リビング", imageName: "curtain_dummy", category: "カーテン", height: 3000, width: 900),
+        Place(name: "洗面台", imageName: "rug_dummy", category: "ラグ", height: 800, width: 1700)
     ]
     
     
