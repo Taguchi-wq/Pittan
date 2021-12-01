@@ -26,8 +26,7 @@ class PlaceCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupImageView(placeImageView)
-        categoryLabel.textColor = .appMain
+        setupPlaceCellLayout()
     }
     
     
@@ -42,6 +41,13 @@ class PlaceCell: UICollectionViewCell {
 
     
     // MARK: - Methods
+    /// PlaceCellのレイアウトを設定する
+    private func setupPlaceCellLayout() {
+        layer.cornerRadius = 20
+        setupImageView(placeImageView)
+        categoryLabel.textColor = .appMain
+    }
+    
     /// UIImageViewを設定する
     /// - Parameter imageView: 設定するUIImageView
     private func setupImageView(_ imageView: UIImageView) {
