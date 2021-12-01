@@ -11,6 +11,6 @@ struct Place {
     let name: String
     let imageName: String
     let category: String
-    let height: Double
-    let width: Double
+    let height: Int
+    let width: Int
 }
