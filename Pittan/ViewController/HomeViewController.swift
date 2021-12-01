@@ -10,10 +10,14 @@ import UIKit
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
+    /// 画面サイズ
+    private let screen = UIScreen.main.bounds
+    /// セントラルお姉さん
+    private let centralWoman = UIImageView(appImage: .centralWoman)
     /// 場所を格納する配列
     private var places: [Place] = [
-        Place(name: "リビング", imageName: "curtain_dummy", category: "カーテン", height: 3000, width: 900),
-        Place(name: "洗面台", imageName: "rug_dummy", category: "ラグ", height: 800, width: 1700)
+//        Place(name: "リビング", imageName: "curtain_dummy", category: "カーテン", height: 3000, width: 900),
+//        Place(name: "洗面台", imageName: "rug_dummy", category: "ラグ", height: 800, width: 1700)
     ]
     
     
@@ -60,7 +64,10 @@ class HomeViewController: UIViewController {
     
     // MARK: - @IBActions
     /// addPlaceButtonを押した時に呼ばれる
-    @IBAction private func tappedAddPlaceButton(_ sender: UIButton) {}
+    @IBAction private func tappedAddPlaceButton(_ sender: UIButton) {
+        places.append(Place(name: "リビング", imageName: "curtain_dummy", category: "カーテン", height: 3000, width: 900))
+        placeCollectionView.reloadData()
+    }
     
 }
 
@@ -69,6 +76,17 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 設置場所がない時セントラルお姉さんを表示する
+        if places.isEmpty {
+            centralWoman.frame = CGRect(x: 0, y: 0, width: 321, height: 258)
+            centralWoman.center = CGPoint(x: screen.width / 2, y: screen.height / 2)
+            view.addSubview(centralWoman)
+            collectionView.isScrollEnabled = false
+        } else {
+            centralWoman.removeFromSuperview()
+            collectionView.isScrollEnabled = true
+        }
+        
         return places.count
     }
     
