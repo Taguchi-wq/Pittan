@@ -11,7 +11,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     private var places: [Place] = [
-        Place(name: "name", imageName: "imageName", category: "category", height: 10.0, width: 10.0)
+        Place(name: "name1", imageName: "imageName", category: "category", height: 10.0, width: 10.0),
+        Place(name: "name2", imageName: "imageName", category: "category", height: 10.0, width: 10.0),
+        Place(name: "name3", imageName: "imageName", category: "category", height: 10.0, width: 10.0)
     ]
     
     
