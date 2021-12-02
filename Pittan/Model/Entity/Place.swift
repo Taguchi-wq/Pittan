@@ -2,15 +2,34 @@
 //  Place.swift
 //  Pittan
 //
-//  Created by cmStudent on 2021/11/30.
+//  Created by cmStudent on 2021/12/02.
 //
 
 import Foundation
+import RealmSwift
 
-struct Place {
-    let name: String
-    let imageName: String
-    let category: String
-    let height: Int
-    let width: Int
+class Place: Object {
+    
+    // MARK: - Properties
+    @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var productID: String? = nil
+    @objc dynamic var name: String = ""
+    @objc dynamic var deleteFlag: Bool = false
+    
+    
+    // MARK: - Initialize
+    convenience init(productID: String? = nil, name: String, deleteFlag: Bool) {
+        self.init()
+        
+        self.productID = productID
+        self.name = name
+        self.deleteFlag = deleteFlag
+    }
+    
+    
+    // MARK: - Override Methods
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
 }
