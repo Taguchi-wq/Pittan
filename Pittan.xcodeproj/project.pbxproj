@@ -16,6 +16,8 @@
 		7F0A490927509B6000866926 /* PittanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */; };
 		7F0A491727509C3400866926 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A491627509C3400866926 /* Realm */; };
 		7F0A491927509C3400866926 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A491827509C3400866926 /* RealmSwift */; };
+		7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F727585D8F001910EB /* AddPlaceViewController.swift */; };
+		7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F927586599001910EB /* UIStoryboard+Extension.swift */; };
 		7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB027565C700086F26C /* CollectionViewLayout.swift */; };
 		7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */; };
 		7F748DB92756658B0086F26C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB82756658B0086F26C /* Reusable.swift */; };
@@ -23,6 +25,7 @@
 		7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C02757C4BA00352C0B /* Product.swift */; };
 		7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C22757C6C100352C0B /* ProductImage.swift */; };
 		7FB0B3C52757C75200352C0B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C42757C75100352C0B /* Place.swift */; };
+		7FB0B3C727585B6D00352C0B /* AddPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */; };
 		7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */; };
 		7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBCB275797E5000F9F06 /* AppImage.swift */; };
 		7FBCCBD22757C11E000F9F06 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBD12757C11E000F9F06 /* RealmManager.swift */; };
@@ -62,6 +65,8 @@
 		7F0A490227509B6000866926 /* PittanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PittanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0A490627509B6000866926 /* PittanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITests.swift; sourceTree = "<group>"; };
 		7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F1393F727585D8F001910EB /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
+		7F1393F927586599001910EB /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		7F748DB027565C700086F26C /* CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
 		7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
 		7F748DB82756658B0086F26C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		7FB0B3C02757C4BA00352C0B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7FB0B3C22757C6C100352C0B /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		7FB0B3C42757C75100352C0B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlace.storyboard; sourceTree = "<group>"; };
 		7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7FBCCBCB275797E5000F9F06 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		7FBCCBD12757C11E000F9F06 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD5186F2755436000C7642D /* HomeViewController.swift */,
+				7F1393F727585D8F001910EB /* AddPlaceViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 				7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */,
 				7F748DBE27566A640086F26C /* UIColor+Extension.swift */,
 				7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */,
+				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 			children = (
 				7F0A48F027509B6000866926 /* LaunchScreen.storyboard */,
 				7FD5186D2755435000C7642D /* Home.storyboard */,
+				7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -379,6 +388,7 @@
 			files = (
 				7FD5186E2755435000C7642D /* Home.storyboard in Resources */,
 				7F0A48F227509B6000866926 /* LaunchScreen.storyboard in Resources */,
+				7FB0B3C727585B6D00352C0B /* AddPlace.storyboard in Resources */,
 				7F0A48EF27509B6000866926 /* Assets.xcassets in Resources */,
 				7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */,
 			);
@@ -409,10 +419,12 @@
 				7F0A48E627509B5B00866926 /* AppDelegate.swift in Sources */,
 				7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
+				7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */,
 				7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */,
 				7F748DB92756658B0086F26C /* Reusable.swift in Sources */,
 				7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */,
 				7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */,
+				7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
 				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,

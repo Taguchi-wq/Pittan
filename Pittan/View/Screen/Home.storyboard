@@ -66,11 +66,22 @@
                     <connections>
                         <outlet property="addPlaceButton" destination="46a-h9-CrJ" id="BXV-Km-KWC"/>
                         <outlet property="placeCollectionView" destination="pw6-uC-a38" id="W04-WL-I9y"/>
+                        <segue destination="wKJ-uX-EOB" kind="show" id="pon-gO-haK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="93.75"/>
+        </scene>
+        <!--AddPlace-->
+        <scene sceneID="Ajd-cu-MpA">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddPlaceViewController" storyboardName="AddPlace" id="wKJ-uX-EOB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ND6-h7-KMR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqN-lb-HHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7yE-kk-bCt">
