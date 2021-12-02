@@ -20,14 +20,17 @@
 		7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */; };
 		7F748DB92756658B0086F26C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB82756658B0086F26C /* Reusable.swift */; };
 		7F748DBF27566A640086F26C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DBE27566A640086F26C /* UIColor+Extension.swift */; };
+		7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C02757C4BA00352C0B /* Product.swift */; };
+		7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C22757C6C100352C0B /* ProductImage.swift */; };
+		7FB0B3C52757C75200352C0B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C42757C75100352C0B /* Place.swift */; };
 		7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */; };
 		7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBCB275797E5000F9F06 /* AppImage.swift */; };
+		7FBCCBD22757C11E000F9F06 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBD12757C11E000F9F06 /* RealmManager.swift */; };
 		7FD5186E2755435000C7642D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5186D2755435000C7642D /* Home.storyboard */; };
 		7FD518702755436000C7642D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5186F2755436000C7642D /* HomeViewController.swift */; };
 		7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD51874275622E400C7642D /* UIView+Extension.swift */; };
 		7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5187A2756254100C7642D /* PlaceCell.swift */; };
 		7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5187B2756254100C7642D /* PlaceCell.xib */; };
-		7FD518852756424900C7642D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD518842756424900C7642D /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,14 +66,17 @@
 		7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
 		7F748DB82756658B0086F26C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		7F748DBE27566A640086F26C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7FB0B3C02757C4BA00352C0B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7FB0B3C22757C6C100352C0B /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
+		7FB0B3C42757C75100352C0B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7FBCCBCB275797E5000F9F06 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		7FBCCBD12757C11E000F9F06 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		7FD5186D2755435000C7642D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7FD5186F2755436000C7642D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7FD51874275622E400C7642D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7FD5187A2756254100C7642D /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		7FD5187B2756254100C7642D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
-		7FD518842756424900C7642D /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,9 +195,19 @@
 		7FBCCBCD2757A8A7000F9F06 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				7FD518842756424900C7642D /* Place.swift */,
+				7FB0B3C42757C75100352C0B /* Place.swift */,
+				7FB0B3C02757C4BA00352C0B /* Product.swift */,
+				7FB0B3C22757C6C100352C0B /* ProductImage.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		7FBCCBD02757C10C000F9F06 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7FBCCBD12757C11E000F9F06 /* RealmManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		7FD518712756214B00C7642D /* Extension */ = {
@@ -243,6 +259,7 @@
 		7FD518832756422700C7642D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7FBCCBD02757C10C000F9F06 /* Manager */,
 				7FBCCBCA275797AA000F9F06 /* Utility */,
 				7FBCCBCD2757A8A7000F9F06 /* Entity */,
 			);
@@ -388,18 +405,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBCCBD22757C11E000F9F06 /* RealmManager.swift in Sources */,
 				7F0A48E627509B5B00866926 /* AppDelegate.swift in Sources */,
+				7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
 				7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */,
 				7F748DB92756658B0086F26C /* Reusable.swift in Sources */,
 				7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */,
 				7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
+				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
-				7FD518852756424900C7642D /* Place.swift in Sources */,
 				7FD518702755436000C7642D /* HomeViewController.swift in Sources */,
 				7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */,
 				7F748DBF27566A640086F26C /* UIColor+Extension.swift in Sources */,
+				7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
