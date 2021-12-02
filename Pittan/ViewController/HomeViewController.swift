@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
     /// - Parameter collectionView: 設置するUICollectionView
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(cellType: PlaceCell.self)
         collectionView.collectionViewLayout = createLayout()
         collectionView.backgroundColor = .clear
@@ -136,6 +137,17 @@ extension HomeViewController: CollectionViewLayout {
         section.contentInsets = .init(top: 40, leading: 16, bottom: 100, trailing: 16)
         
         return section
+    }
+    
+}
+
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+        navigationController?.pushViewController(addPlaceVC, animated: true)
     }
     
 }

@@ -17,6 +17,7 @@
 		7F0A491727509C3400866926 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A491627509C3400866926 /* Realm */; };
 		7F0A491927509C3400866926 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A491827509C3400866926 /* RealmSwift */; };
 		7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F727585D8F001910EB /* AddPlaceViewController.swift */; };
+		7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F927586599001910EB /* UIStoryboard+Extension.swift */; };
 		7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB027565C700086F26C /* CollectionViewLayout.swift */; };
 		7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */; };
 		7F748DB92756658B0086F26C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB82756658B0086F26C /* Reusable.swift */; };
@@ -65,6 +66,7 @@
 		7F0A490627509B6000866926 /* PittanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITests.swift; sourceTree = "<group>"; };
 		7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7F1393F727585D8F001910EB /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
+		7F1393F927586599001910EB /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		7F748DB027565C700086F26C /* CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
 		7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
 		7F748DB82756658B0086F26C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */,
 				7F748DBE27566A640086F26C /* UIColor+Extension.swift */,
 				7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */,
+				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				7F748DB92756658B0086F26C /* Reusable.swift in Sources */,
 				7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */,
 				7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */,
+				7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
 				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
