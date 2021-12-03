@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlaceDetailViewController: UIViewController {
+final class PlaceDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
