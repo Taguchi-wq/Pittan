@@ -22,11 +22,21 @@
                     <navigationItem key="navigationItem" id="wDs-W8-1yR">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="sJE-qX-ofH">
                             <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="tappedCloseButton:" destination="Y6W-OH-hqX" id="gQE-Jn-i8P"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="B79-w4-vNF">
                             <color key="tintColor" red="0.63529411759999999" green="0.50588235290000005" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="tappedSaveButton:" destination="Y6W-OH-hqX" id="HAl-rs-1go"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="sJE-qX-ofH" id="u6l-Ec-iEw"/>
+                        <outlet property="saveButton" destination="wDs-W8-1yR" id="yAQ-gJ-2ax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

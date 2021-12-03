@@ -13,4 +13,7 @@ class AddPlaceViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
 }
