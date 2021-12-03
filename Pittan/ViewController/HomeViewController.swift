@@ -146,8 +146,8 @@ extension HomeViewController: CollectionViewLayout {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
-        navigationController?.pushViewController(addPlaceVC, animated: true)
+        guard let placeDetailVC = storyboard?.instantiateViewController(with: PlaceDetailViewController.self) else { return }
+        navigationController?.pushViewController(placeDetailVC, animated: true)
     }
     
 }
