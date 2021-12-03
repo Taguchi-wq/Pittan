@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIStoryboard {
+public extension UIStoryboard {
     
     /// ViewControllerをインスタンス化する
     /// - Returns: インスタンス化したViewController

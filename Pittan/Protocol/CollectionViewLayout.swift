@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol CollectionViewLayout {
+public protocol CollectionViewLayout {
     func createLayout() -> UICollectionViewLayout
 }

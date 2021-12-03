@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol Reusable {
+public protocol Reusable {
     static var className: String { get }
 }
 
-extension Reusable {
+public extension Reusable {
     static var className: String {
         return String(describing: self)
     }

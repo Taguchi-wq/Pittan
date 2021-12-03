@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
     /// UINibでcellを登録する
     /// - Parameters:

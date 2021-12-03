@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     /// アプリのメインカラー
     class var appMain: UIColor {

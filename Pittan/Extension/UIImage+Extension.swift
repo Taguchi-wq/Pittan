@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     
     /// アプリ上にある画像で初期化する
     convenience init(appImage: AppImage) {
