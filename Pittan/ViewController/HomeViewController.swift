@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     /// 画面サイズ
@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     /// 場所を格納する配列
     private var places = RealmManager.shared.fetch(Place.self)
     
+    
+    let panGesture = UIPanGestureRecognizer(target: self, action: #selector(hoge(_:)))
     
     // MARK: - @IBOutlets
     /// 設置場所を表示するUICollectionView
@@ -32,6 +34,12 @@ class HomeViewController: UIViewController {
         setupView(view)
         setupButton(addPlaceButton)
         setupCollectionView(placeCollectionView)
+        panGesture.delegate = self
+    }
+    
+    @objc
+    private func hoge(_ sender: UIPanGestureRecognizer) {
+        print("こんにちは")
     }
     
     
@@ -91,6 +99,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let placeCell = collectionView.reusableCell(with: PlaceCell.self, for: indexPath)
         placeCell.initialize(place: places[indexPath.item])
+        placeCell.addGestureRecognizer(panGesture)
         return placeCell
     }
     
