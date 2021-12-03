@@ -16,7 +16,7 @@ public extension UIStoryboard {
     }
     
     /// UINavigationControllerを挟んだ画面遷移をする
-    /// - Returns: <#description#>
+    /// - Returns: UINavigationController
     func instantiateNavigationController<T: UIViewController>(with type: T.Type) -> UINavigationController {
         instantiateViewController(withIdentifier: type.className) as! UINavigationController
     }
