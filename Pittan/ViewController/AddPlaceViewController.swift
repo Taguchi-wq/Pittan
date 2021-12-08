@@ -41,6 +41,7 @@ final class AddPlaceViewController: UIViewController {
     // MARK: - Methods
     private func setupLayout() {
         view.backgroundColor = .appBackground
+        checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
     }
     
     
