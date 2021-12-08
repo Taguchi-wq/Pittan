@@ -14,11 +14,33 @@ final class AddPlaceViewController: UIViewController {
     @IBOutlet private weak var closeButton: UIBarButtonItem!
     /// 入力したデータを保存するボタン
     @IBOutlet private weak var saveButton: UINavigationItem!
+    /// UIScrollView
+    @IBOutlet private weak var addPlaceScrollView: UIScrollView!
+    /// 雰囲気を見るボタン
+    @IBOutlet private weak var checkMoodButton: UIButton!
+    /// 設置場所の名前を入力するUITextField
+    @IBOutlet private weak var placeNameTextField: UITextField!
+    /// 窓枠の縦幅を入力するUITextField
+    @IBOutlet private weak var heightTextField: UITextField!
+    /// 窓枠の横幅を入力するUITextField
+    @IBOutlet private weak var widthTextField: UITextField!
+    /// コメントを入力するUITextField
+    @IBOutlet private weak var commentTextField: UITextField!
+    /// カテゴリを選択するUISegmentedControl
+    @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
     
     
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupLayout()
+    }
+    
+    
+    // MARK: - Methods
+    private func setupLayout() {
+        view.backgroundColor = .appBackground
     }
     
     
