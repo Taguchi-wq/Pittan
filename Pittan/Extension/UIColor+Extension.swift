@@ -19,4 +19,9 @@ public extension UIColor {
         return UIColor(named: "appBackground")!
     }
     
+    /// アプリの文字カラー
+    class var appText: UIColor {
+        return UIColor(named: "appText")!
+    }
+    
 }
