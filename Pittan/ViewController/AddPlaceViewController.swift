@@ -39,9 +39,12 @@ final class AddPlaceViewController: UIViewController {
     
     
     // MARK: - Methods
+    /// 画面のレイアウトを設定する
     private func setupLayout() {
         view.backgroundColor = .appBackground
         checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
+        categorySegmentedControl.setTitle(state: .selected)
+        categorySegmentedControl.setTitle(state: .normal)
     }
     
     
