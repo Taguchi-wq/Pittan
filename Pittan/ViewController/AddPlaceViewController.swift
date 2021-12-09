@@ -55,6 +55,7 @@ final class AddPlaceViewController: UIViewController {
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
     @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
+        
         dismiss(animated: true)
     }
     
