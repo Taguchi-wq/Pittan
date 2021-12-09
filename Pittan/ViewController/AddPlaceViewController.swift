@@ -45,6 +45,10 @@ final class AddPlaceViewController: UIViewController {
         checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
+        placeNameTextField.addBottomBorder()
+        heightTextField.addBottomBorder()
+        widthTextField.addBottomBorder()
+        commentTextField.addBottomBorder()
     }
     
     
