@@ -59,7 +59,9 @@ final class AddPlaceViewController: UIViewController {
     }
     
     /// saveButtonを押した時に呼ばれる
-    @IBAction private func tappedSaveButton(_ sender: UIBarButtonItem) {}
+    @IBAction private func tappedSaveButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
     
     /// checkMoodButtonを押した時に呼ばれる
     @IBAction private func tappedCheckMoodButton(_ sender: UIButton) {
