@@ -55,13 +55,23 @@ final class AddPlaceViewController: UIViewController {
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
     @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
-        
         dismiss(animated: true)
     }
     
     /// saveButtonを押した時に呼ばれる
     @IBAction private func tappedSaveButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
+        let placeNameIsEmpty = placeNameTextField.text?.isEmpty ?? false
+        let heightIsEmpty = heightTextField.text?.isEmpty ?? false
+        let widthIsEmpty = widthTextField.text?.isEmpty ?? false
+        let commentIsEmpty = commentTextField.text?.isEmpty ?? false
+        
+        if placeNameIsEmpty || heightIsEmpty || widthIsEmpty || commentIsEmpty {
+            let alert = UIAlertController(title: "エラー", message: "全ての項目を入力してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        } else {
+            dismiss(animated: true)
+        }
     }
     
     /// checkMoodButtonを押した時に呼ばれる
