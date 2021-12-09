@@ -45,6 +45,9 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tappedCheckMoodButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CQP-ys-1yk"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vNQ-af-Rws">
                                                         <rect key="frame" x="0.0" y="230" width="382" height="57.5"/>
@@ -192,11 +195,22 @@
                         <outlet property="placeNameTextField" destination="8tV-CB-d5Z" id="iIc-Lr-GC7"/>
                         <outlet property="saveButton" destination="wDs-W8-1yR" id="yAQ-gJ-2ax"/>
                         <outlet property="widthTextField" destination="sk9-UK-k0m" id="Zb5-Ux-f3z"/>
+                        <segue destination="vMK-AK-OlK" kind="show" id="TUZ-eP-gjz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="69.642857142857139"/>
+        </scene>
+        <!--PutProduct-->
+        <scene sceneID="fCP-gi-OTH">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PutProductViewController" storyboardName="PutProduct" id="vMK-AK-OlK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="D8Q-zk-sDh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRR-p0-t3u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eT2-sR-fna">

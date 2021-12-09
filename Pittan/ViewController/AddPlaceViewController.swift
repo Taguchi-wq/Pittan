@@ -61,4 +61,11 @@ final class AddPlaceViewController: UIViewController {
     /// saveButtonを押した時に呼ばれる
     @IBAction private func tappedSaveButton(_ sender: UIBarButtonItem) {}
     
+    /// checkMoodButtonを押した時に呼ばれる
+    @IBAction private func tappedCheckMoodButton(_ sender: UIButton) {
+        guard let putProductVC = storyboard?.instantiateViewController(with: PutProductViewController.self) else { return }
+        putProductVC.modalPresentationStyle = .fullScreen
+        present(putProductVC, animated: true)
+    }
+    
 }
