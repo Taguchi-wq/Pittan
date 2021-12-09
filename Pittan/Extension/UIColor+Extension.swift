@@ -24,4 +24,9 @@ public extension UIColor {
         return UIColor(named: "appText")!
     }
     
+    /// ボーダーカラー
+    class var appBorder: UIColor {
+        return UIColor(named: "appBorder")!
+    }
+    
 }

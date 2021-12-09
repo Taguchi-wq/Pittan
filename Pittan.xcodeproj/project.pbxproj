@@ -23,6 +23,7 @@
 		7F748DB92756658B0086F26C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB82756658B0086F26C /* Reusable.swift */; };
 		7F748DBF27566A640086F26C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DBE27566A640086F26C /* UIColor+Extension.swift */; };
 		7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */; };
+		7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */; };
 		7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C02757C4BA00352C0B /* Product.swift */; };
 		7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C22757C6C100352C0B /* ProductImage.swift */; };
 		7FB0B3C52757C75200352C0B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C42757C75100352C0B /* Place.swift */; };
@@ -84,6 +85,7 @@
 		7F748DB82756658B0086F26C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		7F748DBE27566A640086F26C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		7FB0B3C02757C4BA00352C0B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7FB0B3C22757C6C100352C0B /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		7FB0B3C42757C75100352C0B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */,
 				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
 				7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */,
+				7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */,
 				7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
+				7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */,
 				7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */,
 				7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */,
 				7F748DB92756658B0086F26C /* Reusable.swift in Sources */,
