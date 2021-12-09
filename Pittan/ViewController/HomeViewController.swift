@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     // MARK: - Properties
     /// 画面サイズ
@@ -63,8 +63,9 @@ class HomeViewController: UIViewController {
     // MARK: - @IBActions
     /// addPlaceButtonを押した時に呼ばれる
     @IBAction private func tappedAddPlaceButton(_ sender: UIButton) {
-        RealmManager.shared.savePlace()
-        placeCollectionView.reloadData()
+        guard let addPlaceVC = storyboard?.instantiateNavigationController(with: AddPlaceViewController.self) else { return }
+        addPlaceVC.modalPresentationStyle = .fullScreen
+        present(addPlaceVC, animated: true)
     }
     
 }
@@ -146,8 +147,8 @@ extension HomeViewController: CollectionViewLayout {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
-        navigationController?.pushViewController(addPlaceVC, animated: true)
+        guard let placeDetailVC = storyboard?.instantiateViewController(with: PlaceDetailViewController.self) else { return }
+        navigationController?.pushViewController(placeDetailVC, animated: true)
     }
     
 }

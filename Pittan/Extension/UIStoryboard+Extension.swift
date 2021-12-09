@@ -7,12 +7,18 @@
 
 import UIKit
 
-extension UIStoryboard {
+public extension UIStoryboard {
     
     /// ViewControllerをインスタンス化する
     /// - Returns: インスタンス化したViewController
     func instantiateViewController<T: UIViewController>(with type: T.Type) -> T {
         instantiateViewController(withIdentifier: type.className) as! T
+    }
+    
+    /// UINavigationControllerを挟んだ画面遷移をする
+    /// - Returns: UINavigationController
+    func instantiateNavigationController<T: UIViewController>(with type: T.Type) -> UINavigationController {
+        instantiateViewController(withIdentifier: type.className) as! UINavigationController
     }
     
 }

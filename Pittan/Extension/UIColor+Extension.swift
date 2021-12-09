@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     /// アプリのメインカラー
     class var appMain: UIColor {
@@ -17,6 +17,16 @@ extension UIColor {
     /// アプリのバックグラウンドカラー
     class var appBackground: UIColor {
         return UIColor(named: "appBackground")!
+    }
+    
+    /// アプリの文字カラー
+    class var appText: UIColor {
+        return UIColor(named: "appText")!
+    }
+    
+    /// ボーダーカラー
+    class var appBorder: UIColor {
+        return UIColor(named: "appBorder")!
     }
     
 }
