@@ -54,19 +54,27 @@ final class AddPlaceViewController: UIViewController {
     /// 場所を保存する
     private func savePlace() {
         let placeName = placeNameTextField.text ?? ""
-        let height = Int(heightTextField.text!) ?? 0
-        let width = Int(widthTextField.text!) ?? 0
         let comment = commentTextField.text ?? ""
         let category = categorySegmentedControl.selectedCategory
-        RealmManager.shared.savePlace(name: placeName,
-                                      imageID: nil,
-                                      category: category.name,
-                                      colorCode: "",
-                                      design: "",
-                                      type: "",
-                                      comment: comment,
-                                      height: height,
-                                      width: width)
+        let height = heightTextField.text ?? ""
+        let width = widthTextField.text ?? ""
+        
+        if height.isNumber && width.isNumber {
+            RealmManager.shared.savePlace(name: placeName,
+                                          imageID: nil,
+                                          category: category.name,
+                                          colorCode: "",
+                                          design: "",
+                                          type: "",
+                                          comment: comment,
+                                          height: Int(height)!,
+                                          width: Int(width)!)
+            dismiss(animated: true)
+        } else {
+            let alert = UIAlertController(title: "エラー", message: "縦幅と横幅は数字で入力してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
     }
     
     
@@ -89,7 +97,6 @@ final class AddPlaceViewController: UIViewController {
             present(alert, animated: true)
         } else {
             savePlace()
-            dismiss(animated: true)
         }
     }
     
