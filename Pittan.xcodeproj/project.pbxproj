@@ -220,6 +220,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7F8B6E802762F96E003C98D4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7FD51874275622E400C7642D /* UIView+Extension.swift */,
+				7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */,
+				7F748DBE27566A640086F26C /* UIColor+Extension.swift */,
+				7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */,
+				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
+				7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */,
+				7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		7FBCCBCA275797AA000F9F06 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,13 +264,7 @@
 		7FD518712756214B00C7642D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7FD51874275622E400C7642D /* UIView+Extension.swift */,
-				7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */,
-				7F748DBE27566A640086F26C /* UIColor+Extension.swift */,
-				7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */,
-				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
-				7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */,
-				7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */,
+				7F8B6E802762F96E003C98D4 /* UIKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
