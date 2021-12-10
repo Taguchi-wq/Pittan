@@ -71,9 +71,7 @@ final class AddPlaceViewController: UIViewController {
                                           width: Int(width)!)
             dismiss(animated: true)
         } else {
-            let alert = UIAlertController(title: "エラー", message: "縦幅と横幅は数字で入力してください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
+            Alert.show(on: self, message: .pleaseEnterNumber)
         }
     }
     
@@ -92,9 +90,7 @@ final class AddPlaceViewController: UIViewController {
         let commentIsEmpty = commentTextField.text?.isEmpty ?? false
         
         if placeNameIsEmpty || heightIsEmpty || widthIsEmpty || commentIsEmpty {
-            let alert = UIAlertController(title: "エラー", message: "全ての項目を入力してください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
+            Alert.show(on: self, message: .pleaseFillAllFields)
         } else {
             savePlace()
         }
