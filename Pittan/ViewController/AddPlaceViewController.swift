@@ -51,6 +51,24 @@ final class AddPlaceViewController: UIViewController {
         commentTextField.addBottomBorder()
     }
     
+    /// 場所を保存する
+    private func savePlace() {
+        let placeName = placeNameTextField.text ?? ""
+        let height = Int(heightTextField.text!) ?? 0
+        let width = Int(widthTextField.text!) ?? 0
+        let comment = commentTextField.text ?? ""
+        let category = categorySegmentedControl.selectedCategory
+        RealmManager.shared.savePlace(name: placeName,
+                                      imageID: nil,
+                                      category: category.name,
+                                      colorCode: "",
+                                      design: "",
+                                      type: "",
+                                      comment: comment,
+                                      height: height,
+                                      width: width)
+    }
+    
     
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
@@ -70,6 +88,7 @@ final class AddPlaceViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
         } else {
+            savePlace()
             dismiss(animated: true)
         }
     }

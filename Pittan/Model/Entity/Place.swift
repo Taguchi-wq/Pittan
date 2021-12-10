@@ -16,6 +16,12 @@ class Place: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var deleteFlag: Bool = false
     
+    var product: Product? {
+        guard let productID = productID else { return nil }
+        let product = RealmManager.shared.fetchProduct(by: productID)
+        return product
+    }
+    
     
     // MARK: - Initialize
     convenience init(productID: String? = nil, name: String, deleteFlag: Bool) {

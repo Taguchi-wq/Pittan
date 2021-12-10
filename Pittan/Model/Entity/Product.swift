@@ -18,9 +18,12 @@ class Product: Object {
     @objc dynamic var design: String = ""
     @objc dynamic var type: String = ""
     @objc dynamic var comment: String = ""
-    @objc dynamic var recommendedSize: Double = 0.0
-    @objc dynamic var height: Double = 0.0
-    @objc dynamic var width: Double = 0.0
+    @objc dynamic var height: Int = 0
+    @objc dynamic var width: Int = 0
+    
+    var recommendedSize: Int {
+        return height * width
+    }
     
     
     // MARK: - Initialize
@@ -30,9 +33,8 @@ class Product: Object {
                      design: String,
                      type: String,
                      comment: String,
-                     recommendedSize: Double,
-                     height: Double,
-                     width: Double) {
+                     height: Int,
+                     width: Int) {
         self.init()
         self.imageID = imageID
         self.category = category
@@ -40,7 +42,6 @@ class Product: Object {
         self.design = design
         self.type = type
         self.comment = comment
-        self.recommendedSize = recommendedSize
         self.height = height
         self.width = width
     }

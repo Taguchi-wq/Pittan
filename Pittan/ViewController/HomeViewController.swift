@@ -34,6 +34,12 @@ final class HomeViewController: UIViewController {
         setupCollectionView(placeCollectionView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        placeCollectionView.reloadData()
+    }
+    
     
     // MARK: - Methods
     /// UIViewを設定する

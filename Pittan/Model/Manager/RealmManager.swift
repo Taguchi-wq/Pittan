@@ -38,9 +38,44 @@ final class RealmManager {
     }
     
     /// 設置場所を保存する
-    func savePlace() {
-        let place = Place(name: "リビング", deleteFlag: false)
+    /// - Parameters:
+    ///   - name: 設置場所名
+    ///   - imageID: 画像id
+    ///   - category: カテゴリー(カーテンorラグ)
+    ///   - colorCode: 製品の色
+    ///   - design: 柄
+    ///   - type: 片開、両開き...
+    ///   - comment: コメント
+    ///   - height: 製品の縦幅
+    ///   - width: 製品の横幅
+    func savePlace(name: String,
+                   imageID: String?,
+                   category: String,
+                   colorCode: String,
+                   design: String,
+                   type: String,
+                   comment: String,
+                   height: Int,
+                   width: Int) {
+        let product = Product(imageID: imageID,
+                              category: category,
+                              colorCode: colorCode,
+                              design: design,
+                              type: type,
+                              comment: comment,
+                              height: height,
+                              width: width)
+        let place = Place(productID: product.id, name: name, deleteFlag: false)
+        add(product)
         add(place)
+    }
+    
+    /// 製品をidで取得する
+    /// - Parameter id: 製品のid
+    /// - Returns: 製品
+    func fetchProduct(by id: String) -> Product? {
+        let product = realm.object(ofType: Product.self, forPrimaryKey: id)
+        return product
     }
     
 }
