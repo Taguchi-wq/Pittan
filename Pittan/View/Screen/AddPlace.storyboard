@@ -173,13 +173,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="wDs-W8-1yR">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="sJE-qX-ofH">
-                            <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" name="appText"/>
                             <connections>
                                 <action selector="tappedCloseButton:" destination="Y6W-OH-hqX" id="gQE-Jn-i8P"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="B79-w4-vNF">
-                            <color key="tintColor" red="0.63529411759999999" green="0.50588235290000005" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" name="appMain"/>
                             <connections>
                                 <action selector="tappedSaveButton:" destination="Y6W-OH-hqX" id="HAl-rs-1go"/>
                             </connections>
@@ -234,6 +234,9 @@
     <resources>
         <namedColor name="appMain">
             <color red="0.63529411764705879" green="0.50588235294117645" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="appText">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
