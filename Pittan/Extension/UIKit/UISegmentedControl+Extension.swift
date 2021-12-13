@@ -9,6 +9,15 @@ import UIKit
 
 public extension UISegmentedControl {
     
+    // MARK: - Properties
+    /// 選択されているカテゴリー
+    var selectedCategory: Category {
+        let category: Category = selectedSegmentIndex == 0 ? .curtain : .rug
+        return category
+    }
+    
+    
+    // MARK: - Methods
     /// タイトルの色とフォントサイズを設定する
     /// - Parameters:
     ///   - color: 色

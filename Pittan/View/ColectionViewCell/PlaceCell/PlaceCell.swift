@@ -32,14 +32,12 @@ class PlaceCell: UICollectionViewCell {
     
     // MARK: - Initialize
     func initialize(place: Place) {
+        guard let product = place.product else { return }
 //        placeImageView.image = UIImage(named: place.imageName)
         placeNameLabel.text = place.name
-//        placeHeightLabel.text = "縦幅: \(place.height) mm"
-//        placeWidthLabel.text = "横幅: \(place.width) mm"
-//        categoryLabel.text = place.category
-        placeHeightLabel.text = "縦幅: ダミー mm"
-        placeWidthLabel.text = "横幅: ダミー mm"
-        categoryLabel.text = "カテゴリー"
+        placeHeightLabel.text = "縦幅: \(product.height) mm"
+        placeWidthLabel.text = "横幅: \(product.width) mm"
+        categoryLabel.text = product.category
     }
 
     
