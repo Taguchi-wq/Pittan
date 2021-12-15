@@ -20,6 +20,7 @@ final class PlaceDetailViewController: UIViewController {
     // MARK: - Methods
     /// 画面のレイアウトを設定する
     private func setupLayout() {
+        view.backgroundColor = .appBackground
         navigationController?.navigationBar.tintColor = .appText
     }
     
