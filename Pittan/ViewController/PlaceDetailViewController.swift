@@ -48,10 +48,27 @@ class PlaceDetailViewController: UIViewController {
         view.backgroundColor = .appBackground
         navigationController?.navigationBar.tintColor = .appText
         imagesView.cornerRadius = 10
-        categoryLabel.addBorder(width: 2,
-                                color: .appMain,
-                                cornerRadius: categoryLabel.bounds.height/2)
+        categoryLabel.addBorder(width: 2, color: .appMain, cornerRadius: categoryLabel.bounds.height / 2)
         curtainSizeStackView.cornerRadius = 10
+        displayPlace(place)
+    }
+    
+    /// 設置場所を表示する
+    /// - Parameter place: 設置場所
+    private func displayPlace(_ place: Place?) {
+        guard let place = place else { return }
+        nameLabel.text = place.name
+        displayProduct(place)
+    }
+    
+    /// 設置場所に置くモノを表示する
+    /// - Parameter place: 設置場所
+    private func displayProduct(_ place: Place) {
+        guard let product = place.product else { return }
+        categoryLabel.text = product.category
+        heightLabel.text = "\(product.height) mm"
+        widthLabel.text = "\(product.width) mm"
+        commentLabel.text = product.comment
     }
     
     

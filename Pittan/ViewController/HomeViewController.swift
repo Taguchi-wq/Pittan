@@ -149,6 +149,7 @@ extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let placeDetailVC = storyboard?.instantiateViewController(with: PlaceDetailViewController.self) else { return }
+        placeDetailVC.initialize(place: places[indexPath.item])
         navigationController?.pushViewController(placeDetailVC, animated: true)
     }
     
