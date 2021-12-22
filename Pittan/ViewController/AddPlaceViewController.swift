@@ -9,7 +9,7 @@ import UIKit
 
 final class AddPlaceViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - @IBOutlets
     /// 画面を閉じるボタン
     @IBOutlet private weak var closeButton: UIBarButtonItem!
     /// 入力したデータを保存するボタン

@@ -9,9 +9,12 @@ import UIKit
 
 final class PlaceDetailViewController: UIViewController {
     
+    // MARK: - Properties
     /// 設置場所
     private var place: Place?
     
+    
+    // MARK: - @IBOutlets
     /// 実際に設置した時のイメージを表示するUIImageView
     @IBOutlet weak var imagesView: UIImageView!
     /// 設置場所の名前を表示するUILabel
