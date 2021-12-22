@@ -62,7 +62,9 @@
                             <constraint firstItem="pw6-uC-a38" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uUe-4F-RqW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="設置場所" id="TfO-qb-VEN"/>
+                    <navigationItem key="navigationItem" title="設置場所" id="TfO-qb-VEN">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fBb-hE-XE4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addPlaceButton" destination="46a-h9-CrJ" id="BXV-Km-KWC"/>
                         <outlet property="placeCollectionView" destination="pw6-uC-a38" id="W04-WL-I9y"/>

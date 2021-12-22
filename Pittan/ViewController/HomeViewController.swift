@@ -29,40 +29,35 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView(view)
-        setupButton(addPlaceButton)
-        setupCollectionView(placeCollectionView)
+        setupLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         placeCollectionView.reloadData()
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     
     // MARK: - Methods
-    /// UIViewを設定する
-    private func setupView(_ view: UIView) {
+    /// 画面のレイアウトを設定する
+    private func setupLayout() {
         view.backgroundColor = .appBackground
-    }
-    
-    /// UICollectionViewを設置する
-    /// - Parameter collectionView: 設置するUICollectionView
-    private func setupCollectionView(_ collectionView: UICollectionView) {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(cellType: PlaceCell.self)
-        collectionView.collectionViewLayout = createLayout()
-        collectionView.backgroundColor = .clear
-    }
-    
-    /// UIButtonを設定する
-    /// - Parameter button: 設定するUIButton
-    private func setupButton(_ button: UIButton) {
-        button.cornerRadius = 16
-        button.backgroundColor = .appMain
-        button.addShadow()
+        placeCollectionView.dataSource = self
+        placeCollectionView.delegate = self
+        placeCollectionView.register(cellType: PlaceCell.self)
+        placeCollectionView.collectionViewLayout = createLayout()
+        placeCollectionView.backgroundColor = .clear
+        addPlaceButton.cornerRadius = 16
+        addPlaceButton.backgroundColor = .appMain
+        addPlaceButton.addShadow()
     }
     
     
