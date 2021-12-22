@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlaceDetailViewController: UIViewController {
+final class PlaceDetailViewController: UIViewController {
     
     /// 設置場所
     private var place: Place?
