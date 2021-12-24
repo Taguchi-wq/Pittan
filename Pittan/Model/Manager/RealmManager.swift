@@ -86,4 +86,33 @@ final class RealmManager {
         return product
     }
     
+    /// 設置場所のデータを更新する
+    /// - Parameters:
+    ///   - id: 設置場所のid
+    ///   - name: 設置場所の名前
+    ///   - category: モノのカテゴリ
+    ///   - height: モノの縦幅
+    ///   - width: モノの横幅
+    ///   - comment: 設置場所のコメント
+    func updatePlace(_ id: String,
+                     name: String,
+                     category: String,
+                     height: Int,
+                     width: Int,
+                     comment: String) {
+        guard let place = fetchPlace(by: id) else { return }
+        guard let product = place.product else { return }
+        do {
+            try realm.write {
+                place.name       = name
+                product.category = category
+                product.height   = height
+                product.width    = width
+                product.comment  = comment
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
 }
