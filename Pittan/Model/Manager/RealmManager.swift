@@ -70,12 +70,49 @@ final class RealmManager {
         add(place)
     }
     
-    /// 製品をidで取得する
-    /// - Parameter id: 製品のid
-    /// - Returns: 製品
+    /// 設置場所をidで取得する
+    /// - Parameter id: 設置場所のid
+    /// - Returns: 設置場所
+    func fetchPlace(by id: String) -> Place? {
+        let place = realm.object(ofType: Place.self, forPrimaryKey: id)
+        return place
+    }
+    
+    /// モノをidで取得する
+    /// - Parameter id: モノのid
+    /// - Returns: モノ
     func fetchProduct(by id: String) -> Product? {
         let product = realm.object(ofType: Product.self, forPrimaryKey: id)
         return product
+    }
+    
+    /// 設置場所のデータを更新する
+    /// - Parameters:
+    ///   - id: 設置場所のid
+    ///   - name: 設置場所の名前
+    ///   - category: モノのカテゴリ
+    ///   - height: モノの縦幅
+    ///   - width: モノの横幅
+    ///   - comment: 設置場所のコメント
+    func updatePlace(_ id: String,
+                     name: String,
+                     category: String,
+                     height: Int,
+                     width: Int,
+                     comment: String) {
+        guard let place = fetchPlace(by: id) else { return }
+        guard let product = place.product else { return }
+        do {
+            try realm.write {
+                place.name       = name
+                product.category = category
+                product.height   = height
+                product.width    = width
+                product.comment  = comment
+            }
+        } catch {
+            print(error)
+        }
     }
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Jf-Og-ie8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,6 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v74-lv-tzu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" name="appBackground"/>
+                                <items>
+                                    <navigationItem id="P8S-a1-ASO">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="1Gl-Wx-Xdf">
+                                            <color key="tintColor" name="appText"/>
+                                            <connections>
+                                                <action selector="tappedCloseButton:" destination="Y6W-OH-hqX" id="DE0-A5-jX8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="Vyv-nT-e3w">
+                                            <color key="tintColor" name="appMain"/>
+                                            <connections>
+                                                <action selector="tappedSaveButton:" destination="Y6W-OH-hqX" id="gAu-Kt-12M"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1a-10-YSX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
@@ -165,35 +185,25 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="M1a-10-YSX" secondAttribute="bottom" id="May-9w-QWO"/>
-                            <constraint firstItem="M1a-10-YSX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="X42-ue-CKR"/>
-                            <constraint firstItem="M1a-10-YSX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="h9y-tf-DLy"/>
-                            <constraint firstItem="M1a-10-YSX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="iqh-3X-Q4t"/>
+                            <constraint firstItem="M1a-10-YSX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2dI-1k-l9E"/>
+                            <constraint firstItem="v74-lv-tzu" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="85U-T9-832"/>
+                            <constraint firstItem="v74-lv-tzu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GkY-vw-ElP"/>
+                            <constraint firstItem="M1a-10-YSX" firstAttribute="top" secondItem="v74-lv-tzu" secondAttribute="bottom" id="WoJ-Dr-l3s"/>
+                            <constraint firstItem="M1a-10-YSX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hKt-Rb-RlY"/>
+                            <constraint firstAttribute="bottom" secondItem="M1a-10-YSX" secondAttribute="bottom" id="k5f-7W-jzk"/>
+                            <constraint firstItem="v74-lv-tzu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uUl-xD-5St"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wDs-W8-1yR">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="sJE-qX-ofH">
-                            <color key="tintColor" name="appText"/>
-                            <connections>
-                                <action selector="tappedCloseButton:" destination="Y6W-OH-hqX" id="gQE-Jn-i8P"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="B79-w4-vNF">
-                            <color key="tintColor" name="appMain"/>
-                            <connections>
-                                <action selector="tappedSaveButton:" destination="Y6W-OH-hqX" id="HAl-rs-1go"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="addPlaceScrollView" destination="M1a-10-YSX" id="wZh-ih-wOv"/>
                         <outlet property="categorySegmentedControl" destination="Gug-f9-epP" id="4jP-qF-gUH"/>
                         <outlet property="checkMoodButton" destination="Odg-Rx-gss" id="SQc-Wl-QYD"/>
-                        <outlet property="closeButton" destination="sJE-qX-ofH" id="u6l-Ec-iEw"/>
+                        <outlet property="closeButton" destination="1Gl-Wx-Xdf" id="3Fq-Xs-aY6"/>
                         <outlet property="commentTextField" destination="iP8-FH-beq" id="gCR-b8-7wJ"/>
                         <outlet property="heightTextField" destination="qeg-S2-gKJ" id="fus-IT-JeK"/>
+                        <outlet property="navigationBar" destination="v74-lv-tzu" id="rf2-0Y-gXi"/>
                         <outlet property="placeNameTextField" destination="8tV-CB-d5Z" id="iIc-Lr-GC7"/>
-                        <outlet property="saveButton" destination="wDs-W8-1yR" id="yAQ-gJ-2ax"/>
+                        <outlet property="saveButton" destination="Vyv-nT-e3w" id="Diz-Yy-cN6"/>
                         <outlet property="widthTextField" destination="sk9-UK-k0m" id="Zb5-Ux-f3z"/>
                         <segue destination="vMK-AK-OlK" kind="show" id="TUZ-eP-gjz"/>
                     </connections>
@@ -212,26 +222,11 @@
             </objects>
             <point key="canvasLocation" x="1788" y="70"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eT2-sR-fna">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Jf-Og-ie8" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRf-Er-Ovu">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="6pA-TQ-LnD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EQM-r6-5QJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="69.642857142857139"/>
-        </scene>
     </scenes>
     <resources>
+        <namedColor name="appBackground">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="appMain">
             <color red="0.63529411764705879" green="0.50588235294117645" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -10,7 +10,7 @@ import Foundation
 public extension String {
     
     /// Int型かどうか
-    var isNumber: Bool {
+    var isInt: Bool {
         Int(self) != nil
     }
     

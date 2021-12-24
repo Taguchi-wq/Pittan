@@ -7,11 +7,14 @@
 
 import UIKit
 
-class PlaceDetailViewController: UIViewController {
+final class PlaceDetailViewController: UIViewController {
     
+    // MARK: - Properties
     /// 設置場所
     private var place: Place?
     
+    
+    // MARK: - @IBOutlets
     /// 実際に設置した時のイメージを表示するUIImageView
     @IBOutlet weak var imagesView: UIImageView!
     /// 設置場所の名前を表示するUILabel
@@ -31,6 +34,10 @@ class PlaceDetailViewController: UIViewController {
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setupLayout()
     }
@@ -73,8 +80,13 @@ class PlaceDetailViewController: UIViewController {
     
     
     // MARK: - @IBActions
+    /// 編集ボタンを押した時の処理
     @IBAction private func tappedEditButton(_ sender: UIBarButtonItem) {
-        print("編集")
+        guard let place = place else { return }
+        guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+        addPlaceVC.initialize(place: place)
+        addPlaceVC.modalPresentationStyle = .fullScreen
+        present(addPlaceVC, animated: true)
     }
     
 }
