@@ -64,7 +64,7 @@ final class HomeViewController: UIViewController {
     // MARK: - @IBActions
     /// addPlaceButtonを押した時に呼ばれる
     @IBAction private func tappedAddPlaceButton(_ sender: UIButton) {
-        guard let addPlaceVC = storyboard?.instantiateNavigationController(with: AddPlaceViewController.self) else { return }
+        guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
         addPlaceVC.modalPresentationStyle = .fullScreen
         present(addPlaceVC, animated: true)
     }
