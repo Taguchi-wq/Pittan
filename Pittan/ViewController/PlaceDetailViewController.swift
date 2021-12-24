@@ -40,7 +40,6 @@ final class PlaceDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupLayout()
-        
     }
     
     
