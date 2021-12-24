@@ -70,9 +70,17 @@ final class RealmManager {
         add(place)
     }
     
-    /// 製品をidで取得する
-    /// - Parameter id: 製品のid
-    /// - Returns: 製品
+    /// 設置場所をidで取得する
+    /// - Parameter id: 設置場所のid
+    /// - Returns: 設置場所
+    func fetchPlace(by id: String) -> Place? {
+        let place = realm.object(ofType: Place.self, forPrimaryKey: id)
+        return place
+    }
+    
+    /// モノをidで取得する
+    /// - Parameter id: モノのid
+    /// - Returns: モノ
     func fetchProduct(by id: String) -> Product? {
         let product = realm.object(ofType: Product.self, forPrimaryKey: id)
         return product
