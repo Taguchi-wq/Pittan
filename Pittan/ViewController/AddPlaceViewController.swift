@@ -9,11 +9,18 @@ import UIKit
 
 final class AddPlaceViewController: UIViewController {
     
+    // MARK: - Properties
+    /// 設置場所
+    private var place: Place?
+    
+    
     // MARK: - @IBOutlets
+    /// UINavigationBar
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     /// 画面を閉じるボタン
     @IBOutlet private weak var closeButton: UIBarButtonItem!
     /// 入力したデータを保存するボタン
-    @IBOutlet private weak var saveButton: UINavigationItem!
+    @IBOutlet private weak var saveButton: UIBarButtonItem!
     /// UIScrollView
     @IBOutlet private weak var addPlaceScrollView: UIScrollView!
     /// 雰囲気を見るボタン
@@ -38,10 +45,17 @@ final class AddPlaceViewController: UIViewController {
     }
     
     
+    // MARK: - Initialize
+    func initialize(place: Place) {
+        self.place = place
+    }
+    
+    
     // MARK: - Methods
     /// 画面のレイアウトを設定する
     private func setupLayout() {
         view.backgroundColor = .appBackground
+        navigationBar.hideShadow(true)
         checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
@@ -49,6 +63,26 @@ final class AddPlaceViewController: UIViewController {
         heightTextField.addBottomBorder()
         widthTextField.addBottomBorder()
         commentTextField.addBottomBorder()
+        inputPlace(place)
+    }
+    
+    /// 受け取った設置場所を入力する
+    /// - Parameter place: 設置場所
+    private func inputPlace(_ place: Place?) {
+        guard let place = place else { return }
+        placeNameTextField.text = place.name
+        inputProduct(place)
+    }
+    
+    /// 受け取ったモノを入力する
+    /// - Parameter place: モノ
+    private func inputProduct(_ place: Place) {
+        guard let product = place.product else { return }
+        guard let category = Category(rawValue: product.category) else { return }
+        heightTextField.text = String(product.height)
+        widthTextField.text = String(product.width)
+        commentTextField.text = product.comment
+        categorySegmentedControl.selectedCategory = category
     }
     
     /// 場所を保存する

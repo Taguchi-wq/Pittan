@@ -76,8 +76,13 @@ final class PlaceDetailViewController: UIViewController {
     
     
     // MARK: - @IBActions
+    /// 編集ボタンを押した時の処理
     @IBAction private func tappedEditButton(_ sender: UIBarButtonItem) {
-        print("編集")
+        guard let place = place else { return }
+        guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+        addPlaceVC.initialize(place: place)
+        addPlaceVC.modalPresentationStyle = .fullScreen
+        present(addPlaceVC, animated: true)
     }
     
 }
