@@ -7,9 +7,18 @@
 
 import Foundation
 
-public enum Category: CaseIterable {
-    case curtain
-    case rug
+public enum Category: String, CaseIterable {
+    case curtain = "カーテン"
+    case rug = "ラグ"
+    
+    var index: Int {
+        switch self {
+        case .curtain:
+            return 0
+        case .rug:
+            return 1
+        }
+    }
     
     var name: String {
         switch self {
