@@ -88,21 +88,31 @@ final class AddPlaceViewController: UIViewController {
     /// 場所を保存する
     private func savePlace() {
         let placeName = placeNameTextField.text ?? ""
-        let comment = commentTextField.text ?? ""
         let category = categorySegmentedControl.selectedCategory
         let height = heightTextField.text ?? ""
         let width = widthTextField.text ?? ""
+        let comment = commentTextField.text ?? ""
         
         if height.isNumber && width.isNumber {
-            RealmManager.shared.savePlace(name: placeName,
-                                          imageID: nil,
-                                          category: category.name,
-                                          colorCode: "",
-                                          design: "",
-                                          type: "",
-                                          comment: comment,
-                                          height: Int(height)!,
-                                          width: Int(width)!)
+            if let place = place {
+                RealmManager.shared.updatePlace(place.id,
+                                                name: placeName,
+                                                category: category.name,
+                                                height: Int(height)!,
+                                                width: Int(width)!,
+                                                comment: comment)
+            } else {
+                RealmManager.shared.savePlace(name: placeName,
+                                              imageID: nil,
+                                              category: category.name,
+                                              colorCode: "",
+                                              design: "",
+                                              type: "",
+                                              comment: comment,
+                                              height: Int(height)!,
+                                              width: Int(width)!)
+            }
+            
             dismiss(animated: true)
         } else {
             Alert.show(on: self, message: .pleaseEnterNumber)
