@@ -93,7 +93,7 @@ final class AddPlaceViewController: UIViewController {
         let width = widthTextField.text ?? ""
         let comment = commentTextField.text ?? ""
         
-        if height.isNumber && width.isNumber {
+        if height.isInt && width.isInt {
             if let place = place {
                 RealmManager.shared.updatePlace(place.id,
                                                 name: placeName,
