@@ -12,8 +12,13 @@ public extension UISegmentedControl {
     // MARK: - Properties
     /// 選択されているカテゴリー
     var selectedCategory: Category {
-        let category: Category = selectedSegmentIndex == 0 ? .curtain : .rug
-        return category
+        get {
+            let category: Category = selectedSegmentIndex == 0 ? .curtain : .rug
+            return category
+        }
+        set {
+            selectedSegmentIndex = newValue.index
+        }
     }
     
     
