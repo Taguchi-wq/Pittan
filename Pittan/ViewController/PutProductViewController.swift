@@ -22,6 +22,7 @@ final class PutProductViewController: UIViewController {
 
     
     // MARK: - @IBActions
+    /// backボタンを押した時の処理
     @IBAction private func tappedBackButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
