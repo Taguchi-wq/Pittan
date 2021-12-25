@@ -16,13 +16,27 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFC-vM-roU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EFC-vM-roU" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="R00-GR-06y"/>
+                            <constraint firstItem="EFC-vM-roU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wfk-kJ-ljJ"/>
+                            <constraint firstAttribute="bottom" secondItem="EFC-vM-roU" secondAttribute="bottom" id="cCF-cv-Bxa"/>
+                            <constraint firstItem="EFC-vM-roU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="o0b-Bm-dFe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arView" destination="EFC-vM-roU" id="r13-oh-n9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="76"/>
+            <point key="canvasLocation" x="34.782608695652179" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
