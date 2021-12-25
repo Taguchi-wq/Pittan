@@ -20,12 +20,26 @@
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFC-vM-roU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-ho-gkx">
+                                <rect key="frame" x="16" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3AH-j6-YS6"/>
+                                    <constraint firstAttribute="width" constant="40" id="aX7-pk-g8G"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="plain" image="close"/>
+                                <connections>
+                                    <action selector="tappedBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gg4-0f-IDx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ogg-ho-gkx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="F32-4B-MQL"/>
                             <constraint firstItem="EFC-vM-roU" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="R00-GR-06y"/>
                             <constraint firstItem="EFC-vM-roU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wfk-kJ-ljJ"/>
+                            <constraint firstItem="Ogg-ho-gkx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="XOL-Z6-BsK"/>
                             <constraint firstAttribute="bottom" secondItem="EFC-vM-roU" secondAttribute="bottom" id="cCF-cv-Bxa"/>
                             <constraint firstItem="EFC-vM-roU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="o0b-Bm-dFe"/>
                         </constraints>
@@ -40,6 +54,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -20,4 +20,10 @@ final class PutProductViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
+    // MARK: - @IBActions
+    @IBAction private func tappedBackButton(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
 }
