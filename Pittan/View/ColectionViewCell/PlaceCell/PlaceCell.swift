@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlaceCell: UICollectionViewCell {
+final class PlaceCell: UICollectionViewCell {
     
     // MARK: - @IBOutlets
     /// 設置場所の画像を表示するUIImageView
@@ -26,7 +26,7 @@ class PlaceCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupPlaceCellLayout()
+        setupLayout()
     }
     
     
@@ -43,7 +43,7 @@ class PlaceCell: UICollectionViewCell {
     
     // MARK: - Methods
     /// PlaceCellのレイアウトを設定する
-    private func setupPlaceCellLayout() {
+    private func setupLayout() {
         cornerRadius = 20
         placeImageView.cornerRadius = 10
         categoryLabel.textColor = .appMain
