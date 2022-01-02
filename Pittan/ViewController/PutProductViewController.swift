@@ -27,4 +27,14 @@ final class PutProductViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    /// pictureボタンを押した時の処理
+    @IBAction private func tappedPictureButton(_ sender: UIButton) {
+        
+    }
+    
+    /// putボタンを押した時の処理
+    @IBAction private func tappedPutButton(_ sender: UIButton) {
+        
+    }
+    
 }
