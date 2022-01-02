@@ -125,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="arView" destination="EFC-vM-roU" id="r13-oh-n9e"/>
+                        <outlet property="putProductCollectionView" destination="G95-bF-oLx" id="DzQ-Qh-VEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
