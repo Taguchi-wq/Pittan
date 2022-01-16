@@ -32,66 +32,6 @@
                                     <action selector="tappedBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gg4-0f-IDx"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-iy-JSh">
-                                <rect key="frame" x="354" y="552" width="40" height="124"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-2X-PBM">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="54.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoH-y9-Xbu">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="LIt-p1-wpE"/>
-                                                    <constraint firstAttribute="width" constant="40" id="j1l-gi-QtU"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="capture_menu">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="tappedPictureButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3G9-n2-Pnz"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撮る" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnE-FP-9aw">
-                                                <rect key="frame" x="0.0" y="40" width="40" height="14.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fSz-7G-jdn">
-                                        <rect key="frame" x="0.0" y="69.5" width="40" height="54.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdO-66-ErO">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="1R3-4r-gdD"/>
-                                                    <constraint firstAttribute="width" constant="40" id="Cbx-DY-6Pa"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="curtain_menu">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="tappedPutButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lhB-Tw-d2M"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwN-hA-CYc">
-                                                <rect key="frame" x="0.0" y="40" width="40" height="14.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="KbZ-Jm-stV"/>
-                                </constraints>
-                            </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G95-bF-oLx">
                                 <rect key="frame" x="0.0" y="716" width="414" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,9 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="G95-bF-oLx" firstAttribute="top" secondItem="Sw6-iy-JSh" secondAttribute="bottom" constant="40" id="3X0-VN-jZV"/>
                             <constraint firstItem="Ogg-ho-gkx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="F32-4B-MQL"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Sw6-iy-JSh" secondAttribute="trailing" constant="20" id="FX6-1O-Fo8"/>
                             <constraint firstAttribute="bottom" secondItem="G95-bF-oLx" secondAttribute="bottom" id="JjD-X4-ofU"/>
                             <constraint firstItem="EFC-vM-roU" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="R00-GR-06y"/>
                             <constraint firstItem="EFC-vM-roU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wfk-kJ-ljJ"/>
@@ -134,9 +72,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="capture_menu" width="40" height="40"/>
         <image name="close" width="40" height="40"/>
-        <image name="curtain_menu" width="41" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
