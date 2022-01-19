@@ -29,6 +29,10 @@ final class PutProductViewController: UIViewController {
     @IBOutlet private weak var arView: ARView!
     /// 製品を選ぶUICollectionView
     @IBOutlet private weak var putProductCollectionView: UICollectionView!
+    /// 閉じるボタン
+    @IBOutlet private weak var backButton: UIButton!
+    /// 削除ボタン
+    @IBOutlet private weak var removeButton: UIButton!
     
     
     // MARK: - Override Methods
@@ -42,6 +46,8 @@ final class PutProductViewController: UIViewController {
     // MARK: - Methods
     /// レイアウトを設定する
     private func setupLayout() {
+        backButton.cornerRadius = 16
+        removeButton.cornerRadius = 16
         putProductCollectionView.dataSource = self
         putProductCollectionView.delegate = self
         putProductCollectionView.register(cellType: ProductCell.self, bundle: nil)
@@ -58,13 +64,8 @@ final class PutProductViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    /// pictureボタンを押した時の処理
-    @IBAction private func tappedPictureButton(_ sender: UIButton) {
-        
-    }
-    
-    /// putボタンを押した時の処理
-    @IBAction private func tappedPutButton(_ sender: UIButton) {
+    /// removeボタンを押した時の処理
+    @IBAction private func tappedRemoveButton(_ sender: UIButton) {
         
     }
     
