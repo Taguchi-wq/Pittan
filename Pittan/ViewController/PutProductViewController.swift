@@ -20,6 +20,7 @@ final class PutProductViewController: UIViewController {
     // MARK: - Properties
     /// 製品を格納する配列
     private var products: [String] = ["", "", "", "", "", "", "", "", "", ""]
+    /// 選ばれているtag
     private var selectTag: Tag = .put
     
 
