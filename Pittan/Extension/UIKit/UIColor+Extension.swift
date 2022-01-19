@@ -24,6 +24,11 @@ public extension UIColor {
         return UIColor(named: "appText")!
     }
     
+    /// アプリの文字カラー2
+    class var appText2: UIColor {
+        return UIColor(named: "appText2")!
+    }
+    
     /// ボーダーカラー
     class var appBorder: UIColor {
         return UIColor(named: "appBorder")!
