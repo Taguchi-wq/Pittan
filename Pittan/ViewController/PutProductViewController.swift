@@ -71,6 +71,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private func setupSceneView() {
 //        sceneView.session.delegate = self
         sceneView.scene = SCNScene()
+        sceneView.pointOfView?.addChildNode(DirectionalLightNode())
     }
     
     /// トラッキング
@@ -162,7 +163,7 @@ extension PutProductViewController: UICollectionViewDelegate {
             
             let materials = objectInteraction.selectedObject!.geometry!.materials
             for material in materials where material.name == "Default_OBJ" {
-                material.diffuse.contents = UIImage(named: "731883104")
+                material.diffuse.contents = UIImage(named: "00001")
             }
             
             sceneView.scene.rootNode.addChildNode(objectInteraction.selectedObject!)
