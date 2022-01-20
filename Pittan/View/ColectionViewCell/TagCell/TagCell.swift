@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TagCell: UICollectionViewCell {
+final class TagCell: UICollectionViewCell {
 
     // MARK: - @IBOutlets
     @IBOutlet private weak var titleLabel: UILabel!

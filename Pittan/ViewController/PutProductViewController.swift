@@ -131,6 +131,7 @@ extension PutProductViewController: UICollectionViewDataSource {
                 return productCell
             } else {
                 let sizeSliderCell = collectionView.reusableCell(with: SizeSliderCell.self, for: indexPath)
+                sizeSliderCell.delegate = self
                 return sizeSliderCell
             }
         }
@@ -290,6 +291,20 @@ extension PutProductViewController: ARCoachingOverlayViewDelegate {
             coachingOverlay.widthAnchor.constraint(equalTo: view.widthAnchor),
             coachingOverlay.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
+    }
+    
+}
+
+
+// MARK: - SizeSliderCellDelegate
+extension PutProductViewController: SizeSliderCellDelegate {
+    
+    func changedHeight(_ value: Float) {
+        objectInteraction.selectedObject?.height = value * 0.01
+    }
+    
+    func changedWidth(_ value: Float) {
+        objectInteraction.selectedObject?.width = value * 0.01
     }
     
 }
