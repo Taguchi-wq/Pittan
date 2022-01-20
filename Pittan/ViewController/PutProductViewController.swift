@@ -44,6 +44,12 @@ final class PutProductViewController: UIViewController {
         setupCoachingOverlay(.horizontalPlane)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        sceneView.session.pause()
+    }
+    
     
     // MARK: - Methods
     /// レイアウトを設定する
