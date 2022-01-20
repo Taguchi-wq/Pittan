@@ -50,6 +50,11 @@
 		7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5187B2756254100C7642D /* PlaceCell.xib */; };
 		7FE699AE2761AD1400F64618 /* PutProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE699AD2761AD1400F64618 /* PutProduct.storyboard */; };
 		7FE699B02761AD7700F64618 /* PutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE699AF2761AD7700F64618 /* PutProductViewController.swift */; };
+		7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */; };
+		7FEDAB01279907D600D5C449 /* float4x4+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB00279907D600D5C449 /* float4x4+Extension.swift */; };
+		7FEDAB0D27992FD600D5C449 /* curtain.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDAB0C27992FD600D5C449 /* curtain.scn */; };
+		7FEDAB1027995E7B00D5C449 /* ObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB0F27995E7B00D5C449 /* ObjectInteraction.swift */; };
+		7FEDAB122799AD4E00D5C449 /* SCNNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */; };
 		928912B0BC67AF93A07D5988 /* Pods_Pittan_PittanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D6FF839A48FA1EBCE5AB9F /* Pods_Pittan_PittanUITests.framework */; };
 		97AB7869DFD1654606F5D871 /* Pods_Pittan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325E3238EB467EBC79784A41 /* Pods_Pittan.framework */; };
 		9C0ACE1D2A42495AD254EC34 /* Pods_PittanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AEEC641CF0ABCE44892619 /* Pods_PittanTests.framework */; };
@@ -126,6 +131,11 @@
 		7FD5187B2756254100C7642D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		7FE699AD2761AD1400F64618 /* PutProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PutProduct.storyboard; sourceTree = "<group>"; };
 		7FE699AF2761AD7700F64618 /* PutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProductViewController.swift; sourceTree = "<group>"; };
+		7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extension.swift"; sourceTree = "<group>"; };
+		7FEDAB00279907D600D5C449 /* float4x4+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "float4x4+Extension.swift"; sourceTree = "<group>"; };
+		7FEDAB0C27992FD600D5C449 /* curtain.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = curtain.scn; sourceTree = "<group>"; };
+		7FEDAB0F27995E7B00D5C449 /* ObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInteraction.swift; sourceTree = "<group>"; };
+		7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extension.swift"; sourceTree = "<group>"; };
 		9D420565361AE2BC18F20392 /* Pods-PittanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.release.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.release.xcconfig"; sourceTree = "<group>"; };
 		F21AEBCEFD1E6916CEC6B893 /* Pods-Pittan-PittanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pittan-PittanUITests.release.xcconfig"; path = "Target Support Files/Pods-Pittan-PittanUITests/Pods-Pittan-PittanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE6F74BB5E7362BB12A14B60 /* Pods-PittanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.debug.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 				7FD518712756214B00C7642D /* Extension */,
 				7FD518802756408E00C7642D /* Protocol */,
 				7F0A48EE27509B6000866926 /* Assets.xcassets */,
+				7FEDAB0C27992FD600D5C449 /* curtain.scn */,
 				7F0A48F327509B6000866926 /* Info.plist */,
 			);
 			path = Pittan;
@@ -334,6 +345,8 @@
 			children = (
 				7F8B6E802762F96E003C98D4 /* UIKit */,
 				7F8B6E832762FA14003C98D4 /* Foundation */,
+				7FEDAAFF2799078600D5C449 /* ARKit */,
+				7FEDAB132799AD9A00D5C449 /* SceneKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -382,12 +395,38 @@
 		7FD518832756422700C7642D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7FEDAB0E27995E5900D5C449 /* Logic */,
 				7F8B6E862762FEED003C98D4 /* Error */,
 				7FBCCBD02757C10C000F9F06 /* Manager */,
 				7FBCCBCA275797AA000F9F06 /* Utility */,
 				7FBCCBCD2757A8A7000F9F06 /* Entity */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7FEDAAFF2799078600D5C449 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */,
+				7FEDAB00279907D600D5C449 /* float4x4+Extension.swift */,
+			);
+			path = ARKit;
+			sourceTree = "<group>";
+		};
+		7FEDAB0E27995E5900D5C449 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDAB0F27995E7B00D5C449 /* ObjectInteraction.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		7FEDAB132799AD9A00D5C449 /* SceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */,
+			);
+			path = SceneKit;
 			sourceTree = "<group>";
 		};
 		A7423C809001D1A6D6CD550B /* Frameworks */ = {
@@ -532,6 +571,7 @@
 				7F70711C275A141D00849598 /* PlaceDetail.storyboard in Resources */,
 				7F0A48EF27509B6000866926 /* Assets.xcassets in Resources */,
 				7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */,
+				7FEDAB0D27992FD600D5C449 /* curtain.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +705,7 @@
 				7F0A48E627509B5B00866926 /* AppDelegate.swift in Sources */,
 				7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */,
 				7FE699B02761AD7700F64618 /* PutProductViewController.swift in Sources */,
+				7FEDAB1027995E7B00D5C449 /* ObjectInteraction.swift in Sources */,
 				7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
 				7F8B6E852762FDC8003C98D4 /* Alert.swift in Sources */,
@@ -676,12 +717,15 @@
 				7F0FC171277445150005A4E4 /* UINavigationBar+Extension.swift in Sources */,
 				7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */,
 				7F49DACF27820F3F00EEFDAE /* ProductCell.swift in Sources */,
+				7FEDAB122799AD4E00D5C449 /* SCNNode+Extension.swift in Sources */,
+				7FEDAB01279907D600D5C449 /* float4x4+Extension.swift in Sources */,
 				7F8B6E822762FA06003C98D4 /* String+Extension.swift in Sources */,
 				7F70711A275A140800849598 /* PlaceDetailViewController.swift in Sources */,
 				7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
 				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
+				7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */,
 				7FC4B4F32796671B008BC70C /* SizeSliderCell.swift in Sources */,
 				7FD518702755436000C7642D /* HomeViewController.swift in Sources */,
 				7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */,

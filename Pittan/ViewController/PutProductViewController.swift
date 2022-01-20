@@ -8,7 +8,7 @@
 import UIKit
 import ARKit
 
-final class PutProductViewController: UIViewController {
+final class PutProductViewController: UIViewController, ARSessionDelegate {
     
     // MARK: - Enums
     private enum Section: CaseIterable {
@@ -22,6 +22,8 @@ final class PutProductViewController: UIViewController {
     private var products: [String] = ["", "", "", "", "", "", "", "", "", ""]
     /// 選ばれているtag
     private var selectTag: Tag = .put
+    var curtainNode: SCNNode?
+    lazy var objectInteraction = ObjectInteraction(sceneView: sceneView)
     
 
     // MARK: - @IBOutlets
@@ -40,6 +42,7 @@ final class PutProductViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        setupSceneView()
         trackingConfiguration()
         setupCoachingOverlay(.horizontalPlane)
     }
@@ -65,11 +68,16 @@ final class PutProductViewController: UIViewController {
         putProductCollectionView.isScrollEnabled = false
     }
     
+    private func setupSceneView() {
+//        sceneView.session.delegate = self
+        sceneView.scene = SCNScene()
+    }
+    
     /// トラッキング
     private func trackingConfiguration() {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
-        configuration.frameSemantics = [.personSegmentation]
+        configuration.frameSemantics = [.personSegmentationWithDepth]
         sceneView.session.run(configuration)
     }
     
@@ -82,7 +90,9 @@ final class PutProductViewController: UIViewController {
     
     /// removeボタンを押した時の処理
     @IBAction private func tappedRemoveButton(_ sender: UIButton) {
-        
+        objectInteraction.selectedObject?.removeFromParentNode()
+        sceneView.scene.rootNode.removeFromParentNode()
+        objectInteraction.selectedObject = nil
     }
     
 }
@@ -139,7 +149,22 @@ extension PutProductViewController: UICollectionViewDelegate {
             selectTag = .allCases[indexPath.item]
             putProductCollectionView.reloadData()
         case .product:
-            print("product")
+            guard objectInteraction.selectedObject == nil else { return }
+            guard let query = sceneView.getRaycastQuery(from: sceneView.screenCenter),
+                  let result = sceneView.castRay(for: query).first,
+                  let scene = SCNScene(named: "curtain.scn"),
+                  let node = (scene.rootNode.childNode(withName: "material_1", recursively: false)) else { return }
+            objectInteraction.selectedObject = node
+            objectInteraction.selectedObject?.simdWorldPosition = result.worldTransform.translation
+            objectInteraction.selectedObject?.pivot = SCNMatrix4MakeTranslation(0, objectInteraction.selectedObject!.boundingBox.min.y, 0)
+            objectInteraction.selectedObject?.scale = SCNVector3(0.05, 0.05, 0.05)
+            
+            let materials = objectInteraction.selectedObject!.geometry!.materials
+            for material in materials where material.name == "Default_OBJ" {
+                material.diffuse.contents = UIImage(named: "731883104")
+            }
+            
+            sceneView.scene.rootNode.addChildNode(objectInteraction.selectedObject!)
         }
     }
     
