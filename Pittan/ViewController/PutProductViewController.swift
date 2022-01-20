@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RealityKit
+import ARKit
 
 final class PutProductViewController: UIViewController {
     
@@ -25,8 +25,8 @@ final class PutProductViewController: UIViewController {
     
 
     // MARK: - @IBOutlets
-    /// ARView
-    @IBOutlet private weak var arView: ARView!
+    /// sceneView
+    @IBOutlet private weak var sceneView: ARSCNView!
     /// 製品を選ぶUICollectionView
     @IBOutlet private weak var putProductCollectionView: UICollectionView!
     /// 閉じるボタン
@@ -40,6 +40,8 @@ final class PutProductViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        trackingConfiguration()
+        setupCoachingOverlay(.horizontalPlane)
     }
     
     
@@ -56,7 +58,15 @@ final class PutProductViewController: UIViewController {
         putProductCollectionView.collectionViewLayout = createLayout()
         putProductCollectionView.isScrollEnabled = false
     }
-
+    
+    /// トラッキング
+    private func trackingConfiguration() {
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.frameSemantics = [.personSegmentation]
+        sceneView.session.run(configuration)
+    }
+    
     
     // MARK: - @IBActions
     /// backボタンを押した時の処理
@@ -224,6 +234,31 @@ extension PutProductViewController: CollectionViewLayout {
         section.contentInsets = .init(top: 20, leading: 16, bottom: 0, trailing: 16)
         
         return section
+    }
+    
+}
+
+
+// MARK: - ARCoachingOverlayViewDelegate
+extension PutProductViewController: ARCoachingOverlayViewDelegate {
+    
+    /// コーチングを設定する
+    /// - Parameter goal: コーチングのゴール
+    private func setupCoachingOverlay(_ goal:  ARCoachingOverlayView.Goal) {
+        let coachingOverlay = ARCoachingOverlayView()
+        coachingOverlay.session = sceneView.session
+        coachingOverlay.delegate = self
+        coachingOverlay.activatesAutomatically = true
+        coachingOverlay.translatesAutoresizingMaskIntoConstraints = false
+        coachingOverlay.goal = goal
+        view.addSubview(coachingOverlay)
+        
+        NSLayoutConstraint.activate([
+            coachingOverlay.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            coachingOverlay.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            coachingOverlay.widthAnchor.constraint(equalTo: view.widthAnchor),
+            coachingOverlay.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
     }
     
 }
