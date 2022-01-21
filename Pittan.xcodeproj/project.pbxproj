@@ -15,6 +15,8 @@
 		7F0A490727509B6000866926 /* PittanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A490627509B6000866926 /* PittanUITests.swift */; };
 		7F0A490927509B6000866926 /* PittanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */; };
 		7F0FC171277445150005A4E4 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */; };
+		7F102461279A442B00440600 /* HomeViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */; };
+		7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */; };
 		7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F727585D8F001910EB /* AddPlaceViewController.swift */; };
 		7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F927586599001910EB /* UIStoryboard+Extension.swift */; };
 		7F2B8FE727949DC8005D70C3 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B8FE527949DC8005D70C3 /* TagCell.swift */; };
@@ -98,6 +100,8 @@
 		7F0A490627509B6000866926 /* PittanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITests.swift; sourceTree = "<group>"; };
 		7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionViewLayout.swift"; sourceTree = "<group>"; };
 		7F1393F727585D8F001910EB /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		7F1393F927586599001910EB /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		7F2B8FE527949DC8005D70C3 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -240,7 +244,7 @@
 		7F0A491B27509E0D00866926 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7FD5186F2755436000C7642D /* HomeViewController.swift */,
+				7F10245F279A43F400440600 /* HomeViewContoller */,
 				7F1393F727585D8F001910EB /* AddPlaceViewController.swift */,
 				7F707119275A140700849598 /* PlaceDetailViewController.swift */,
 				7FE699AF2761AD7700F64618 /* PutProductViewController.swift */,
@@ -255,6 +259,16 @@
 				7FD518762756248100C7642D /* ColectionViewCell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7F10245F279A43F400440600 /* HomeViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				7FD5186F2755436000C7642D /* HomeViewController.swift */,
+				7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */,
+				7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */,
+			);
+			path = HomeViewContoller;
 			sourceTree = "<group>";
 		};
 		7F2B8FE927949DCE005D70C3 /* TagCell */ = {
@@ -735,12 +749,14 @@
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
 				7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */,
 				7FC4B4F32796671B008BC70C /* SizeSliderCell.swift in Sources */,
+				7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */,
 				7FD518702755436000C7642D /* HomeViewController.swift in Sources */,
 				7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */,
 				7F748DBF27566A640086F26C /* UIColor+Extension.swift in Sources */,
 				7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */,
 				7FC4B4F0279652B7008BC70C /* Tag.swift in Sources */,
 				7F8B6E7F2762F083003C98D4 /* Category.swift in Sources */,
+				7F102461279A442B00440600 /* HomeViewController+UICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
