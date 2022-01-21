@@ -17,6 +17,10 @@
 		7F0FC171277445150005A4E4 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */; };
 		7F102461279A442B00440600 /* HomeViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */; };
 		7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */; };
+		7F102468279A508500440600 /* PutProductViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102467279A508500440600 /* PutProductViewController+UICollectionView.swift */; };
+		7F10246C279A520000440600 /* PutProductViewController+CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10246B279A520000440600 /* PutProductViewController+CollectionViewLayout.swift */; };
+		7F10246E279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10246D279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift */; };
+		7F102470279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10246F279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift */; };
 		7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F727585D8F001910EB /* AddPlaceViewController.swift */; };
 		7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F927586599001910EB /* UIStoryboard+Extension.swift */; };
 		7F2B8FE727949DC8005D70C3 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B8FE527949DC8005D70C3 /* TagCell.swift */; };
@@ -102,6 +106,10 @@
 		7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionViewLayout.swift"; sourceTree = "<group>"; };
+		7F102467279A508500440600 /* PutProductViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		7F10246B279A520000440600 /* PutProductViewController+CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+CollectionViewLayout.swift"; sourceTree = "<group>"; };
+		7F10246D279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+ARCoachingOverlayViewDelegate.swift"; sourceTree = "<group>"; };
+		7F10246F279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+SizeSliderCellDelegate.swift"; sourceTree = "<group>"; };
 		7F1393F727585D8F001910EB /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		7F1393F927586599001910EB /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		7F2B8FE527949DC8005D70C3 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -247,7 +255,7 @@
 				7F10245F279A43F400440600 /* HomeViewContoller */,
 				7F102464279A4BCF00440600 /* AddPlaceViewController */,
 				7F102465279A4C2200440600 /* PlaceDetailViewController */,
-				7FE699AF2761AD7700F64618 /* PutProductViewController.swift */,
+				7F102466279A506600440600 /* PutProductViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -285,6 +293,18 @@
 				7F707119275A140700849598 /* PlaceDetailViewController.swift */,
 			);
 			path = PlaceDetailViewController;
+			sourceTree = "<group>";
+		};
+		7F102466279A506600440600 /* PutProductViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FE699AF2761AD7700F64618 /* PutProductViewController.swift */,
+				7F102467279A508500440600 /* PutProductViewController+UICollectionView.swift */,
+				7F10246B279A520000440600 /* PutProductViewController+CollectionViewLayout.swift */,
+				7F10246D279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift */,
+				7F10246F279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift */,
+			);
+			path = PutProductViewController;
 			sourceTree = "<group>";
 		};
 		7F2B8FE927949DCE005D70C3 /* TagCell */ = {
@@ -737,14 +757,17 @@
 			files = (
 				7F2B8FE727949DC8005D70C3 /* TagCell.swift in Sources */,
 				7FEDAB172799BB2900D5C449 /* DirectionalLightNode.swift in Sources */,
+				7F10246E279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift in Sources */,
 				7FBCCBD22757C11E000F9F06 /* RealmManager.swift in Sources */,
 				7F8B6E882762FF0F003C98D4 /* AlertMessage.swift in Sources */,
 				7F0A48E627509B5B00866926 /* AppDelegate.swift in Sources */,
 				7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */,
 				7FE699B02761AD7700F64618 /* PutProductViewController.swift in Sources */,
+				7F10246C279A520000440600 /* PutProductViewController+CollectionViewLayout.swift in Sources */,
 				7FEDAB1027995E7B00D5C449 /* ObjectInteraction.swift in Sources */,
 				7FEDAB152799B1F900D5C449 /* SizeSliderCellDelegate.swift in Sources */,
 				7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */,
+				7F102468279A508500440600 /* PutProductViewController+UICollectionView.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
 				7F8B6E852762FDC8003C98D4 /* Alert.swift in Sources */,
 				7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */,
@@ -763,6 +786,7 @@
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
 				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
+				7F102470279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift in Sources */,
 				7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */,
 				7FC4B4F32796671B008BC70C /* SizeSliderCell.swift in Sources */,
 				7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */,
