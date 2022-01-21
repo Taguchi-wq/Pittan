@@ -246,7 +246,7 @@
 			children = (
 				7F10245F279A43F400440600 /* HomeViewContoller */,
 				7F102464279A4BCF00440600 /* AddPlaceViewController */,
-				7F707119275A140700849598 /* PlaceDetailViewController.swift */,
+				7F102465279A4C2200440600 /* PlaceDetailViewController */,
 				7FE699AF2761AD7700F64618 /* PutProductViewController.swift */,
 			);
 			path = ViewController;
@@ -277,6 +277,14 @@
 				7F1393F727585D8F001910EB /* AddPlaceViewController.swift */,
 			);
 			path = AddPlaceViewController;
+			sourceTree = "<group>";
+		};
+		7F102465279A4C2200440600 /* PlaceDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F707119275A140700849598 /* PlaceDetailViewController.swift */,
+			);
+			path = PlaceDetailViewController;
 			sourceTree = "<group>";
 		};
 		7F2B8FE927949DCE005D70C3 /* TagCell */ = {
