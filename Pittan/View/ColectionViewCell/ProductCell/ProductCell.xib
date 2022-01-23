@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OPV-Kc-zk3">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OPV-Kc-zk3">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <color key="backgroundColor" name="appText"/>
                         <constraints>

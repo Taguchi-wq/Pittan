@@ -19,7 +19,7 @@ extension PutProductViewController: UICollectionViewDataSource {
         let section = Section.allCases[section]
         switch section {
         case .tag: return Tag.allCases.count
-        case .product: return selectTag == .put ? products.count : 1
+        case .product: return selectTag == .put ? Products.allCases.count : 1
         }
     }
     
@@ -38,6 +38,8 @@ extension PutProductViewController: UICollectionViewDataSource {
         case .product:
             if selectTag == .put {
                 let productCell = collectionView.reusableCell(with: ProductCell.self, for: indexPath)
+                let product = Products.allCases[indexPath.item]
+                productCell.initialize(imageName: product.imageName, name: product.name)
                 return productCell
             } else {
                 let sizeSliderCell = collectionView.reusableCell(with: SizeSliderCell.self, for: indexPath)
@@ -60,11 +62,19 @@ extension PutProductViewController: UICollectionViewDelegate {
             selectTag = .allCases[indexPath.item]
             putProductCollectionView.reloadData()
         case .product:
-            guard objectInteraction.selectedObject == nil else { return }
+            let product = Products.allCases[indexPath.item]
+            guard objectInteraction.selectedObject == nil else {
+                let materials = objectInteraction.selectedObject!.geometry!.materials
+                for material in materials where material.name == "Default_OBJ" {
+                    material.diffuse.contents = UIImage(named: product.imageName)
+                    material.roughness.contents = 1
+                }
+                return
+            }
             guard let query = sceneView.getRaycastQuery(from: sceneView.screenCenter),
                   let result = sceneView.castRay(for: query).first,
                   let scene = SCNScene(named: "curtain.scn"),
-                  let node = (scene.rootNode.childNode(withName: "material_1", recursively: false)) else { return }
+                  let node = (scene.rootNode.childNode(withName: "uploads_files_2420428_FA_Curtain_02_Default_OBJ", recursively: false)) else { return }
             objectInteraction.selectedObject = node
             objectInteraction.selectedObject?.simdWorldPosition = result.worldTransform.translation
             objectInteraction.selectedObject?.pivot = SCNMatrix4MakeTranslation(0, objectInteraction.selectedObject!.boundingBox.min.y, 0)
@@ -72,7 +82,8 @@ extension PutProductViewController: UICollectionViewDelegate {
             
             let materials = objectInteraction.selectedObject!.geometry!.materials
             for material in materials where material.name == "Default_OBJ" {
-                material.diffuse.contents = UIImage(named: "00001")
+                material.diffuse.contents = UIImage(named: product.imageName)
+                material.roughness.contents = 1
             }
             
             sceneView.scene.rootNode.addChildNode(objectInteraction.selectedObject!)

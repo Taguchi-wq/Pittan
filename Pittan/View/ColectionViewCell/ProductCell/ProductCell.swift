@@ -22,6 +22,13 @@ final class ProductCell: UICollectionViewCell {
         
         setupLayout()
     }
+    
+    
+    // MARK: - Initialize
+    func initialize(imageName: String, name: String) {
+        imageView.image = UIImage(named: imageName)
+        nameLabel.text = name
+    }
 
     
     // MARK: - Methods
