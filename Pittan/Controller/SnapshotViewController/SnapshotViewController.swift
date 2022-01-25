@@ -45,6 +45,9 @@ class SnapshotViewController: UIViewController {
     // MARK: - @IBActions
     /// saveボタンを押した時の処置
     @IBAction private func tappedSaveButton(_ sender: UIButton) {
-        presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        Alert.showSize(on: self, height: 1000, width: 2000) { _ in
+            self.presentingViewController?
+                .presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
 }

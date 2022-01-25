@@ -115,7 +115,7 @@ final class AddPlaceViewController: UIViewController {
             
             dismiss(animated: true)
         } else {
-            Alert.show(on: self, message: .pleaseEnterNumber)
+            Alert.showError(on: self, message: .pleaseEnterNumber)
         }
     }
     
@@ -134,7 +134,7 @@ final class AddPlaceViewController: UIViewController {
         let commentIsEmpty = commentTextField.text?.isEmpty ?? false
         
         if placeNameIsEmpty || heightIsEmpty || widthIsEmpty || commentIsEmpty {
-            Alert.show(on: self, message: .pleaseFillAllFields)
+            Alert.showError(on: self, message: .pleaseFillAllFields)
         } else {
             savePlace()
         }
