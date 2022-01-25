@@ -123,4 +123,31 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         objectInteraction.selectedObject = nil
     }
     
+    /// shutterボタンを押した時の処理
+    @IBAction private func tappedShutterButton(_ sender: UIButton) {
+        let snapshotImage = sceneView.snapshot()
+        UIImageWriteToSavedPhotosAlbum(snapshotImage, self, #selector(showResultOfSaveImage(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc
+    private func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
+        
+        var title = "Completed"
+        var message = "Completed to save on Liblary"
+        
+        if error != nil {
+            title = "Error"
+            message = "Fail to save"
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: .default,
+                                      handler:{
+            (action:UIAlertAction!) -> Void in
+            print("save")
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }

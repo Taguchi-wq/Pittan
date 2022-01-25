@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-GY-Xkr">
-                                <rect key="frame" x="0.0" y="0.0" width="416" height="616"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="616"/>
                             </arscnView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G95-bF-oLx">
-                                <rect key="frame" x="0.0" y="616" width="416" height="150"/>
+                                <rect key="frame" x="0.0" y="616" width="414" height="150"/>
                                 <color key="backgroundColor" name="appBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="oho-Wa-edu"/>
@@ -37,10 +37,10 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-Wb-kP8">
-                                <rect key="frame" x="0.0" y="766" width="416" height="130"/>
+                                <rect key="frame" x="0.0" y="766" width="414" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaI-c5-abL">
-                                        <rect key="frame" x="173" y="16" width="70" height="70"/>
+                                        <rect key="frame" x="172" y="16" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="1Or-e1-3cN"/>
                                             <constraint firstAttribute="width" constant="70" id="J54-Vm-72j"/>
@@ -48,6 +48,9 @@
                                         <color key="tintColor" name="appText2"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="shutter_button"/>
+                                        <connections>
+                                            <action selector="tappedShutterButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0sO-Kk-5hn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="appBackground"/>
@@ -58,10 +61,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="196" translatesAutoresizingMaskIntoConstraints="NO" id="1jv-UH-37g">
-                                <rect key="frame" x="20" y="64" width="376" height="54"/>
+                                <rect key="frame" x="20" y="64" width="374" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-ho-gkx">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="54"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="z3P-Hy-Ycj"/>
@@ -73,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pn-3G-s3Z">
-                                        <rect key="frame" x="286" y="0.0" width="90" height="54"/>
+                                        <rect key="frame" x="285" y="0.0" width="89" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="Smh-HV-6vy"/>
