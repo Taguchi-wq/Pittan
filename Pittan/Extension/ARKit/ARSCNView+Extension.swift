@@ -17,7 +17,7 @@ public extension ARSCNView {
     
     
     // MARK: - Methods
-    func getRaycastQuery(from point: CGPoint, for alignment: ARRaycastQuery.TargetAlignment = .horizontal) -> ARRaycastQuery? {
+    func getRaycastQuery(from point: CGPoint, for alignment: ARRaycastQuery.TargetAlignment = .any) -> ARRaycastQuery? {
         return raycastQuery(from: point, allowing: .estimatedPlane, alignment: alignment)
     }
     
