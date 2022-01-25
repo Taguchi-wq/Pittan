@@ -54,6 +54,8 @@
 		7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD51874275622E400C7642D /* UIView+Extension.swift */; };
 		7FD5187C2756254100C7642D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5187A2756254100C7642D /* PlaceCell.swift */; };
 		7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5187B2756254100C7642D /* PlaceCell.xib */; };
+		7FD56960279F89200052D51E /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5695F279F89200052D51E /* SnapshotViewController.swift */; };
+		7FD56962279F892E0052D51E /* Snapshot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD56961279F892E0052D51E /* Snapshot.storyboard */; };
 		7FE699AE2761AD1400F64618 /* PutProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE699AD2761AD1400F64618 /* PutProduct.storyboard */; };
 		7FE699B02761AD7700F64618 /* PutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE699AF2761AD7700F64618 /* PutProductViewController.swift */; };
 		7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */; };
@@ -143,6 +145,8 @@
 		7FD51874275622E400C7642D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7FD5187A2756254100C7642D /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		7FD5187B2756254100C7642D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
+		7FD5695F279F89200052D51E /* SnapshotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
+		7FD56961279F892E0052D51E /* Snapshot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Snapshot.storyboard; sourceTree = "<group>"; };
 		7FE699AD2761AD1400F64618 /* PutProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PutProduct.storyboard; sourceTree = "<group>"; };
 		7FE699AF2761AD7700F64618 /* PutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProductViewController.swift; sourceTree = "<group>"; };
 		7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extension.swift"; sourceTree = "<group>"; };
@@ -213,7 +217,7 @@
 				7F0A491A27509E0300866926 /* App */,
 				7FD518832756422700C7642D /* Model */,
 				7F0A491C27509E2800866926 /* View */,
-				7F0A491B27509E0D00866926 /* ViewController */,
+				7F0A491B27509E0D00866926 /* Controller */,
 				7FD518712756214B00C7642D /* Extension */,
 				7FD518802756408E00C7642D /* Protocol */,
 				7F0A48EE27509B6000866926 /* Assets.xcassets */,
@@ -249,15 +253,16 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		7F0A491B27509E0D00866926 /* ViewController */ = {
+		7F0A491B27509E0D00866926 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				7F10245F279A43F400440600 /* HomeViewContoller */,
 				7F102464279A4BCF00440600 /* AddPlaceViewController */,
 				7F102465279A4C2200440600 /* PlaceDetailViewController */,
 				7F102466279A506600440600 /* PutProductViewController */,
+				7FD5695E279F88D20052D51E /* SnapshotViewController */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7F0A491C27509E2800866926 /* View */ = {
@@ -424,6 +429,7 @@
 				7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */,
 				7F70711B275A141D00849598 /* PlaceDetail.storyboard */,
 				7FE699AD2761AD1400F64618 /* PutProduct.storyboard */,
+				7FD56961279F892E0052D51E /* Snapshot.storyboard */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -457,6 +463,14 @@
 				7FBCCBCD2757A8A7000F9F06 /* Entity */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7FD5695E279F88D20052D51E /* SnapshotViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FD5695F279F89200052D51E /* SnapshotViewController.swift */,
+			);
+			path = SnapshotViewController;
 			sourceTree = "<group>";
 		};
 		7FEDAAFF2799078600D5C449 /* ARKit */ = {
@@ -623,6 +637,7 @@
 				7FD5186E2755435000C7642D /* Home.storyboard in Resources */,
 				7F2B8FE827949DC8005D70C3 /* TagCell.xib in Resources */,
 				7F0A48F227509B6000866926 /* LaunchScreen.storyboard in Resources */,
+				7FD56962279F892E0052D51E /* Snapshot.storyboard in Resources */,
 				7FB0B3C727585B6D00352C0B /* AddPlace.storyboard in Resources */,
 				7F70711C275A141D00849598 /* PlaceDetail.storyboard in Resources */,
 				7F0A48EF27509B6000866926 /* Assets.xcassets in Resources */,
@@ -787,6 +802,7 @@
 				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
 				7F102470279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift in Sources */,
+				7FD56960279F89200052D51E /* SnapshotViewController.swift in Sources */,
 				7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */,
 				7FC4B4F32796671B008BC70C /* SizeSliderCell.swift in Sources */,
 				7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */,

@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-GY-Xkr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="0.0" width="416" height="616"/>
                             </arscnView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G95-bF-oLx">
-                                <rect key="frame" x="0.0" y="616" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="616" width="416" height="150"/>
                                 <color key="backgroundColor" name="appBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="oho-Wa-edu"/>
@@ -37,10 +37,10 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-Wb-kP8">
-                                <rect key="frame" x="0.0" y="766" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="766" width="416" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaI-c5-abL">
-                                        <rect key="frame" x="172" y="16" width="70" height="70"/>
+                                        <rect key="frame" x="173" y="16" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="1Or-e1-3cN"/>
                                             <constraint firstAttribute="width" constant="70" id="J54-Vm-72j"/>
@@ -61,10 +61,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="196" translatesAutoresizingMaskIntoConstraints="NO" id="1jv-UH-37g">
-                                <rect key="frame" x="20" y="64" width="374" height="54"/>
+                                <rect key="frame" x="20" y="64" width="376" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-ho-gkx">
-                                        <rect key="frame" x="0.0" y="0.0" width="89" height="54"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="z3P-Hy-Ycj"/>
@@ -76,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pn-3G-s3Z">
-                                        <rect key="frame" x="285" y="0.0" width="89" height="54"/>
+                                        <rect key="frame" x="286" y="0.0" width="90" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="Smh-HV-6vy"/>
@@ -117,11 +117,22 @@
                         <outlet property="putProductCollectionView" destination="G95-bF-oLx" id="DzQ-Qh-VEt"/>
                         <outlet property="removeButton" destination="5pn-3G-s3Z" id="4pa-1F-X3y"/>
                         <outlet property="sceneView" destination="PWe-GY-Xkr" id="RC1-HV-IKC"/>
+                        <segue destination="2dF-9z-Fvj" kind="show" id="hfR-eK-gjj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="75.669642857142847"/>
+        </scene>
+        <!--Snapshot-->
+        <scene sceneID="54q-An-X7E">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SnapshotViewController" storyboardName="Snapshot" id="2dF-9z-Fvj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RTJ-R1-VDJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gia-gq-eX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="76"/>
         </scene>
     </scenes>
     <resources>
