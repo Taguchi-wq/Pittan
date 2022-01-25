@@ -63,30 +63,11 @@ extension PutProductViewController: UICollectionViewDelegate {
             putProductCollectionView.reloadData()
         case .product:
             let product = Products.allCases[indexPath.item]
-            guard objectInteraction.selectedObject == nil else {
-                let materials = objectInteraction.selectedObject!.geometry!.materials
-                for material in materials where material.name == "Default_OBJ" {
-                    material.diffuse.contents = UIImage(named: product.imageName)
-                    material.roughness.contents = 1
-                }
-                return
+            if let selectedObject = objectInteraction.selectedObject {
+                selectedObject.setTexture(product.imageName)
+            } else {
+                objectInteraction.selectedTexture = product.imageName
             }
-            guard let query = sceneView.getRaycastQuery(from: sceneView.screenCenter),
-                  let result = sceneView.castRay(for: query).first,
-                  let scene = SCNScene(named: "curtain.scn"),
-                  let node = (scene.rootNode.childNode(withName: "uploads_files_2420428_FA_Curtain_02_Default_OBJ", recursively: false)) else { return }
-            objectInteraction.selectedObject = node
-            objectInteraction.selectedObject?.simdWorldPosition = result.worldTransform.translation
-            objectInteraction.selectedObject?.pivot = SCNMatrix4MakeTranslation(0, objectInteraction.selectedObject!.boundingBox.min.y, 0)
-            objectInteraction.selectedObject?.scale = SCNVector3(0.05, 0.05, 0.05)
-            
-            let materials = objectInteraction.selectedObject!.geometry!.materials
-            for material in materials where material.name == "Default_OBJ" {
-                material.diffuse.contents = UIImage(named: product.imageName)
-                material.roughness.contents = 1
-            }
-            
-            sceneView.scene.rootNode.addChildNode(objectInteraction.selectedObject!)
         }
     }
     
