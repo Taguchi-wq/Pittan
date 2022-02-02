@@ -52,11 +52,22 @@
                     <connections>
                         <outlet property="saveButton" destination="3v3-t5-S7z" id="oV9-ab-nZH"/>
                         <outlet property="snapshotView" destination="mlG-7J-NWb" id="3zN-0i-Wd7"/>
+                        <segue destination="0YC-ZD-ffH" kind="show" id="05t-zl-Oqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2463768115942031" y="93.75"/>
+        </scene>
+        <!--AddPlace-->
+        <scene sceneID="Y6b-vJ-XRK">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddPlaceViewController" storyboardName="AddPlace" id="0YC-ZD-ffH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TxQ-AB-p6T"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0p-bv-3zL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="94"/>
         </scene>
     </scenes>
     <resources>

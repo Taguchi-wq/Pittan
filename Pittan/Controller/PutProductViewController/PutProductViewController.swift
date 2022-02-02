@@ -50,6 +50,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     var selectTag: Tag = .put
     /// 3Dオブジェクトに対してのジェスチャーをつける
     lazy var objectInteraction = ObjectInteraction(sceneView: sceneView)
+    /// 作成した製品
+    private var product = Product()
     
 
     // MARK: - @IBOutlets
@@ -132,7 +134,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     @IBAction private func tappedShutterButton(_ sender: UIButton) {
         let snapshot = sceneView.snapshot()
         guard let snapshotVC = storyboard?.instantiateViewController(with: SnapshotViewController.self) else { return }
-        snapshotVC.initialize(snapshot: snapshot)
+        snapshotVC.initialize(product: product, snapshot: snapshot)
         snapshotVC.modalTransitionStyle = .crossDissolve
         snapshotVC.modalPresentationStyle = .fullScreen
         present(snapshotVC, animated: true)

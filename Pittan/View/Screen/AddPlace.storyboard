@@ -47,24 +47,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-1d-mDc">
                                                 <rect key="frame" x="16" y="24" width="382" height="602"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odg-Rx-gss">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odg-Rx-gss">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="190"/>
                                                         <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="190" id="jT8-2u-ULm"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="カーテンの雰囲気">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.63529411764705879" green="0.50588235294117645" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="24" name="HiraginoSans-W6"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="24"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="カーテンの雰囲気">
+                                                            <color key="titleColor" name="appMain"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="tappedCheckMoodButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CQP-ys-1yk"/>
                                                         </connections>
@@ -196,8 +189,10 @@
                     </view>
                     <connections>
                         <outlet property="addPlaceScrollView" destination="M1a-10-YSX" id="wZh-ih-wOv"/>
+                        <outlet property="addPlaceScrollViewHeight" destination="Yku-25-XEL" id="J1p-Yn-b3e"/>
                         <outlet property="categorySegmentedControl" destination="Gug-f9-epP" id="4jP-qF-gUH"/>
                         <outlet property="checkMoodButton" destination="Odg-Rx-gss" id="SQc-Wl-QYD"/>
+                        <outlet property="checkMoodButtonHeight" destination="jT8-2u-ULm" id="WDb-zZ-cHJ"/>
                         <outlet property="closeButton" destination="1Gl-Wx-Xdf" id="3Fq-Xs-aY6"/>
                         <outlet property="commentTextField" destination="iP8-FH-beq" id="gCR-b8-7wJ"/>
                         <outlet property="heightTextField" destination="qeg-S2-gKJ" id="fus-IT-JeK"/>
@@ -205,22 +200,11 @@
                         <outlet property="placeNameTextField" destination="8tV-CB-d5Z" id="iIc-Lr-GC7"/>
                         <outlet property="saveButton" destination="Vyv-nT-e3w" id="Diz-Yy-cN6"/>
                         <outlet property="widthTextField" destination="sk9-UK-k0m" id="Zb5-Ux-f3z"/>
-                        <segue destination="vMK-AK-OlK" kind="show" id="TUZ-eP-gjz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="69.642857142857139"/>
-        </scene>
-        <!--PutProduct-->
-        <scene sceneID="fCP-gi-OTH">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PutProductViewController" storyboardName="PutProduct" id="vMK-AK-OlK" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="D8Q-zk-sDh"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iRR-p0-t3u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1788" y="70"/>
         </scene>
     </scenes>
     <resources>

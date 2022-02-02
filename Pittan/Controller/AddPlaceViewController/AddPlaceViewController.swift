@@ -12,6 +12,8 @@ final class AddPlaceViewController: UIViewController {
     // MARK: - Properties
     /// 設置場所
     private var place: Place?
+    /// 製品
+    private var product: Product?
     
     
     // MARK: - @IBOutlets
@@ -35,6 +37,10 @@ final class AddPlaceViewController: UIViewController {
     @IBOutlet private weak var commentTextField: UITextField!
     /// カテゴリを選択するUISegmentedControl
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
+    /// UIScrollViewの高さ
+    @IBOutlet private weak var addPlaceScrollViewHeight: NSLayoutConstraint!
+    /// 雰囲気を見るボタンの高さ
+    @IBOutlet private weak var checkMoodButtonHeight: NSLayoutConstraint!
     
     
     // MARK: - Override Methods
@@ -44,10 +50,30 @@ final class AddPlaceViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let product = product {
+            checkMoodButton.imageView?.contentMode = .scaleToFill
+            checkMoodButton.imageView?.cornerRadius = 10
+            checkMoodButton.setImage(UIImage(imagePath: product.imagePath), for: .normal)
+            checkMoodButtonHeight.constant = 400
+            addPlaceScrollViewHeight.constant += checkMoodButtonHeight.constant
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     
     // MARK: - Initialize
     func initialize(place: Place) {
         self.place = place
+    }
+    
+    func initialize(product: Product) {
+        self.product = product
     }
     
     
@@ -103,7 +129,7 @@ final class AddPlaceViewController: UIViewController {
                                                 comment: comment)
             } else {
                 RealmManager.shared.savePlace(name: placeName,
-                                              imageID: nil,
+                                              imagePath: place?.product?.imagePath,
                                               category: category.name,
                                               colorCode: "",
                                               design: "",
@@ -113,7 +139,10 @@ final class AddPlaceViewController: UIViewController {
                                               width: Int(width)!)
             }
             
-            dismiss(animated: true)
+            presentingViewController?
+                .presentingViewController?
+                .presentingViewController?
+                .dismiss(animated: true, completion: nil)
         } else {
             Alert.showError(on: self, message: .pleaseEnterNumber)
         }
@@ -123,7 +152,14 @@ final class AddPlaceViewController: UIViewController {
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
     @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
+        if product != nil {
+            presentingViewController?
+                .presentingViewController?
+                .presentingViewController?
+                .dismiss(animated: true, completion: nil)
+        } else {
+            dismiss(animated: true)
+        }
     }
     
     /// saveButtonを押した時に呼ばれる
@@ -142,9 +178,9 @@ final class AddPlaceViewController: UIViewController {
     
     /// checkMoodButtonを押した時に呼ばれる
     @IBAction private func tappedCheckMoodButton(_ sender: UIButton) {
-        guard let putProductVC = storyboard?.instantiateViewController(with: PutProductViewController.self) else { return }
-        putProductVC.modalPresentationStyle = .fullScreen
-        present(putProductVC, animated: true)
+        presentingViewController?
+            .presentingViewController?
+            .dismiss(animated: true)
     }
     
 }
