@@ -52,6 +52,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     lazy var objectInteraction = ObjectInteraction(sceneView: sceneView)
     /// 作成した製品
     private var product = Product()
+    /// スナップショット
+    private var snapshot: UIImage?
     
 
     // MARK: - @IBOutlets
@@ -116,6 +118,18 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         sceneView.session.run(configuration)
     }
     
+    /// AddImageButtonを押した時の処理
+    @objc
+    private func tappedAddImageButton(_ sender: UIButton) {
+        Alert.showSize(on: self, height: 1000, width: 2000) { _ in
+            guard let snapshot = self.snapshot else { return }
+            guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+            addPlaceVC.modalPresentationStyle = .fullScreen
+            addPlaceVC.initialize(product: self.product, snapshot: snapshot)
+            self.present(addPlaceVC, animated: true)
+        }
+    }
+    
     
     // MARK: - @IBActions
     /// backボタンを押した時の処理
@@ -132,12 +146,29 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     
     /// shutterボタンを押した時の処理
     @IBAction private func tappedShutterButton(_ sender: UIButton) {
-        let snapshot = sceneView.snapshot()
-        guard let snapshotVC = storyboard?.instantiateViewController(with: SnapshotViewController.self) else { return }
-        snapshotVC.initialize(product: product, snapshot: snapshot)
-        snapshotVC.modalTransitionStyle = .crossDissolve
-        snapshotVC.modalPresentationStyle = .fullScreen
-        present(snapshotVC, animated: true)
+        snapshot = sceneView.snapshot()
+        
+        let uiview = UIView()
+        uiview.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        uiview.backgroundColor = .appBackground
+        view.addSubview(uiview)
+        
+        let imageView = UIImageView()
+        imageView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        imageView.image = snapshot
+        imageView.contentMode = .scaleAspectFit
+        view.addSubview(imageView)
+        
+        let button = UIButton()
+        button.frame = CGRect(x: (view.bounds.width/2) - (170/2), y: view.bounds.height - 120, width: 170, height: 70)
+        button.backgroundColor = .appMain
+        button.setTitle("追加", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
+        button.cornerRadius = 20
+        button.addTarget(self, action: #selector(tappedAddImageButton(_:)), for: .touchUpInside)
+        view.addSubview(button)
+        
+        sceneView.session.pause()
     }
     
 }

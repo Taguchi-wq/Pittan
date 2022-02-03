@@ -14,6 +14,8 @@ final class AddPlaceViewController: UIViewController {
     private var place: Place?
     /// 製品
     private var product: Product?
+    /// スナップショット
+    private var snapshot: UIImage?
     
     
     // MARK: - @IBOutlets
@@ -53,17 +55,13 @@ final class AddPlaceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let product = product {
-            checkMoodButton.imageView?.contentMode = .scaleToFill
+        if let snapshot = snapshot {
+            checkMoodButton.imageView?.contentMode = .scaleAspectFill
             checkMoodButton.imageView?.cornerRadius = 10
-            checkMoodButton.setImage(UIImage(imagePath: product.imagePath), for: .normal)
+            checkMoodButton.setImage(snapshot, for: .normal)
             checkMoodButtonHeight.constant = 400
             addPlaceScrollViewHeight.constant += checkMoodButtonHeight.constant
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     
@@ -72,8 +70,9 @@ final class AddPlaceViewController: UIViewController {
         self.place = place
     }
     
-    func initialize(product: Product) {
+    func initialize(product: Product, snapshot: UIImage) {
         self.product = product
+        self.snapshot = snapshot
     }
     
     
@@ -81,6 +80,10 @@ final class AddPlaceViewController: UIViewController {
     /// 画面のレイアウトを設定する
     private func setupLayout() {
         view.backgroundColor = .appBackground
+        placeNameTextField.delegate = self
+        heightTextField.delegate = self
+        widthTextField.delegate = self
+        commentTextField.delegate = self
         navigationBar.hideShadow(true)
         checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
         categorySegmentedControl.setTitle(state: .selected)
@@ -127,20 +130,29 @@ final class AddPlaceViewController: UIViewController {
                                                 height: Int(height)!,
                                                 width: Int(width)!,
                                                 comment: comment)
-            } else {
-                RealmManager.shared.savePlace(name: placeName,
-                                              imagePath: place?.product?.imagePath,
-                                              category: category.name,
-                                              colorCode: "",
-                                              design: "",
-                                              type: "",
-                                              comment: comment,
-                                              height: Int(height)!,
-                                              width: Int(width)!)
+            } else if let product = product {
+                guard let snapshot = snapshot else { return }
+                guard let filePath = createFilePathURL() else { return }
+                
+                let pngImageData = snapshot.pngData()
+                do {
+                    try pngImageData?.write(to: filePath)
+                    product.imagePath = filePath.absoluteString
+                    RealmManager.shared.savePlace(name: placeName,
+                                                  imagePath: product.imagePath,
+                                                  category: category.name,
+                                                  colorCode: product.colorCode,
+                                                  design: product.design,
+                                                  type: product.type,
+                                                  comment: comment,
+                                                  height: Int(height)!,
+                                                  width: Int(width)!)
+                } catch {
+                    print("Failed to save the image")
+                }
             }
             
             presentingViewController?
-                .presentingViewController?
                 .presentingViewController?
                 .dismiss(animated: true, completion: nil)
         } else {
@@ -148,17 +160,21 @@ final class AddPlaceViewController: UIViewController {
         }
     }
     
+    private func createFilePathURL() -> URL? {
+        let fileManager = FileManager.default
+        guard let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let uuid = UUID().uuidString
+        return documentURL.appendingPathComponent(uuid + ".png")
+    }
+    
     
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
     @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
-        if product != nil {
+        if let _ = product, let _ = snapshot {
             presentingViewController?
                 .presentingViewController?
-                .presentingViewController?
                 .dismiss(animated: true, completion: nil)
-        } else {
-            dismiss(animated: true)
         }
     }
     
@@ -181,6 +197,14 @@ final class AddPlaceViewController: UIViewController {
         presentingViewController?
             .presentingViewController?
             .dismiss(animated: true)
+    }
+    
+}
+
+extension AddPlaceViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
     }
     
 }

@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="75.669642857142847"/>
         </scene>
-        <!--Snapshot-->
+        <!--AddPlace-->
         <scene sceneID="54q-An-X7E">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SnapshotViewController" storyboardName="Snapshot" id="2dF-9z-Fvj" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="AddPlaceViewController" storyboardName="AddPlace" id="2dF-9z-Fvj" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="RTJ-R1-VDJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gia-gq-eX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

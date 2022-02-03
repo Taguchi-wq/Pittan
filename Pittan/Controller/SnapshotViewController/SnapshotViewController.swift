@@ -44,38 +44,9 @@ final class SnapshotViewController: UIViewController {
         snapshotView.image = snapshot
         saveButton.cornerRadius = 20
     }
-    
-    private func createFilePathURL() -> URL? {
-        let fileManager = FileManager.default
-        guard let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let uuid = UUID().uuidString
-        return documentURL.appendingPathComponent(uuid + ".png")
-    }
-    
-    private func saveProduct() {
-        guard let product = product else { return }
-        guard let snapshot = snapshot else { return }
-        guard let filePath = createFilePathURL() else { return }
-        let pngImageData = snapshot.pngData()
-        do {
-            try pngImageData?.write(to: filePath)
-            product.imagePath = filePath.absoluteString
-            
-            guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
-            addPlaceVC.modalPresentationStyle = .fullScreen
-            addPlaceVC.initialize(product: product)
-            present(addPlaceVC, animated: true)
-        } catch {
-            print("Failed to save the image")
-        }
-    }
-    
 
     // MARK: - @IBActions
     /// saveボタンを押した時の処置
     @IBAction private func tappedSaveButton(_ sender: UIButton) {
-        Alert.showSize(on: self, height: 1000, width: 2000) { _ in
-            self.saveProduct()
-        }
     }
 }
