@@ -27,8 +27,8 @@ final class AddPlaceViewController: UIViewController {
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     /// UIScrollView
     @IBOutlet private weak var addPlaceScrollView: UIScrollView!
-    /// 雰囲気を見るボタン
-    @IBOutlet private weak var checkMoodButton: UIButton!
+    /// 雰囲気を見るUIImageView
+    @IBOutlet private weak var imageView: UIImageView!
     /// 設置場所の名前を入力するUITextField
     @IBOutlet private weak var placeNameTextField: UITextField!
     /// 窓枠の縦幅を入力するUITextField
@@ -41,8 +41,6 @@ final class AddPlaceViewController: UIViewController {
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
     /// UIScrollViewの高さ
     @IBOutlet private weak var addPlaceScrollViewHeight: NSLayoutConstraint!
-    /// 雰囲気を見るボタンの高さ
-    @IBOutlet private weak var checkMoodButtonHeight: NSLayoutConstraint!
     
     
     // MARK: - Override Methods
@@ -56,11 +54,8 @@ final class AddPlaceViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let snapshot = snapshot {
-            checkMoodButton.imageView?.contentMode = .scaleAspectFill
-            checkMoodButton.imageView?.cornerRadius = 10
-            checkMoodButton.setImage(snapshot, for: .normal)
-            checkMoodButtonHeight.constant = 400
-            addPlaceScrollViewHeight.constant += checkMoodButtonHeight.constant
+            imageView.cornerRadius = 10
+            imageView.image = snapshot
         }
     }
     
@@ -85,7 +80,9 @@ final class AddPlaceViewController: UIViewController {
         widthTextField.delegate = self
         commentTextField.delegate = self
         navigationBar.hideShadow(true)
-        checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
+        imageView.addBorder(color: .appText, cornerRadius: 10)
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
         placeNameTextField.addBottomBorder()
@@ -108,6 +105,7 @@ final class AddPlaceViewController: UIViewController {
     private func inputProduct(_ place: Place) {
         guard let product = place.product else { return }
         guard let category = Category(rawValue: product.category) else { return }
+        imageView.image = UIImage(imagePath: product.imagePath)
         heightTextField.text = String(product.height)
         widthTextField.text = String(product.width)
         commentTextField.text = product.comment
@@ -167,6 +165,11 @@ final class AddPlaceViewController: UIViewController {
         return documentURL.appendingPathComponent(uuid + ".png")
     }
     
+    @objc
+    private func tappedImageView(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true)
+    }
+    
     
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
@@ -192,13 +195,9 @@ final class AddPlaceViewController: UIViewController {
         }
     }
     
-    /// checkMoodButtonを押した時に呼ばれる
-    @IBAction private func tappedCheckMoodButton(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
 }
 
+// MARK: - UITextFieldDelegate
 extension AddPlaceViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

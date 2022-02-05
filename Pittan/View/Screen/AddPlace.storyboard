@@ -42,28 +42,19 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eP-Ke-F3S">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-1d-mDc">
-                                                <rect key="frame" x="16" y="24" width="382" height="602"/>
+                                                <rect key="frame" x="16" y="24" width="382" height="802"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odg-Rx-gss">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="190"/>
-                                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Xu-hcB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="400"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="190" id="jT8-2u-ULm"/>
+                                                            <constraint firstAttribute="height" constant="400" id="Mcp-qE-9vM"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="24"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="カーテンの雰囲気">
-                                                            <color key="titleColor" name="appMain"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="tappedCheckMoodButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CQP-ys-1yk"/>
-                                                        </connections>
-                                                    </button>
+                                                    </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vNQ-af-Rws">
-                                                        <rect key="frame" x="0.0" y="230" width="382" height="57.5"/>
+                                                        <rect key="frame" x="0.0" y="440" width="382" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設置する場所" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpA-mb-v0t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
@@ -82,7 +73,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-Mu-gyK">
-                                                        <rect key="frame" x="0.0" y="327.5" width="382" height="67.5"/>
+                                                        <rect key="frame" x="0.0" y="537.5" width="382" height="67.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHd-0s-PR9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
@@ -105,7 +96,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DJE-Lb-W6H">
-                                                        <rect key="frame" x="0.0" y="435" width="382" height="57.5"/>
+                                                        <rect key="frame" x="0.0" y="645" width="382" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="窓枠のサイズ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0M-rK-6B1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
@@ -137,7 +128,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-di-pCW">
-                                                        <rect key="frame" x="0.0" y="532.5" width="382" height="69.5"/>
+                                                        <rect key="frame" x="0.0" y="742.5" width="382" height="59.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-41-Rt5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
@@ -146,7 +137,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="柄、遮光性、こだわり" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iP8-FH-beq">
-                                                                <rect key="frame" x="0.0" y="27.5" width="382" height="42"/>
+                                                                <rect key="frame" x="0.0" y="27.5" width="382" height="32"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -157,7 +148,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="4fy-1d-mDc" firstAttribute="leading" secondItem="3eP-Ke-F3S" secondAttribute="leading" constant="16" id="XBb-Mg-ahI"/>
-                                            <constraint firstAttribute="height" constant="650" id="Yku-25-XEL"/>
+                                            <constraint firstAttribute="height" constant="850" id="Yku-25-XEL"/>
                                             <constraint firstAttribute="bottom" secondItem="4fy-1d-mDc" secondAttribute="bottom" constant="24" id="ZM0-Fb-pc0"/>
                                             <constraint firstItem="4fy-1d-mDc" firstAttribute="top" secondItem="3eP-Ke-F3S" secondAttribute="top" constant="24" id="wuE-AT-bGK"/>
                                             <constraint firstAttribute="trailing" secondItem="4fy-1d-mDc" secondAttribute="trailing" constant="16" id="ziU-WA-fgP"/>
@@ -191,11 +182,10 @@
                         <outlet property="addPlaceScrollView" destination="M1a-10-YSX" id="wZh-ih-wOv"/>
                         <outlet property="addPlaceScrollViewHeight" destination="Yku-25-XEL" id="J1p-Yn-b3e"/>
                         <outlet property="categorySegmentedControl" destination="Gug-f9-epP" id="4jP-qF-gUH"/>
-                        <outlet property="checkMoodButton" destination="Odg-Rx-gss" id="SQc-Wl-QYD"/>
-                        <outlet property="checkMoodButtonHeight" destination="jT8-2u-ULm" id="WDb-zZ-cHJ"/>
                         <outlet property="closeButton" destination="1Gl-Wx-Xdf" id="3Fq-Xs-aY6"/>
                         <outlet property="commentTextField" destination="iP8-FH-beq" id="gCR-b8-7wJ"/>
                         <outlet property="heightTextField" destination="qeg-S2-gKJ" id="fus-IT-JeK"/>
+                        <outlet property="imageView" destination="2jR-Xu-hcB" id="xuy-IQ-l60"/>
                         <outlet property="navigationBar" destination="v74-lv-tzu" id="rf2-0Y-gXi"/>
                         <outlet property="placeNameTextField" destination="8tV-CB-d5Z" id="iIc-Lr-GC7"/>
                         <outlet property="saveButton" destination="Vyv-nT-e3w" id="Diz-Yy-cN6"/>
