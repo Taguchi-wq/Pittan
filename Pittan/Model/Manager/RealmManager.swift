@@ -40,7 +40,7 @@ final class RealmManager {
     /// 設置場所を保存する
     /// - Parameters:
     ///   - name: 設置場所名
-    ///   - imageID: 画像id
+    ///   - imagePath: 画像パス
     ///   - category: カテゴリー(カーテンorラグ)
     ///   - colorCode: 製品の色
     ///   - design: 柄
@@ -49,7 +49,7 @@ final class RealmManager {
     ///   - height: 製品の縦幅
     ///   - width: 製品の横幅
     func savePlace(name: String,
-                   imageID: String?,
+                   imagePath: String?,
                    category: String,
                    colorCode: String,
                    design: String,
@@ -57,7 +57,7 @@ final class RealmManager {
                    comment: String,
                    height: Int,
                    width: Int) {
-        let product = Product(imageID: imageID,
+        let product = Product(imagePath: imagePath,
                               category: category,
                               colorCode: colorCode,
                               design: design,

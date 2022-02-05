@@ -48,6 +48,9 @@
                                         <color key="tintColor" name="appText2"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="shutter_button"/>
+                                        <connections>
+                                            <action selector="tappedShutterButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0sO-Kk-5hn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="appBackground"/>
@@ -114,11 +117,22 @@
                         <outlet property="putProductCollectionView" destination="G95-bF-oLx" id="DzQ-Qh-VEt"/>
                         <outlet property="removeButton" destination="5pn-3G-s3Z" id="4pa-1F-X3y"/>
                         <outlet property="sceneView" destination="PWe-GY-Xkr" id="RC1-HV-IKC"/>
+                        <segue destination="2dF-9z-Fvj" kind="show" id="hfR-eK-gjj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="75.669642857142847"/>
+        </scene>
+        <!--AddPlace-->
+        <scene sceneID="54q-An-X7E">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddPlaceViewController" storyboardName="AddPlace" id="2dF-9z-Fvj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RTJ-R1-VDJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gia-gq-eX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="76"/>
         </scene>
     </scenes>
     <resources>
