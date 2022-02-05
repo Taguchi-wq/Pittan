@@ -36,6 +36,9 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="OiE-Tg-0uj">
                                         <rect key="frame" x="41" y="0.0" width="259" height="56.5"/>
                                         <color key="tintColor" name="appMain"/>
+                                        <connections>
+                                            <action selector="slideHeight:" destination="gTV-IL-0wX" eventType="valueChanged" id="8WI-4A-Wmb"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
@@ -54,6 +57,9 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iZN-Ra-mFD">
                                         <rect key="frame" x="41" y="0.0" width="259" height="56.5"/>
                                         <color key="tintColor" name="appMain"/>
+                                        <connections>
+                                            <action selector="slideWidth:" destination="gTV-IL-0wX" eventType="valueChanged" id="aq0-qo-fTo"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
@@ -69,6 +75,10 @@
                 <constraint firstAttribute="bottom" secondItem="124-ES-Zvv" secondAttribute="bottom" id="z7i-K3-FRB"/>
             </constraints>
             <size key="customSize" width="298" height="111"/>
+            <connections>
+                <outlet property="heightSlider" destination="OiE-Tg-0uj" id="QXI-82-JJh"/>
+                <outlet property="widthSlider" destination="iZN-Ra-mFD" id="iBr-2b-W33"/>
+            </connections>
             <point key="canvasLocation" x="317.39130434782612" y="130.24553571428572"/>
         </collectionViewCell>
     </objects>

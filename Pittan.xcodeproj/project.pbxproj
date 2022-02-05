@@ -15,26 +15,34 @@
 		7F0A490727509B6000866926 /* PittanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A490627509B6000866926 /* PittanUITests.swift */; };
 		7F0A490927509B6000866926 /* PittanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */; };
 		7F0FC171277445150005A4E4 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */; };
+		7F102461279A442B00440600 /* HomeViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */; };
+		7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */; };
+		7F102468279A508500440600 /* PutProductViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F102467279A508500440600 /* PutProductViewController+UICollectionView.swift */; };
+		7F10246C279A520000440600 /* PutProductViewController+CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10246B279A520000440600 /* PutProductViewController+CollectionViewLayout.swift */; };
+		7F10246E279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10246D279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift */; };
+		7F102470279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10246F279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift */; };
 		7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F727585D8F001910EB /* AddPlaceViewController.swift */; };
 		7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1393F927586599001910EB /* UIStoryboard+Extension.swift */; };
 		7F2B8FE727949DC8005D70C3 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B8FE527949DC8005D70C3 /* TagCell.swift */; };
 		7F2B8FE827949DC8005D70C3 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B8FE627949DC8005D70C3 /* TagCell.xib */; };
 		7F49DACF27820F3F00EEFDAE /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F49DACD27820F3F00EEFDAE /* ProductCell.swift */; };
 		7F49DAD027820F3F00EEFDAE /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F49DACE27820F3F00EEFDAE /* ProductCell.xib */; };
+		7F4B60B627A168B80005186A /* curtain.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7F4B60B527A168B80005186A /* curtain.scn */; };
 		7F70711A275A140800849598 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F707119275A140700849598 /* PlaceDetailViewController.swift */; };
 		7F70711C275A141D00849598 /* PlaceDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F70711B275A141D00849598 /* PlaceDetail.storyboard */; };
 		7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB027565C700086F26C /* CollectionViewLayout.swift */; };
 		7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */; };
 		7F748DB92756658B0086F26C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DB82756658B0086F26C /* Reusable.swift */; };
 		7F748DBF27566A640086F26C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F748DBE27566A640086F26C /* UIColor+Extension.swift */; };
+		7F7F30A727A8DF4E00264080 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F30A627A8DF4E00264080 /* UIImageView+Extension.swift */; };
 		7F8B6E7F2762F083003C98D4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B6E7E2762F083003C98D4 /* Category.swift */; };
 		7F8B6E822762FA06003C98D4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B6E812762FA06003C98D4 /* String+Extension.swift */; };
 		7F8B6E852762FDC8003C98D4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B6E842762FDC8003C98D4 /* Alert.swift */; };
 		7F8B6E882762FF0F003C98D4 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B6E872762FF0F003C98D4 /* AlertMessage.swift */; };
+		7F9DB53A27A3893000287134 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DB53927A3893000287134 /* NotificationName+Extension.swift */; };
 		7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */; };
 		7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */; };
 		7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C02757C4BA00352C0B /* Product.swift */; };
-		7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C22757C6C100352C0B /* ProductImage.swift */; };
 		7FB0B3C52757C75200352C0B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C42757C75100352C0B /* Place.swift */; };
 		7FB0B3C727585B6D00352C0B /* AddPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */; };
 		7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */; };
@@ -50,6 +58,12 @@
 		7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5187B2756254100C7642D /* PlaceCell.xib */; };
 		7FE699AE2761AD1400F64618 /* PutProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE699AD2761AD1400F64618 /* PutProduct.storyboard */; };
 		7FE699B02761AD7700F64618 /* PutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE699AF2761AD7700F64618 /* PutProductViewController.swift */; };
+		7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */; };
+		7FEDAB01279907D600D5C449 /* float4x4+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB00279907D600D5C449 /* float4x4+Extension.swift */; };
+		7FEDAB1027995E7B00D5C449 /* ObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB0F27995E7B00D5C449 /* ObjectInteraction.swift */; };
+		7FEDAB122799AD4E00D5C449 /* SCNNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */; };
+		7FEDAB152799B1F900D5C449 /* SizeSliderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB142799B1F900D5C449 /* SizeSliderCellDelegate.swift */; };
+		7FEDAB172799BB2900D5C449 /* DirectionalLightNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */; };
 		928912B0BC67AF93A07D5988 /* Pods_Pittan_PittanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D6FF839A48FA1EBCE5AB9F /* Pods_Pittan_PittanUITests.framework */; };
 		97AB7869DFD1654606F5D871 /* Pods_Pittan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325E3238EB467EBC79784A41 /* Pods_Pittan.framework */; };
 		9C0ACE1D2A42495AD254EC34 /* Pods_PittanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AEEC641CF0ABCE44892619 /* Pods_PittanTests.framework */; };
@@ -91,26 +105,34 @@
 		7F0A490627509B6000866926 /* PittanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITests.swift; sourceTree = "<group>"; };
 		7F0A490827509B6000866926 /* PittanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PittanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionViewLayout.swift"; sourceTree = "<group>"; };
+		7F102467279A508500440600 /* PutProductViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		7F10246B279A520000440600 /* PutProductViewController+CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+CollectionViewLayout.swift"; sourceTree = "<group>"; };
+		7F10246D279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+ARCoachingOverlayViewDelegate.swift"; sourceTree = "<group>"; };
+		7F10246F279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+SizeSliderCellDelegate.swift"; sourceTree = "<group>"; };
 		7F1393F727585D8F001910EB /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		7F1393F927586599001910EB /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		7F2B8FE527949DC8005D70C3 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		7F2B8FE627949DC8005D70C3 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
 		7F49DACD27820F3F00EEFDAE /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		7F49DACE27820F3F00EEFDAE /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		7F4B60B527A168B80005186A /* curtain.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = curtain.scn; sourceTree = "<group>"; };
 		7F707119275A140700849598 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		7F70711B275A141D00849598 /* PlaceDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceDetail.storyboard; sourceTree = "<group>"; };
 		7F748DB027565C700086F26C /* CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
 		7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
 		7F748DB82756658B0086F26C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		7F748DBE27566A640086F26C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7F7F30A627A8DF4E00264080 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		7F8B6E7E2762F083003C98D4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7F8B6E812762FA06003C98D4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7F8B6E842762FDC8003C98D4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7F8B6E872762FF0F003C98D4 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		7F9DB53927A3893000287134 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		7FB0B3C02757C4BA00352C0B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		7FB0B3C22757C6C100352C0B /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		7FB0B3C42757C75100352C0B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlace.storyboard; sourceTree = "<group>"; };
 		7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -126,6 +148,12 @@
 		7FD5187B2756254100C7642D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		7FE699AD2761AD1400F64618 /* PutProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PutProduct.storyboard; sourceTree = "<group>"; };
 		7FE699AF2761AD7700F64618 /* PutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProductViewController.swift; sourceTree = "<group>"; };
+		7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extension.swift"; sourceTree = "<group>"; };
+		7FEDAB00279907D600D5C449 /* float4x4+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "float4x4+Extension.swift"; sourceTree = "<group>"; };
+		7FEDAB0F27995E7B00D5C449 /* ObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInteraction.swift; sourceTree = "<group>"; };
+		7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extension.swift"; sourceTree = "<group>"; };
+		7FEDAB142799B1F900D5C449 /* SizeSliderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSliderCellDelegate.swift; sourceTree = "<group>"; };
+		7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalLightNode.swift; sourceTree = "<group>"; };
 		9D420565361AE2BC18F20392 /* Pods-PittanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.release.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.release.xcconfig"; sourceTree = "<group>"; };
 		F21AEBCEFD1E6916CEC6B893 /* Pods-Pittan-PittanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pittan-PittanUITests.release.xcconfig"; path = "Target Support Files/Pods-Pittan-PittanUITests/Pods-Pittan-PittanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE6F74BB5E7362BB12A14B60 /* Pods-PittanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.debug.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,10 +215,11 @@
 				7F0A491A27509E0300866926 /* App */,
 				7FD518832756422700C7642D /* Model */,
 				7F0A491C27509E2800866926 /* View */,
-				7F0A491B27509E0D00866926 /* ViewController */,
+				7F0A491B27509E0D00866926 /* Controller */,
 				7FD518712756214B00C7642D /* Extension */,
 				7FD518802756408E00C7642D /* Protocol */,
 				7F0A48EE27509B6000866926 /* Assets.xcassets */,
+				7F4B60B527A168B80005186A /* curtain.scn */,
 				7F0A48F327509B6000866926 /* Info.plist */,
 			);
 			path = Pittan;
@@ -222,15 +251,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		7F0A491B27509E0D00866926 /* ViewController */ = {
+		7F0A491B27509E0D00866926 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7FD5186F2755436000C7642D /* HomeViewController.swift */,
-				7F1393F727585D8F001910EB /* AddPlaceViewController.swift */,
-				7F707119275A140700849598 /* PlaceDetailViewController.swift */,
-				7FE699AF2761AD7700F64618 /* PutProductViewController.swift */,
+				7F10245F279A43F400440600 /* HomeViewContoller */,
+				7F102464279A4BCF00440600 /* AddPlaceViewController */,
+				7F102465279A4C2200440600 /* PlaceDetailViewController */,
+				7F102466279A506600440600 /* PutProductViewController */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7F0A491C27509E2800866926 /* View */ = {
@@ -240,6 +269,44 @@
 				7FD518762756248100C7642D /* ColectionViewCell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7F10245F279A43F400440600 /* HomeViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				7FD5186F2755436000C7642D /* HomeViewController.swift */,
+				7F102460279A442B00440600 /* HomeViewController+UICollectionView.swift */,
+				7F102462279A476E00440600 /* HomeViewController+CollectionViewLayout.swift */,
+			);
+			path = HomeViewContoller;
+			sourceTree = "<group>";
+		};
+		7F102464279A4BCF00440600 /* AddPlaceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F1393F727585D8F001910EB /* AddPlaceViewController.swift */,
+			);
+			path = AddPlaceViewController;
+			sourceTree = "<group>";
+		};
+		7F102465279A4C2200440600 /* PlaceDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F707119275A140700849598 /* PlaceDetailViewController.swift */,
+			);
+			path = PlaceDetailViewController;
+			sourceTree = "<group>";
+		};
+		7F102466279A506600440600 /* PutProductViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FE699AF2761AD7700F64618 /* PutProductViewController.swift */,
+				7F102467279A508500440600 /* PutProductViewController+UICollectionView.swift */,
+				7F10246B279A520000440600 /* PutProductViewController+CollectionViewLayout.swift */,
+				7F10246D279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift */,
+				7F10246F279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift */,
+			);
+			path = PutProductViewController;
 			sourceTree = "<group>";
 		};
 		7F2B8FE927949DCE005D70C3 /* TagCell */ = {
@@ -268,6 +335,7 @@
 				7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */,
 				7F748DBE27566A640086F26C /* UIColor+Extension.swift */,
 				7FBCCBC8275796F6000F9F06 /* UIImage+Extension.swift */,
+				7F7F30A627A8DF4E00264080 /* UIImageView+Extension.swift */,
 				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
 				7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */,
 				7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */,
@@ -279,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				7F8B6E812762FA06003C98D4 /* String+Extension.swift */,
+				7F9DB53927A3893000287134 /* NotificationName+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -307,7 +376,6 @@
 			children = (
 				7FB0B3C42757C75100352C0B /* Place.swift */,
 				7FB0B3C02757C4BA00352C0B /* Product.swift */,
-				7FB0B3C22757C6C100352C0B /* ProductImage.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -325,6 +393,7 @@
 			children = (
 				7FC4B4F12796671B008BC70C /* SizeSliderCell.swift */,
 				7FC4B4F22796671B008BC70C /* SizeSliderCell.xib */,
+				7FEDAB142799B1F900D5C449 /* SizeSliderCellDelegate.swift */,
 			);
 			path = SizeSliderCell;
 			sourceTree = "<group>";
@@ -334,6 +403,8 @@
 			children = (
 				7F8B6E802762F96E003C98D4 /* UIKit */,
 				7F8B6E832762FA14003C98D4 /* Foundation */,
+				7FEDAAFF2799078600D5C449 /* ARKit */,
+				7FEDAB132799AD9A00D5C449 /* SceneKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -382,12 +453,39 @@
 		7FD518832756422700C7642D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7FEDAB0E27995E5900D5C449 /* Logic */,
 				7F8B6E862762FEED003C98D4 /* Error */,
 				7FBCCBD02757C10C000F9F06 /* Manager */,
 				7FBCCBCA275797AA000F9F06 /* Utility */,
 				7FBCCBCD2757A8A7000F9F06 /* Entity */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7FEDAAFF2799078600D5C449 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDAAFD2798F69B00D5C449 /* ARSCNView+Extension.swift */,
+				7FEDAB00279907D600D5C449 /* float4x4+Extension.swift */,
+			);
+			path = ARKit;
+			sourceTree = "<group>";
+		};
+		7FEDAB0E27995E5900D5C449 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDAB0F27995E7B00D5C449 /* ObjectInteraction.swift */,
+				7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		7FEDAB132799AD9A00D5C449 /* SceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */,
+			);
+			path = SceneKit;
 			sourceTree = "<group>";
 		};
 		A7423C809001D1A6D6CD550B /* Frameworks */ = {
@@ -532,6 +630,7 @@
 				7F70711C275A141D00849598 /* PlaceDetail.storyboard in Resources */,
 				7F0A48EF27509B6000866926 /* Assets.xcassets in Resources */,
 				7FD5187D2756254100C7642D /* PlaceCell.xib in Resources */,
+				7F4B60B627A168B80005186A /* curtain.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,12 +759,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F2B8FE727949DC8005D70C3 /* TagCell.swift in Sources */,
+				7FEDAB172799BB2900D5C449 /* DirectionalLightNode.swift in Sources */,
+				7F10246E279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift in Sources */,
 				7FBCCBD22757C11E000F9F06 /* RealmManager.swift in Sources */,
 				7F8B6E882762FF0F003C98D4 /* AlertMessage.swift in Sources */,
 				7F0A48E627509B5B00866926 /* AppDelegate.swift in Sources */,
+				7F9DB53A27A3893000287134 /* NotificationName+Extension.swift in Sources */,
 				7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */,
 				7FE699B02761AD7700F64618 /* PutProductViewController.swift in Sources */,
-				7FB0B3C32757C6C100352C0B /* ProductImage.swift in Sources */,
+				7F10246C279A520000440600 /* PutProductViewController+CollectionViewLayout.swift in Sources */,
+				7FEDAB1027995E7B00D5C449 /* ObjectInteraction.swift in Sources */,
+				7FEDAB152799B1F900D5C449 /* SizeSliderCellDelegate.swift in Sources */,
+				7F102468279A508500440600 /* PutProductViewController+UICollectionView.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
 				7F8B6E852762FDC8003C98D4 /* Alert.swift in Sources */,
 				7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */,
@@ -676,19 +781,26 @@
 				7F0FC171277445150005A4E4 /* UINavigationBar+Extension.swift in Sources */,
 				7FBCCBCC275797E5000F9F06 /* AppImage.swift in Sources */,
 				7F49DACF27820F3F00EEFDAE /* ProductCell.swift in Sources */,
+				7FEDAB122799AD4E00D5C449 /* SCNNode+Extension.swift in Sources */,
+				7FEDAB01279907D600D5C449 /* float4x4+Extension.swift in Sources */,
 				7F8B6E822762FA06003C98D4 /* String+Extension.swift in Sources */,
 				7F70711A275A140800849598 /* PlaceDetailViewController.swift in Sources */,
 				7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
+				7F7F30A727A8DF4E00264080 /* UIImageView+Extension.swift in Sources */,
 				7FB0B3C52757C75200352C0B /* Place.swift in Sources */,
 				7FD51875275622E400C7642D /* UIView+Extension.swift in Sources */,
+				7F102470279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift in Sources */,
+				7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */,
 				7FC4B4F32796671B008BC70C /* SizeSliderCell.swift in Sources */,
+				7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */,
 				7FD518702755436000C7642D /* HomeViewController.swift in Sources */,
 				7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */,
 				7F748DBF27566A640086F26C /* UIColor+Extension.swift in Sources */,
 				7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */,
 				7FC4B4F0279652B7008BC70C /* Tag.swift in Sources */,
 				7F8B6E7F2762F083003C98D4 /* Category.swift in Sources */,
+				7F102461279A442B00440600 /* HomeViewController+UICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,12 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFC-vM-roU">
-                                <rect key="frame" x="0.0" y="0.0" width="416" height="896"/>
-                            </arView>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-GY-Xkr">
+                                <rect key="frame" x="0.0" y="0.0" width="416" height="616"/>
+                            </arscnView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G95-bF-oLx">
                                 <rect key="frame" x="0.0" y="616" width="416" height="150"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="appBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="oho-Wa-edu"/>
                                 </constraints>
@@ -48,9 +48,12 @@
                                         <color key="tintColor" name="appText2"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="shutter_button"/>
+                                        <connections>
+                                            <action selector="tappedShutterButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0sO-Kk-5hn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="appBackground"/>
                                 <constraints>
                                     <constraint firstItem="DaI-c5-abL" firstAttribute="top" secondItem="Uja-Wb-kP8" secondAttribute="top" constant="16" id="1fC-yA-G6k"/>
                                     <constraint firstAttribute="height" constant="130" id="XLM-Nw-hCd"/>
@@ -89,45 +92,56 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="ozF-SS-9yY"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1jv-UH-37g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="8P1-9Q-uIQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1jv-UH-37g" secondAttribute="trailing" constant="20" id="8So-QI-LKW"/>
                             <constraint firstItem="Uja-Wb-kP8" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="989-jb-asl"/>
-                            <constraint firstItem="1jv-UH-37g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Au4-YE-xbx"/>
+                            <constraint firstItem="1jv-UH-37g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ExN-1v-XDl"/>
+                            <constraint firstItem="G95-bF-oLx" firstAttribute="top" secondItem="PWe-GY-Xkr" secondAttribute="bottom" id="HSs-BW-5CC"/>
+                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KpD-33-AZt"/>
                             <constraint firstItem="Uja-Wb-kP8" firstAttribute="top" secondItem="G95-bF-oLx" secondAttribute="bottom" id="LX2-Gc-MLZ"/>
-                            <constraint firstItem="EFC-vM-roU" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="R00-GR-06y"/>
                             <constraint firstAttribute="bottom" secondItem="Uja-Wb-kP8" secondAttribute="bottom" id="SdT-Cd-FCh"/>
-                            <constraint firstItem="EFC-vM-roU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wfk-kJ-ljJ"/>
-                            <constraint firstAttribute="bottom" secondItem="EFC-vM-roU" secondAttribute="bottom" id="cCF-cv-Bxa"/>
+                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XIQ-aF-n19"/>
                             <constraint firstItem="G95-bF-oLx" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ita-bM-D9b"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1jv-UH-37g" secondAttribute="trailing" constant="20" id="nKX-8H-y98"/>
-                            <constraint firstItem="1jv-UH-37g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="nnh-yu-904"/>
-                            <constraint firstItem="EFC-vM-roU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="o0b-Bm-dFe"/>
                             <constraint firstItem="G95-bF-oLx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rDM-c2-Ka4"/>
                             <constraint firstItem="Uja-Wb-kP8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="saj-OY-OOK"/>
+                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="uwH-Mb-N1Z"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="arView" destination="EFC-vM-roU" id="r13-oh-n9e"/>
                         <outlet property="backButton" destination="Ogg-ho-gkx" id="kMp-c7-IyZ"/>
                         <outlet property="putProductCollectionView" destination="G95-bF-oLx" id="DzQ-Qh-VEt"/>
                         <outlet property="removeButton" destination="5pn-3G-s3Z" id="4pa-1F-X3y"/>
+                        <outlet property="sceneView" destination="PWe-GY-Xkr" id="RC1-HV-IKC"/>
+                        <segue destination="2dF-9z-Fvj" kind="show" id="hfR-eK-gjj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="75.669642857142847"/>
         </scene>
+        <!--AddPlace-->
+        <scene sceneID="54q-An-X7E">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddPlaceViewController" storyboardName="AddPlace" id="2dF-9z-Fvj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RTJ-R1-VDJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gia-gq-eX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="76"/>
+        </scene>
     </scenes>
     <resources>
         <image name="close" width="40" height="40"/>
         <image name="shutter_button" width="70" height="70"/>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <namedColor name="appBackground">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="appText2">
             <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

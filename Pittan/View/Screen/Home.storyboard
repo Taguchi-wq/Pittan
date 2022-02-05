@@ -86,13 +86,13 @@
             </objects>
             <point key="canvasLocation" x="1734" y="-3"/>
         </scene>
-        <!--AddPlace-->
+        <!--PutProduct-->
         <scene sceneID="gWI-iZ-sVG">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AddPlaceViewController" storyboardName="AddPlace" id="oI3-jE-i2G" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6h-y0-aF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="PutProductViewController" storyboardName="PutProduct" id="oI3-jE-i2G" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="g29-u4-IMr"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L6h-y0-aF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1733" y="194"/>
         </scene>

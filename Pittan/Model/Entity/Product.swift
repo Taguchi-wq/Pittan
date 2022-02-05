@@ -12,7 +12,7 @@ class Product: Object {
     
     // MARK: - Properties
     @objc dynamic var id: String = UUID().uuidString
-    @objc dynamic var imageID: String? = nil
+    @objc dynamic var imagePath: String? = ""
     @objc dynamic var category: String = ""
     @objc dynamic var colorCode: String = ""
     @objc dynamic var design: String = ""
@@ -27,7 +27,7 @@ class Product: Object {
     
     
     // MARK: - Initialize
-    convenience init(imageID: String?,
+    convenience init(imagePath: String?,
                      category: String,
                      colorCode: String,
                      design: String,
@@ -36,7 +36,7 @@ class Product: Object {
                      height: Int,
                      width: Int) {
         self.init()
-        self.imageID = imageID
+        self.imagePath = imagePath
         self.category = category
         self.colorCode = colorCode
         self.design = design

@@ -7,12 +7,13 @@
 
 import UIKit
 
-public extension UIImageView {
+public extension UIImage {
     
-    /// アプリ上にある画像で初期化する
-    convenience init(appImage: AppImage) {
-        let image = UIImage(named: appImage.name)
-        self.init(image: image)
+    convenience init?(imagePath: String?) {
+        guard let imagePath = imagePath else { return nil }
+        guard let fileURL = URL(string: imagePath) else { return nil }
+        let filePath = fileURL.path
+        self.init(contentsOfFile: filePath)
     }
     
 }
