@@ -190,11 +190,22 @@
                         <outlet property="placeNameTextField" destination="8tV-CB-d5Z" id="iIc-Lr-GC7"/>
                         <outlet property="saveButton" destination="Vyv-nT-e3w" id="Diz-Yy-cN6"/>
                         <outlet property="widthTextField" destination="sk9-UK-k0m" id="Zb5-Ux-f3z"/>
+                        <segue destination="4pf-Xj-cst" kind="show" id="RVH-ZI-NN3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="69.642857142857139"/>
+        </scene>
+        <!--PutProduct-->
+        <scene sceneID="zaC-Gq-FMK">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PutProductViewController" storyboardName="PutProduct" id="4pf-Xj-cst" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="S6P-QR-sZx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFj-fl-f1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="70"/>
         </scene>
     </scenes>
     <resources>

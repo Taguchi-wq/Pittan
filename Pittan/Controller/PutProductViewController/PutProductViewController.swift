@@ -46,6 +46,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     
     
     // MARK: - Properties
+    /// PutProductViewControllerDelegate
+    weak var delegate: PutProductViewControllerDelegate?
     /// 選ばれているtag
     var selectTag: Tag = .put
     /// 3Dオブジェクトに対してのジェスチャーをつける
@@ -125,11 +127,16 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private func tappedAddImageButton(_ sender: UIButton) {
         Alert.showSize(on: self, height: 1000, width: 2000) { _ in
             guard let snapshot = self.snapshot else { return }
-            guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
-            addPlaceVC.modalPresentationStyle = .fullScreen
-            addPlaceVC.initialize(product: self.product, snapshot: snapshot)
-            self.present(addPlaceVC, animated: true) {
-                self.backView.removeFromSuperview()
+            if let delegate = self.delegate {
+                delegate.putProductViewController(snapshot: snapshot)
+                self.dismiss(animated: true)
+            } else {
+                guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+                addPlaceVC.modalPresentationStyle = .fullScreen
+                addPlaceVC.initialize(product: self.product, snapshot: snapshot)
+                self.present(addPlaceVC, animated: true) {
+                    self.backView.removeFromSuperview()
+                }
             }
         }
     }

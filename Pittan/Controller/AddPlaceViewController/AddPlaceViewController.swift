@@ -15,7 +15,7 @@ final class AddPlaceViewController: UIViewController {
     /// 製品
     private var product: Product?
     /// スナップショット
-    private var snapshot: UIImage?
+    var snapshot: UIImage?
     
     
     // MARK: - @IBOutlets
@@ -167,7 +167,14 @@ final class AddPlaceViewController: UIViewController {
     
     @objc
     private func tappedImageView(_ sender: UITapGestureRecognizer) {
-        dismiss(animated: true)
+        if let _ = place {
+            guard let putProductVC = storyboard?.instantiateViewController(with: PutProductViewController.self) else { return }
+            putProductVC.modalPresentationStyle = .fullScreen
+            putProductVC.delegate = self
+            present(putProductVC, animated: true)
+        } else if let _ = product, let _ = snapshot {
+            dismiss(animated: true)
+        }
     }
     
     
@@ -193,15 +200,6 @@ final class AddPlaceViewController: UIViewController {
         } else {
             savePlace()
         }
-    }
-    
-}
-
-// MARK: - UITextFieldDelegate
-extension AddPlaceViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
     }
     
 }
