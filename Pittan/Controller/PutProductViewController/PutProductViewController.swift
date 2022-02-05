@@ -54,6 +54,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private var product = Product()
     /// スナップショット
     private var snapshot: UIImage?
+    /// スナップショットを表示するbackView
+    private let backView = UIView()
     
 
     // MARK: - @IBOutlets
@@ -126,7 +128,9 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
             addPlaceVC.modalPresentationStyle = .fullScreen
             addPlaceVC.initialize(product: self.product, snapshot: snapshot)
-            self.present(addPlaceVC, animated: true)
+            self.present(addPlaceVC, animated: true) {
+                self.backView.removeFromSuperview()
+            }
         }
     }
     
@@ -148,25 +152,26 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     @IBAction private func tappedShutterButton(_ sender: UIButton) {
         snapshot = sceneView.snapshot()
         
-        let uiview = UIView()
-        uiview.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        uiview.backgroundColor = .appBackground
-        view.addSubview(uiview)
+        let screen = UIScreen.main.bounds
+        
+        backView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
+        backView.backgroundColor = .appBackground
+        view.addSubview(backView)
         
         let imageView = UIImageView()
-        imageView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
         imageView.image = snapshot
         imageView.contentMode = .scaleAspectFit
-        view.addSubview(imageView)
+        backView.addSubview(imageView)
         
         let button = UIButton()
-        button.frame = CGRect(x: (view.bounds.width/2) - (170/2), y: view.bounds.height - 120, width: 170, height: 70)
+        button.frame = CGRect(x: (screen.width/2) - (170/2), y: screen.height - 120, width: 170, height: 70)
         button.backgroundColor = .appMain
         button.setTitle("追加", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
         button.cornerRadius = 20
         button.addTarget(self, action: #selector(tappedAddImageButton(_:)), for: .touchUpInside)
-        view.addSubview(button)
+        backView.addSubview(button)
         
         sceneView.session.pause()
     }

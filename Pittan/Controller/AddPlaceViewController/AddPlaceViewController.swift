@@ -194,9 +194,7 @@ final class AddPlaceViewController: UIViewController {
     
     /// checkMoodButtonを押した時に呼ばれる
     @IBAction private func tappedCheckMoodButton(_ sender: UIButton) {
-        presentingViewController?
-            .presentingViewController?
-            .dismiss(animated: true)
+        dismiss(animated: true)
     }
     
 }
