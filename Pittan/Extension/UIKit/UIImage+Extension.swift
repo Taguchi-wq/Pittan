@@ -10,10 +10,11 @@ import UIKit
 public extension UIImage {
     
     convenience init?(imagePath: String?) {
-        guard let imagePath = imagePath else { return nil }
-        guard let fileURL = URL(string: imagePath) else { return nil }
-        let filePath = fileURL.path
-        self.init(contentsOfFile: filePath)
+        if let imagePath = imagePath, let fileURL = URL(string: imagePath) {
+            self.init(contentsOfFile: fileURL.path)
+        } else {
+            self.init(named: "no_image")
+        }
     }
     
 }
