@@ -33,10 +33,7 @@ final class PlaceCell: UICollectionViewCell {
     // MARK: - Initialize
     func initialize(place: Place) {
         guard let product = place.product else { return }
-        guard let imagePath = product.imagePath else { return }
-        guard let fileURL = URL(string: imagePath) else { return }
-        let filePath = fileURL.path
-        placeImageView.image = UIImage(contentsOfFile: filePath)
+        placeImageView.image = UIImage(imagePath: product.imagePath)
         placeNameLabel.text = place.name
         placeHeightLabel.text = "縦幅: \(product.height) mm"
         placeWidthLabel.text = "横幅: \(product.width) mm"
