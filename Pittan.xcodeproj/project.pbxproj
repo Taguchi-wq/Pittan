@@ -68,6 +68,7 @@
 		7FEDAB172799BB2900D5C449 /* DirectionalLightNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */; };
 		7FFF8C5927B20B6B00D3660D /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF8C5827B20B6B00D3660D /* UITextView+Extension.swift */; };
 		7FFF8C5B27B20F9500D3660D /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF8C5A27B20F9500D3660D /* UIBarButtonItem+Extension.swift */; };
+		7FFF8C5D27B2324200D3660D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF8C5C27B2324200D3660D /* UIViewController+Extension.swift */; };
 		928912B0BC67AF93A07D5988 /* Pods_Pittan_PittanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D6FF839A48FA1EBCE5AB9F /* Pods_Pittan_PittanUITests.framework */; };
 		97AB7869DFD1654606F5D871 /* Pods_Pittan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325E3238EB467EBC79784A41 /* Pods_Pittan.framework */; };
 		9C0ACE1D2A42495AD254EC34 /* Pods_PittanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AEEC641CF0ABCE44892619 /* Pods_PittanTests.framework */; };
@@ -162,6 +163,7 @@
 		7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalLightNode.swift; sourceTree = "<group>"; };
 		7FFF8C5827B20B6B00D3660D /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		7FFF8C5A27B20F9500D3660D /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		7FFF8C5C27B2324200D3660D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9D420565361AE2BC18F20392 /* Pods-PittanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.release.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.release.xcconfig"; sourceTree = "<group>"; };
 		F21AEBCEFD1E6916CEC6B893 /* Pods-Pittan-PittanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pittan-PittanUITests.release.xcconfig"; path = "Target Support Files/Pods-Pittan-PittanUITests/Pods-Pittan-PittanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE6F74BB5E7362BB12A14B60 /* Pods-PittanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.debug.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		7F8B6E802762F96E003C98D4 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7FFF8C5C27B2324200D3660D /* UIViewController+Extension.swift */,
 				7FD51874275622E400C7642D /* UIView+Extension.swift */,
 				7F0FC170277445150005A4E4 /* UINavigationBar+Extension.swift */,
 				7F748DB2275663D30086F26C /* UICollectionView+Extention.swift */,
@@ -770,6 +773,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFF8C5D27B2324200D3660D /* UIViewController+Extension.swift in Sources */,
 				7F2B8FE727949DC8005D70C3 /* TagCell.swift in Sources */,
 				7FEDAB172799BB2900D5C449 /* DirectionalLightNode.swift in Sources */,
 				7F10246E279A524200440600 /* PutProductViewController+ARCoachingOverlayViewDelegate.swift in Sources */,

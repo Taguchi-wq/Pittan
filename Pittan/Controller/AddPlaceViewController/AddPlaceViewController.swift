@@ -48,6 +48,7 @@ final class AddPlaceViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        setupKeyboardWill()
     }
     
     override func viewWillAppear(_ animated: Bool) {
