@@ -44,7 +44,6 @@
 		7F8B6E882762FF0F003C98D4 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B6E872762FF0F003C98D4 /* AlertMessage.swift */; };
 		7F9DB53A27A3893000287134 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DB53927A3893000287134 /* NotificationName+Extension.swift */; };
 		7FAFA7B32760F9E700251378 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */; };
-		7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */; };
 		7FB0B3C12757C4BA00352C0B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C02757C4BA00352C0B /* Product.swift */; };
 		7FB0B3C52757C75200352C0B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C42757C75100352C0B /* Place.swift */; };
 		7FB0B3C727585B6D00352C0B /* AddPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */; };
@@ -137,7 +136,6 @@
 		7F8B6E872762FF0F003C98D4 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		7F9DB53927A3893000287134 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
-		7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		7FB0B3C02757C4BA00352C0B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7FB0B3C42757C75100352C0B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7FB0B3C627585B6D00352C0B /* AddPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlace.storyboard; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 				7F7F30A627A8DF4E00264080 /* UIImageView+Extension.swift */,
 				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
 				7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */,
-				7FAFA7B42760FF2200251378 /* UITextField+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -783,7 +780,6 @@
 				7F102468279A508500440600 /* PutProductViewController+UICollectionView.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
 				7F8B6E852762FDC8003C98D4 /* Alert.swift in Sources */,
-				7FAFA7B52760FF2200251378 /* UITextField+Extension.swift in Sources */,
 				7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */,
 				7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */,
 				7F748DB92756658B0086F26C /* Reusable.swift in Sources */,
