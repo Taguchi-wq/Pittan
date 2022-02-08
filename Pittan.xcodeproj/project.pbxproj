@@ -66,6 +66,8 @@
 		7FEDAB122799AD4E00D5C449 /* SCNNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */; };
 		7FEDAB152799B1F900D5C449 /* SizeSliderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB142799B1F900D5C449 /* SizeSliderCellDelegate.swift */; };
 		7FEDAB172799BB2900D5C449 /* DirectionalLightNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */; };
+		7FFF8C5927B20B6B00D3660D /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF8C5827B20B6B00D3660D /* UITextView+Extension.swift */; };
+		7FFF8C5B27B20F9500D3660D /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF8C5A27B20F9500D3660D /* UIBarButtonItem+Extension.swift */; };
 		928912B0BC67AF93A07D5988 /* Pods_Pittan_PittanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D6FF839A48FA1EBCE5AB9F /* Pods_Pittan_PittanUITests.framework */; };
 		97AB7869DFD1654606F5D871 /* Pods_Pittan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325E3238EB467EBC79784A41 /* Pods_Pittan.framework */; };
 		9C0ACE1D2A42495AD254EC34 /* Pods_PittanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AEEC641CF0ABCE44892619 /* Pods_PittanTests.framework */; };
@@ -158,6 +160,8 @@
 		7FEDAB112799AD4E00D5C449 /* SCNNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extension.swift"; sourceTree = "<group>"; };
 		7FEDAB142799B1F900D5C449 /* SizeSliderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSliderCellDelegate.swift; sourceTree = "<group>"; };
 		7FEDAB162799BB2900D5C449 /* DirectionalLightNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalLightNode.swift; sourceTree = "<group>"; };
+		7FFF8C5827B20B6B00D3660D /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		7FFF8C5A27B20F9500D3660D /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		9D420565361AE2BC18F20392 /* Pods-PittanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.release.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.release.xcconfig"; sourceTree = "<group>"; };
 		F21AEBCEFD1E6916CEC6B893 /* Pods-Pittan-PittanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pittan-PittanUITests.release.xcconfig"; path = "Target Support Files/Pods-Pittan-PittanUITests/Pods-Pittan-PittanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE6F74BB5E7362BB12A14B60 /* Pods-PittanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PittanTests.debug.xcconfig"; path = "Target Support Files/Pods-PittanTests/Pods-PittanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				7F7F30A627A8DF4E00264080 /* UIImageView+Extension.swift */,
 				7F1393F927586599001910EB /* UIStoryboard+Extension.swift */,
 				7FAFA7B22760F9E700251378 /* UISegmentedControl+Extension.swift */,
+				7FFF8C5827B20B6B00D3660D /* UITextView+Extension.swift */,
+				7FFF8C5A27B20F9500D3660D /* UIBarButtonItem+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -779,6 +785,7 @@
 				7FEDAB152799B1F900D5C449 /* SizeSliderCellDelegate.swift in Sources */,
 				7F102468279A508500440600 /* PutProductViewController+UICollectionView.swift in Sources */,
 				7F748DB127565C700086F26C /* CollectionViewLayout.swift in Sources */,
+				7FFF8C5B27B20F9500D3660D /* UIBarButtonItem+Extension.swift in Sources */,
 				7F8B6E852762FDC8003C98D4 /* Alert.swift in Sources */,
 				7F1393F827585D8F001910EB /* AddPlaceViewController.swift in Sources */,
 				7F748DB3275663D30086F26C /* UICollectionView+Extention.swift in Sources */,
@@ -800,6 +807,7 @@
 				7F102470279A52C700440600 /* PutProductViewController+SizeSliderCellDelegate.swift in Sources */,
 				7FEDAAFE2798F69B00D5C449 /* ARSCNView+Extension.swift in Sources */,
 				7FC4B4F32796671B008BC70C /* SizeSliderCell.swift in Sources */,
+				7FFF8C5927B20B6B00D3660D /* UITextView+Extension.swift in Sources */,
 				7F102463279A476E00440600 /* HomeViewController+CollectionViewLayout.swift in Sources */,
 				7FD518702755436000C7642D /* HomeViewController.swift in Sources */,
 				7FBCCBC9275796F7000F9F06 /* UIImage+Extension.swift in Sources */,

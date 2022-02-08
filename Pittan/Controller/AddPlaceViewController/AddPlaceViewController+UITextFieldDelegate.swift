@@ -11,7 +11,7 @@ import UIKit
 extension AddPlaceViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
+        textField.resignFirstResponder()
     }
     
 }
