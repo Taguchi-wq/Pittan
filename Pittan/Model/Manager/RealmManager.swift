@@ -96,6 +96,7 @@ final class RealmManager {
     ///   - comment: 設置場所のコメント
     func updatePlace(_ id: String,
                      name: String,
+                     imagePath: String,
                      category: String,
                      height: Int,
                      width: Int,
@@ -104,10 +105,11 @@ final class RealmManager {
         guard let product = place.product else { return }
         do {
             try realm.write {
-                place.name       = name
+                place.name = name
+                product.imagePath = imagePath
                 product.category = category
-                product.height   = height
-                product.width    = width
+                product.height = height
+                product.width = width
                 product.comment  = comment
             }
         } catch {

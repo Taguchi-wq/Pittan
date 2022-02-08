@@ -121,20 +121,22 @@ final class AddPlaceViewController: UIViewController {
         let comment = commentTextField.text ?? ""
         
         if height.isInt && width.isInt {
-            if let place = place {
-                RealmManager.shared.updatePlace(place.id,
-                                                name: placeName,
-                                                category: category.name,
-                                                height: Int(height)!,
-                                                width: Int(width)!,
-                                                comment: comment)
-            } else if let product = product {
-                guard let snapshot = snapshot else { return }
-                guard let filePath = createFilePathURL() else { return }
-                
-                let pngImageData = snapshot.pngData()
-                do {
-                    try pngImageData?.write(to: filePath)
+            do {
+                guard let pngImageData = snapshot?.pngData() else { return }
+                if let place = place {
+                    guard let imagePath = place.product?.imagePath else { return }
+                    try pngImageData.write(to: URL(string: imagePath)!)
+                    RealmManager.shared.updatePlace(place.id,
+                                                    name: placeName,
+                                                    imagePath: imagePath,
+                                                    category: category.name,
+                                                    height: Int(height)!,
+                                                    width: Int(width)!,
+                                                    comment: comment)
+                    dismiss(animated: true)
+                } else if let product = product {
+                    guard let filePath = createFilePathURL() else { return }
+                    try pngImageData.write(to: filePath)
                     product.imagePath = filePath.absoluteString
                     RealmManager.shared.savePlace(name: placeName,
                                                   imagePath: product.imagePath,
@@ -145,14 +147,13 @@ final class AddPlaceViewController: UIViewController {
                                                   comment: comment,
                                                   height: Int(height)!,
                                                   width: Int(width)!)
-                } catch {
-                    print("Failed to save the image")
+                    presentingViewController?
+                        .presentingViewController?
+                        .dismiss(animated: true, completion: nil)
                 }
+            } catch {
+                print("Failed to save the snapshot.")
             }
-            
-            presentingViewController?
-                .presentingViewController?
-                .dismiss(animated: true, completion: nil)
         } else {
             Alert.showError(on: self, message: .pleaseEnterNumber)
         }
@@ -181,7 +182,9 @@ final class AddPlaceViewController: UIViewController {
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
     @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
-        if let _ = product, let _ = snapshot {
+        if let _ = place {
+            dismiss(animated: true)
+        } else if let _ = product, let _ = snapshot {
             presentingViewController?
                 .presentingViewController?
                 .dismiss(animated: true, completion: nil)
