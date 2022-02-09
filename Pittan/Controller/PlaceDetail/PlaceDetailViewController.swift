@@ -55,7 +55,8 @@ final class PlaceDetailViewController: UIViewController {
         view.backgroundColor = .appBackground
         navigationController?.navigationBar.tintColor = .appText
         imageView.cornerRadius = 10
-        categoryLabel.addBorder(width: 2, color: .appMain, cornerRadius: categoryLabel.bounds.height / 2)
+        categoryLabel.cornerRadius = categoryLabel.bounds.height / 2
+        categoryLabel.addBorder(width: 2, color: .appMain)
         curtainSizeStackView.cornerRadius = 10
         displayPlace(place)
     }

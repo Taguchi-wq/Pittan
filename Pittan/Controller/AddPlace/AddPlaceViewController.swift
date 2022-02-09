@@ -76,19 +76,22 @@ final class AddPlaceViewController: UIViewController {
     /// 画面のレイアウトを設定する
     private func setupLayout() {
         view.backgroundColor = .appBackground
+        navigationBar.hideShadow(true)
         placeNameTextField.delegate = self
         heightTextField.delegate = self
         widthTextField.delegate = self
-        navigationBar.hideShadow(true)
-        imageView.addBorder(color: .appText, cornerRadius: 10)
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
-        categorySegmentedControl.setTitle(state: .selected)
-        categorySegmentedControl.setTitle(state: .normal)
         placeNameTextField.addToolbar { self.view.endEditing(true) }
         heightTextField.addToolbar { self.view.endEditing(true) }
         widthTextField.addToolbar { self.view.endEditing(true) }
         commentTextView.addToolbar { self.view.endEditing(true) }
+        commentTextView.cornerRadius = 5
+        commentTextView.addBorder(width: 0.1, color: .gray)
+        imageView.cornerRadius = 10
+        imageView.addBorder(color: .appText)
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
+        categorySegmentedControl.setTitle(state: .selected)
+        categorySegmentedControl.setTitle(state: .normal)
         inputPlace(place)
     }
     
