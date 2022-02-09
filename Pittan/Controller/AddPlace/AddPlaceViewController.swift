@@ -35,8 +35,8 @@ final class AddPlaceViewController: UIViewController {
     @IBOutlet private weak var heightTextField: UITextField!
     /// 窓枠の横幅を入力するUITextField
     @IBOutlet private weak var widthTextField: UITextField!
-    /// コメントを入力するUITextField
-    @IBOutlet private weak var commentTextField: UITextField!
+    /// コメントを入力するUITextView
+    @IBOutlet private weak var commentTextView: UITextView!
     /// カテゴリを選択するUISegmentedControl
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
     /// UIScrollViewの高さ
@@ -48,6 +48,7 @@ final class AddPlaceViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        setupKeyboardWill()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,20 +76,22 @@ final class AddPlaceViewController: UIViewController {
     /// 画面のレイアウトを設定する
     private func setupLayout() {
         view.backgroundColor = .appBackground
+        navigationBar.hideShadow(true)
         placeNameTextField.delegate = self
         heightTextField.delegate = self
         widthTextField.delegate = self
-        commentTextField.delegate = self
-        navigationBar.hideShadow(true)
-        imageView.addBorder(color: .appText, cornerRadius: 10)
+        placeNameTextField.addToolbar { self.view.endEditing(true) }
+        heightTextField.addToolbar { self.view.endEditing(true) }
+        widthTextField.addToolbar { self.view.endEditing(true) }
+        commentTextView.addToolbar { self.view.endEditing(true) }
+        commentTextView.cornerRadius = 5
+        commentTextView.addBorder(width: 0.1, color: .gray)
+        imageView.cornerRadius = 10
+        imageView.addBorder(color: .appText)
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
-        placeNameTextField.addBottomBorder()
-        heightTextField.addBottomBorder()
-        widthTextField.addBottomBorder()
-        commentTextField.addBottomBorder()
         inputPlace(place)
     }
     
@@ -108,7 +111,7 @@ final class AddPlaceViewController: UIViewController {
         imageView.image = UIImage(imagePath: product.imagePath)
         heightTextField.text = String(product.height)
         widthTextField.text = String(product.width)
-        commentTextField.text = product.comment
+        commentTextView.text = product.comment
         categorySegmentedControl.selectedCategory = category
     }
     
@@ -118,7 +121,7 @@ final class AddPlaceViewController: UIViewController {
         let category = categorySegmentedControl.selectedCategory
         let height = heightTextField.text ?? ""
         let width = widthTextField.text ?? ""
-        let comment = commentTextField.text ?? ""
+        let comment = commentTextView.text ?? ""
         
         if height.isInt && width.isInt {
             do {
@@ -196,7 +199,7 @@ final class AddPlaceViewController: UIViewController {
         let placeNameIsEmpty = placeNameTextField.text?.isEmpty ?? false
         let heightIsEmpty = heightTextField.text?.isEmpty ?? false
         let widthIsEmpty = widthTextField.text?.isEmpty ?? false
-        let commentIsEmpty = commentTextField.text?.isEmpty ?? false
+        let commentIsEmpty = commentTextView.text?.isEmpty ?? false
         
         if placeNameIsEmpty || heightIsEmpty || widthIsEmpty || commentIsEmpty {
             Alert.showError(on: self, message: .pleaseFillAllFields)

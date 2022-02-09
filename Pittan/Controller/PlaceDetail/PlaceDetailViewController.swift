@@ -55,7 +55,8 @@ final class PlaceDetailViewController: UIViewController {
         view.backgroundColor = .appBackground
         navigationController?.navigationBar.tintColor = .appText
         imageView.cornerRadius = 10
-        categoryLabel.addBorder(width: 2, color: .appMain, cornerRadius: categoryLabel.bounds.height / 2)
+        categoryLabel.cornerRadius = categoryLabel.bounds.height / 2
+        categoryLabel.addBorder(width: 2, color: .appMain)
         curtainSizeStackView.cornerRadius = 10
         displayPlace(place)
     }
@@ -87,6 +88,7 @@ final class PlaceDetailViewController: UIViewController {
         guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
         addPlaceVC.initialize(place: place)
         addPlaceVC.modalPresentationStyle = .fullScreen
+        addPlaceVC.modalTransitionStyle = .crossDissolve
         present(addPlaceVC, animated: true)
     }
     
