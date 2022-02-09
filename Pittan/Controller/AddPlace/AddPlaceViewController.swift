@@ -85,6 +85,9 @@ final class AddPlaceViewController: UIViewController {
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
+        placeNameTextField.addToolbar { self.view.endEditing(true) }
+        heightTextField.addToolbar { self.view.endEditing(true) }
+        widthTextField.addToolbar { self.view.endEditing(true) }
         commentTextView.addToolbar { self.view.endEditing(true) }
         inputPlace(place)
     }
