@@ -1,13 +1,13 @@
 //
-//  UITextField+Extension.swift
+//  UITextView+Extension.swift
 //  Pittan
 //
-//  Created by cmStudent on 2022/02/09.
+//  Created by cmStudent on 2022/02/08.
 //
 
 import UIKit
 
-public extension UITextField {
+public extension UITextView {
     
     /// ツールバーを追加する
     /// - Parameter action: ツールバーのボタンを押した時の処理

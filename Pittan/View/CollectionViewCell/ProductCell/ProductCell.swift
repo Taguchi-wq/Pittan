@@ -35,7 +35,7 @@ final class ProductCell: UICollectionViewCell {
     /// ProductCellのレイアウトを設定する
     private func setupLayout() {
         imageView.cornerRadius = 10
-        imageView.addBorder(color: .black, cornerRadius: 10)
+        imageView.addBorder(color: .black)
     }
     
 }

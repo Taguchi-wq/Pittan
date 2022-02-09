@@ -37,11 +37,9 @@ public extension UIView {
     /// - Parameters:
     ///   - width: ボーダーの太さ
     ///   - color: ボーダーの色
-    ///   - cornerRadius: ボーダーの角丸
-    func addBorder(width: CGFloat = 1, color: UIColor, cornerRadius: CGFloat = 0) {
+    func addBorder(width: CGFloat = 1, color: UIColor) {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
-        layer.cornerRadius = cornerRadius
     }
     
 }

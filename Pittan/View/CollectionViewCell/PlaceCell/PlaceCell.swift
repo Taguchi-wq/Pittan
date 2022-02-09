@@ -47,7 +47,8 @@ final class PlaceCell: UICollectionViewCell {
         cornerRadius = 20
         placeImageView.cornerRadius = 10
         categoryLabel.textColor = .appMain
-        categoryLabel.addBorder(width: 2, color: .appMain, cornerRadius: 17.5)
+        categoryLabel.cornerRadius = 17.5
+        categoryLabel.addBorder(width: 2, color: .appMain)
     }
     
 }

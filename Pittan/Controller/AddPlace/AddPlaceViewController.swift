@@ -15,7 +15,7 @@ final class AddPlaceViewController: UIViewController {
     /// 製品
     private var product: Product?
     /// スナップショット
-    private var snapshot: UIImage?
+    var snapshot: UIImage?
     
     
     // MARK: - @IBOutlets
@@ -27,22 +27,20 @@ final class AddPlaceViewController: UIViewController {
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     /// UIScrollView
     @IBOutlet private weak var addPlaceScrollView: UIScrollView!
-    /// 雰囲気を見るボタン
-    @IBOutlet private weak var checkMoodButton: UIButton!
+    /// 雰囲気を見るUIImageView
+    @IBOutlet private weak var imageView: UIImageView!
     /// 設置場所の名前を入力するUITextField
     @IBOutlet private weak var placeNameTextField: UITextField!
     /// 窓枠の縦幅を入力するUITextField
     @IBOutlet private weak var heightTextField: UITextField!
     /// 窓枠の横幅を入力するUITextField
     @IBOutlet private weak var widthTextField: UITextField!
-    /// コメントを入力するUITextField
-    @IBOutlet private weak var commentTextField: UITextField!
+    /// コメントを入力するUITextView
+    @IBOutlet private weak var commentTextView: UITextView!
     /// カテゴリを選択するUISegmentedControl
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
     /// UIScrollViewの高さ
     @IBOutlet private weak var addPlaceScrollViewHeight: NSLayoutConstraint!
-    /// 雰囲気を見るボタンの高さ
-    @IBOutlet private weak var checkMoodButtonHeight: NSLayoutConstraint!
     
     
     // MARK: - Override Methods
@@ -50,17 +48,15 @@ final class AddPlaceViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        setupKeyboardWill()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let snapshot = snapshot {
-            checkMoodButton.imageView?.contentMode = .scaleAspectFill
-            checkMoodButton.imageView?.cornerRadius = 10
-            checkMoodButton.setImage(snapshot, for: .normal)
-            checkMoodButtonHeight.constant = 400
-            addPlaceScrollViewHeight.constant += checkMoodButtonHeight.constant
+            imageView.cornerRadius = 10
+            imageView.image = snapshot
         }
     }
     
@@ -80,18 +76,22 @@ final class AddPlaceViewController: UIViewController {
     /// 画面のレイアウトを設定する
     private func setupLayout() {
         view.backgroundColor = .appBackground
+        navigationBar.hideShadow(true)
         placeNameTextField.delegate = self
         heightTextField.delegate = self
         widthTextField.delegate = self
-        commentTextField.delegate = self
-        navigationBar.hideShadow(true)
-        checkMoodButton.addBorder(color: .appText, cornerRadius: 10)
+        placeNameTextField.addToolbar { self.view.endEditing(true) }
+        heightTextField.addToolbar { self.view.endEditing(true) }
+        widthTextField.addToolbar { self.view.endEditing(true) }
+        commentTextView.addToolbar { self.view.endEditing(true) }
+        commentTextView.cornerRadius = 5
+        commentTextView.addBorder(width: 0.1, color: .gray)
+        imageView.cornerRadius = 10
+        imageView.addBorder(color: .appText)
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
-        placeNameTextField.addBottomBorder()
-        heightTextField.addBottomBorder()
-        widthTextField.addBottomBorder()
-        commentTextField.addBottomBorder()
         inputPlace(place)
     }
     
@@ -108,9 +108,10 @@ final class AddPlaceViewController: UIViewController {
     private func inputProduct(_ place: Place) {
         guard let product = place.product else { return }
         guard let category = Category(rawValue: product.category) else { return }
+        imageView.image = UIImage(imagePath: product.imagePath)
         heightTextField.text = String(product.height)
         widthTextField.text = String(product.width)
-        commentTextField.text = product.comment
+        commentTextView.text = product.comment
         categorySegmentedControl.selectedCategory = category
     }
     
@@ -120,23 +121,25 @@ final class AddPlaceViewController: UIViewController {
         let category = categorySegmentedControl.selectedCategory
         let height = heightTextField.text ?? ""
         let width = widthTextField.text ?? ""
-        let comment = commentTextField.text ?? ""
+        let comment = commentTextView.text ?? ""
         
         if height.isInt && width.isInt {
-            if let place = place {
-                RealmManager.shared.updatePlace(place.id,
-                                                name: placeName,
-                                                category: category.name,
-                                                height: Int(height)!,
-                                                width: Int(width)!,
-                                                comment: comment)
-            } else if let product = product {
-                guard let snapshot = snapshot else { return }
-                guard let filePath = createFilePathURL() else { return }
-                
-                let pngImageData = snapshot.pngData()
-                do {
-                    try pngImageData?.write(to: filePath)
+            do {
+                guard let pngImageData = snapshot?.pngData() else { return }
+                if let place = place {
+                    guard let imagePath = place.product?.imagePath else { return }
+                    try pngImageData.write(to: URL(string: imagePath)!)
+                    RealmManager.shared.updatePlace(place.id,
+                                                    name: placeName,
+                                                    imagePath: imagePath,
+                                                    category: category.name,
+                                                    height: Int(height)!,
+                                                    width: Int(width)!,
+                                                    comment: comment)
+                    dismiss(animated: true)
+                } else if let product = product {
+                    guard let filePath = createFilePathURL() else { return }
+                    try pngImageData.write(to: filePath)
                     product.imagePath = filePath.absoluteString
                     RealmManager.shared.savePlace(name: placeName,
                                                   imagePath: product.imagePath,
@@ -147,14 +150,13 @@ final class AddPlaceViewController: UIViewController {
                                                   comment: comment,
                                                   height: Int(height)!,
                                                   width: Int(width)!)
-                } catch {
-                    print("Failed to save the image")
+                    presentingViewController?
+                        .presentingViewController?
+                        .dismiss(animated: true, completion: nil)
                 }
+            } catch {
+                print("Failed to save the snapshot.")
             }
-            
-            presentingViewController?
-                .presentingViewController?
-                .dismiss(animated: true, completion: nil)
         } else {
             Alert.showError(on: self, message: .pleaseEnterNumber)
         }
@@ -167,11 +169,25 @@ final class AddPlaceViewController: UIViewController {
         return documentURL.appendingPathComponent(uuid + ".png")
     }
     
+    @objc
+    private func tappedImageView(_ sender: UITapGestureRecognizer) {
+        if let _ = place {
+            guard let putProductVC = storyboard?.instantiateViewController(with: PutProductViewController.self) else { return }
+            putProductVC.modalPresentationStyle = .fullScreen
+            putProductVC.delegate = self
+            present(putProductVC, animated: true)
+        } else if let _ = product, let _ = snapshot {
+            dismiss(animated: true)
+        }
+    }
+    
     
     // MARK: - @IBActions
     /// closeButtonを押した時に呼ばれる
     @IBAction private func tappedCloseButton(_ sender: UIBarButtonItem) {
-        if let _ = product, let _ = snapshot {
+        if let _ = place {
+            dismiss(animated: true)
+        } else if let _ = product, let _ = snapshot {
             presentingViewController?
                 .presentingViewController?
                 .dismiss(animated: true, completion: nil)
@@ -183,26 +199,13 @@ final class AddPlaceViewController: UIViewController {
         let placeNameIsEmpty = placeNameTextField.text?.isEmpty ?? false
         let heightIsEmpty = heightTextField.text?.isEmpty ?? false
         let widthIsEmpty = widthTextField.text?.isEmpty ?? false
-        let commentIsEmpty = commentTextField.text?.isEmpty ?? false
+        let commentIsEmpty = commentTextView.text?.isEmpty ?? false
         
         if placeNameIsEmpty || heightIsEmpty || widthIsEmpty || commentIsEmpty {
             Alert.showError(on: self, message: .pleaseFillAllFields)
         } else {
             savePlace()
         }
-    }
-    
-    /// checkMoodButtonを押した時に呼ばれる
-    @IBAction private func tappedCheckMoodButton(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
-}
-
-extension AddPlaceViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
     }
     
 }
