@@ -88,6 +88,7 @@ final class PlaceDetailViewController: UIViewController {
         guard let addPlaceVC = storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
         addPlaceVC.initialize(place: place)
         addPlaceVC.modalPresentationStyle = .fullScreen
+        addPlaceVC.modalTransitionStyle = .crossDissolve
         present(addPlaceVC, animated: true)
     }
     
