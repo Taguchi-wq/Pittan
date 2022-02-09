@@ -104,25 +104,26 @@
                                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eBu-ze-0Fe">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eBu-ze-0Fe">
                                                                 <rect key="frame" x="0.0" y="27.5" width="382" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="縦幅 mm" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeg-S2-gKJ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="40"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                     </textField>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-UO-8hU">
-                                                                        <rect key="frame" x="130" y="0.0" width="122" height="40"/>
+                                                                        <rect key="frame" x="171" y="0.0" width="40" height="40"/>
                                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="横幅 mm" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk9-UK-k0m">
-                                                                        <rect key="frame" x="260" y="0.0" width="122" height="40"/>
+                                                                        <rect key="frame" x="219" y="0.0" width="163" height="40"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstItem="sk9-UK-k0m" firstAttribute="width" secondItem="qeg-S2-gKJ" secondAttribute="width" id="qfS-yz-J7m"/>
                                                                     <constraint firstAttribute="height" constant="40" id="zb0-kA-LAx"/>
                                                                 </constraints>
                                                             </stackView>
