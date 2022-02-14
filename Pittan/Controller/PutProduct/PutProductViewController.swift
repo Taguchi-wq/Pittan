@@ -17,29 +17,33 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     }
     
     enum Products: CaseIterable {
-        case beige, brown, gray, navy, rose, turquoiseBlue, yellowgreen
+        case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen, real
         
         var imageName: String {
             switch self {
             case .beige: return "beige"
+            case .blue: return "blue"
             case .brown: return "brown"
             case .gray: return "gray"
             case .navy: return "navy"
             case .rose: return "rose"
             case .turquoiseBlue: return "turquoise_blue"
             case .yellowgreen: return "yellowgreen"
+            case .real: return "real"
             }
         }
         
         var name: String {
             switch self {
             case .beige: return "ベージュ"
+            case .blue: return "ブルー"
             case .brown: return "ブラウン"
             case .gray: return "グレー"
             case .navy: return "ネイビー"
             case .rose: return "ローズ"
             case .turquoiseBlue: return "ターコイズブルー"
             case .yellowgreen: return "イエローグリーン"
+            case .real: return "リアル"
             }
         }
     }
