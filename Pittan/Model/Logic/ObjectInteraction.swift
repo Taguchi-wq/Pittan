@@ -73,6 +73,9 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         selectedObject!.pivot = SCNMatrix4MakeTranslation(0, selectedObject!.boundingBox.min.y, 0)
         selectedObject!.scale = SCNVector3(0.05, 0.05, 0.05)
         selectedObject!.setTexture(selectedTexture)
+        if let camera = sceneView.pointOfView {
+            selectedObject!.eulerAngles.y = camera.eulerAngles.y
+        }
         sceneView.scene.rootNode.addChildNode(selectedObject!)
     }
     
