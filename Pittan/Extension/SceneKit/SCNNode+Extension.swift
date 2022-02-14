@@ -13,8 +13,8 @@ public extension SCNNode {
     // MARK: - Properties
     /// 横幅
     var width: Float {
-        get { return scale.z }
-        set { scale.z = newValue }
+        get { return scale.x }
+        set { scale.x = newValue }
     }
     
     /// 縦幅
