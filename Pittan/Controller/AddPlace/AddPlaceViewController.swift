@@ -114,21 +114,20 @@ final class AddPlaceViewController: UIViewController {
         let comment = commentTextView.text ?? ""
         
         if height.isInt && width.isInt {
-            do {
+            if let place = place {
+                guard let imagePath = place.product?.imagePath else { return }
+                RealmManager.shared.updatePlace(place.id,
+                                                name: placeName,
+                                                imagePath: imagePath,
+                                                category: category.name,
+                                                height: Int(height)!,
+                                                width: Int(width)!,
+                                                comment: comment)
+                dismiss(animated: true)
+            } else if let product = product {
                 guard let pngImageData = snapshot?.pngData() else { return }
-                if let place = place {
-                    guard let imagePath = place.product?.imagePath else { return }
-                    try pngImageData.write(to: URL(string: imagePath)!)
-                    RealmManager.shared.updatePlace(place.id,
-                                                    name: placeName,
-                                                    imagePath: imagePath,
-                                                    category: category.name,
-                                                    height: Int(height)!,
-                                                    width: Int(width)!,
-                                                    comment: comment)
-                    dismiss(animated: true)
-                } else if let product = product {
-                    guard let filePath = createFilePathURL() else { return }
+                guard let filePath = createFilePathURL() else { return }
+                do {
                     try pngImageData.write(to: filePath)
                     product.imagePath = filePath.absoluteString
                     RealmManager.shared.savePlace(name: placeName,
@@ -140,12 +139,12 @@ final class AddPlaceViewController: UIViewController {
                                                   comment: comment,
                                                   height: Int(height)!,
                                                   width: Int(width)!)
-                    presentingViewController?
-                        .presentingViewController?
-                        .dismiss(animated: true, completion: nil)
+                } catch {
+                    print("Failed to save the snapshot.")
                 }
-            } catch {
-                print("Failed to save the snapshot.")
+                presentingViewController?
+                    .presentingViewController?
+                    .dismiss(animated: true, completion: nil)
             }
         } else {
             Alert.showError(on: self, message: .pleaseEnterNumber)

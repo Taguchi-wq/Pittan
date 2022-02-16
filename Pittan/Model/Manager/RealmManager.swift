@@ -119,7 +119,7 @@ final class RealmManager {
     
     /// 製品のサイズを更新する
     /// - Parameters:
-    ///   - id: 製品id
+    ///   - id: 製品のid
     ///   - height: 縦幅
     ///   - width: 横幅
     func updateSize(_ id: String, height: Int, width: Int) {
@@ -129,6 +129,19 @@ final class RealmManager {
                 product.height = height
                 product.width = width
             }
+        } catch {
+            print(error)
+        }
+    }
+    
+    /// 製品の画像を更新する
+    /// - Parameters:
+    ///   - id: 製品のid
+    ///   - imagePath: 画像パス
+    func updateImage(_ id: String, imagePath: String) {
+        guard let product = fetchProduct(by: id) else { return }
+        do {
+            try realm.write { product.imagePath = imagePath }
         } catch {
             print(error)
         }
