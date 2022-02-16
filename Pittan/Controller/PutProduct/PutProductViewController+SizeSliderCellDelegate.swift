@@ -11,11 +11,11 @@ import Foundation
 extension PutProductViewController: SizeSliderCellDelegate {
     
     func changedHeight(_ value: Float) {
-        objectInteraction.selectedObject?.height = value * 0.01
+        objectInteraction.selectedObject?.scaleHeight = value * 0.01
     }
     
     func changedWidth(_ value: Float) {
-        objectInteraction.selectedObject?.width = value * 0.01
+        objectInteraction.selectedObject?.scaleWidth = value * 0.01
     }
     
 }

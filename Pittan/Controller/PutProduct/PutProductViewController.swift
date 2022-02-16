@@ -129,13 +129,19 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     /// AddImageButtonを押した時の処理
     @objc
     private func tappedAddImageButton(_ sender: UIButton) {
-        Alert.showSize(on: self, height: 1000, width: 2000) { _ in
+        guard let object = objectInteraction.selectedObject else { return }
+        let height = object.millimeterHeight
+        let width = object.millimeterWidth
+        Alert.showSize(on: self, height: height, width: width) { _ in
             guard let snapshot = self.snapshot else { return }
             if let delegate = self.delegate {
                 delegate.putProductViewController(snapshot: snapshot)
+                delegate.putProductViewController(height: height, width: width)
                 self.dismiss(animated: true)
             } else {
                 guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+                self.product.height = height
+                self.product.width = width
                 addPlaceVC.modalPresentationStyle = .fullScreen
                 addPlaceVC.initialize(product: self.product, snapshot: snapshot)
                 self.present(addPlaceVC, animated: true) {

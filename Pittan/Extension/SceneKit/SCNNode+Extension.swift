@@ -12,15 +12,29 @@ public extension SCNNode {
     
     // MARK: - Properties
     /// 横幅
-    var width: Float {
+    var scaleWidth: Float {
         get { return scale.x }
         set { scale.x = newValue }
     }
     
     /// 縦幅
-    var height: Float {
+    var scaleHeight: Float {
         get { return scale.y }
         set { scale.y = newValue }
+    }
+    
+    /// ミリメートル単位の横幅
+    var millimeterWidth: Int {
+        let (min, max) = boundingBox
+        let width = (max.x - min.x)
+        return Int(width * scaleWidth * 1000)
+    }
+    
+    /// ミリメートル単位の縦幅
+    var millimeterHeight: Int {
+        let (min, max) = boundingBox
+        let height = (max.y - min.y)
+        return Int(height * scaleHeight * 1000)
     }
     
     

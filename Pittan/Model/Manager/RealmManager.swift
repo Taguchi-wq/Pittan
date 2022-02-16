@@ -117,4 +117,21 @@ final class RealmManager {
         }
     }
     
+    /// 製品のサイズを更新する
+    /// - Parameters:
+    ///   - id: 製品id
+    ///   - height: 縦幅
+    ///   - width: 横幅
+    func updateSize(_ id: String, height: Int, width: Int) {
+        guard let product = fetchProduct(by: id) else { return }
+        do {
+            try realm.write {
+                product.height = height
+                product.width = width
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
 }

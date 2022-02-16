@@ -14,4 +14,9 @@ extension AddPlaceViewController: PutProductViewControllerDelegate {
         self.snapshot = snapshot
     }
     
+    func putProductViewController(height: Int, width: Int) {
+        guard let product = place?.product else { return }
+        RealmManager.shared.updateSize(product.id, height: height, width: width)
+    }
+    
 }

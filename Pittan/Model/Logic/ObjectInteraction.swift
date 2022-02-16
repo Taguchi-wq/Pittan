@@ -69,12 +69,6 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
               let scene = SCNScene(named: "curtain.scn"),
               let node = (scene.rootNode.childNode(withName: "uploads_files_2420428_FA_Curtain_02_Default_OBJ", recursively: false)) else { return }
         selectedObject = node
-        
-        let (min, max) = (selectedObject!.boundingBox)
-        let boundsWidth = CGFloat(max.x - min.x)
-        let boundsheight = CGFloat(max.y - min.y)
-        print("boundsWidth: ", 1.0 / boundsWidth, "\nboundsheight: ", 1.0 / boundsheight)
-        
         selectedObject!.simdWorldPosition = result.worldTransform.translation
         selectedObject!.pivot = SCNMatrix4MakeTranslation(0, selectedObject!.boundingBox.min.y, 0)
         selectedObject!.scale = SCNVector3(0.05, 0.05, 0.05)
