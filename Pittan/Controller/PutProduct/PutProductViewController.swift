@@ -7,8 +7,15 @@
 
 import UIKit
 import ARKit
+import JonContextMenu
 
 final class PutProductViewController: UIViewController, ARSessionDelegate {
+    
+    /// 柄
+    private let patterns: [JonItem] = Products.allCases.enumerated().map {
+        JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
+    }
+    
     
     // MARK: - Enums
     enum Section: CaseIterable {
@@ -17,7 +24,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     }
     
     enum Products: CaseIterable {
-        case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen, real
+        case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen
         
         var imageName: String {
             switch self {
@@ -29,7 +36,6 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             case .rose: return "rose"
             case .turquoiseBlue: return "turquoise_blue"
             case .yellowgreen: return "yellowgreen"
-            case .real: return "real"
             }
         }
         
@@ -43,7 +49,6 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             case .rose: return "ローズ"
             case .turquoiseBlue: return "ターコイズブルー"
             case .yellowgreen: return "イエローグリーン"
-            case .real: return "リアル"
             }
         }
     }
@@ -82,6 +87,16 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         setupLayout()
         setupSceneView()
         setupCoachingOverlay(.horizontalPlane)
+        
+        
+        let contextMenu = JonContextMenu()
+            .setItems(patterns)
+            .setItemsActiveColorTo(.white)
+            .setItemsTitleColorTo(.white)
+            .setItemsTitleSizeTo(40)
+            .setDelegate(self)
+            .build()
+        sceneView.addGestureRecognizer(contextMenu)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,5 +223,32 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         
         sceneView.session.pause()
     }
+    
+}
+
+// MARK: - JonContextMenuDelegate
+extension PutProductViewController: JonContextMenuDelegate {
+    
+    func menuOpened() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+    }
+    
+    func menuItemWasSelected(item: JonItem) {
+        guard let index = item.id else { return }
+        let pattern = Products.allCases[index].imageName
+        if let selectedObject = objectInteraction.selectedObject {
+            selectedObject.setTexture(pattern)
+        } else {
+            objectInteraction.selectedTexture = pattern
+        }
+    }
+    
+    func menuItemWasActivated(item: JonItem) {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+    }
+    
+    func menuClosed() {}
+    
+    func menuItemWasDeactivated(item: JonItem) {}
     
 }
