@@ -12,7 +12,7 @@ import JonContextMenu
 final class PutProductViewController: UIViewController, ARSessionDelegate {
     
     /// 柄
-    private let patterns: [JonItem] = Products.allCases.enumerated().map {
+    private let patterns: [JonItem] = Patterns.allCases.enumerated().map {
         JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
     }
     
@@ -24,6 +24,24 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     }
     
     enum Products: CaseIterable {
+        case doubleCurtain, singleCurtain
+        
+        var imageName: String {
+            switch self {
+            case .doubleCurtain: return "double_curtain"
+            case .singleCurtain: return "single_curtain"
+            }
+        }
+        
+        var name: String {
+            switch self {
+            case .doubleCurtain: return "両開き"
+            case .singleCurtain: return "片開き"
+            }
+        }
+    }
+    
+    enum Patterns: CaseIterable {
         case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen
         
         var imageName: String {
@@ -235,7 +253,7 @@ extension PutProductViewController: JonContextMenuDelegate {
     
     func menuItemWasSelected(item: JonItem) {
         guard let index = item.id else { return }
-        let pattern = Products.allCases[index].imageName
+        let pattern = Patterns.allCases[index].imageName
         if let selectedObject = objectInteraction.selectedObject {
             selectedObject.setTexture(pattern)
         } else {

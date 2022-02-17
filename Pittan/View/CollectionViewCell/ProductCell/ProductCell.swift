@@ -27,6 +27,7 @@ final class ProductCell: UICollectionViewCell {
     // MARK: - Initialize
     func initialize(imageName: String, name: String) {
         imageView.image = UIImage(named: imageName)
+        imageView.backgroundColor = .appBackground
         nameLabel.text = name
     }
 
