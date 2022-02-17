@@ -11,10 +11,14 @@ import JonContextMenu
 
 final class PutProductViewController: UIViewController, ARSessionDelegate {
     
+    // MARK: - Properties
     /// 柄
     private let patterns: [JonItem] = Patterns.allCases.enumerated().map {
         JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
     }
+    
+    /// 選択されている製品
+    var selectedProduct: Products?
     
     
     // MARK: - Enums

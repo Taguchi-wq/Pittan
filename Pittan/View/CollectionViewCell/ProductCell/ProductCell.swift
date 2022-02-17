@@ -12,6 +12,8 @@ final class ProductCell: UICollectionViewCell {
     // MARK: - @IBOutlets
     /// 製品の画像を表示するUIImageView
     @IBOutlet private weak var imageView: UIImageView!
+    /// 製品を選択した時にチェックを表示するUIImageView
+    @IBOutlet private weak var selectCheckImageView: UIImageView!
     /// 製品の名前を表示するUILabel
     @IBOutlet private weak var nameLabel: UILabel!
 
@@ -25,9 +27,10 @@ final class ProductCell: UICollectionViewCell {
     
     
     // MARK: - Initialize
-    func initialize(imageName: String, name: String) {
+    func initialize(imageName: String, name: String, isSelected: Bool) {
         imageView.image = UIImage(named: imageName)
         imageView.backgroundColor = .appBackground
+        selectCheckImageView.isHidden = !isSelected
         nameLabel.text = name
     }
 
@@ -37,6 +40,8 @@ final class ProductCell: UICollectionViewCell {
     private func setupLayout() {
         imageView.cornerRadius = 10
         imageView.addBorder(color: .black)
+        selectCheckImageView.isHidden = true
+        selectCheckImageView.cornerRadius = 10
     }
     
 }
