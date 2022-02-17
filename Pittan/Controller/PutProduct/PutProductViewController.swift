@@ -100,6 +100,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     @IBOutlet private weak var backButton: UIButton!
     /// 削除ボタン
     @IBOutlet private weak var removeButton: UIButton!
+    /// シャッターボタン
+    @IBOutlet private weak var shutterButton: UIButton!
     
     
     // MARK: - Override Methods
@@ -139,6 +141,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private func setupLayout() {
         backButton.cornerRadius = 16
         removeButton.cornerRadius = 16
+        shutterButton.imageView?.tintColor = .white
         putProductCollectionView.dataSource = self
         putProductCollectionView.delegate = self
         putProductCollectionView.register(cellType: ProductCell.self, bundle: nil)
