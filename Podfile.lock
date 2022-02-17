@@ -1,4 +1,5 @@
 PODS:
+  - JonContextMenu (1.0.0)
   - Realm (10.5.2):
     - Realm/Headers (= 10.5.2)
   - Realm/Headers (10.5.2)
@@ -6,6 +7,7 @@ PODS:
     - Realm (= 10.5.2)
 
 DEPENDENCIES:
+  - JonContextMenu (from `https://github.com/jonSurrey/JonContextMenu.git`, branch `master`)
   - RealmSwift (~> 10.5.1)
 
 SPEC REPOS:
@@ -13,10 +15,21 @@ SPEC REPOS:
     - Realm
     - RealmSwift
 
+EXTERNAL SOURCES:
+  JonContextMenu:
+    :branch: master
+    :git: https://github.com/jonSurrey/JonContextMenu.git
+
+CHECKOUT OPTIONS:
+  JonContextMenu:
+    :commit: b81f5647637a36246545cc8e57c5586827b09fab
+    :git: https://github.com/jonSurrey/JonContextMenu.git
+
 SPEC CHECKSUMS:
+  JonContextMenu: 21767ef04db36981fc802e7402781198b7741823
   Realm: 2e1bc0d28301006176692da234deff51f867d5ae
   RealmSwift: a522ad39715e8b4e491af4460059bc32b84f5a9b
 
-PODFILE CHECKSUM: 467b0ddd0ddba0cb85cb417c45adf6964d1140c6
+PODFILE CHECKSUM: e22cb7b688bf5bd0c280338d025720a8918fcb84
 
 COCOAPODS: 1.11.2
