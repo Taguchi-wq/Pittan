@@ -7,8 +7,19 @@
 
 import UIKit
 import ARKit
+import JonContextMenu
 
 final class PutProductViewController: UIViewController, ARSessionDelegate {
+    
+    // MARK: - Properties
+    /// 柄
+    private let patterns: [JonItem] = Patterns.allCases.enumerated().map {
+        JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
+    }
+    
+    /// 選択されている製品
+    var selectedProduct: Products?
+    
     
     // MARK: - Enums
     enum Section: CaseIterable {
@@ -17,7 +28,25 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     }
     
     enum Products: CaseIterable {
-        case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen, real
+        case doubleCurtain, singleCurtain
+        
+        var imageName: String {
+            switch self {
+            case .doubleCurtain: return "double_curtain"
+            case .singleCurtain: return "single_curtain"
+            }
+        }
+        
+        var name: String {
+            switch self {
+            case .doubleCurtain: return "両開き"
+            case .singleCurtain: return "片開き"
+            }
+        }
+    }
+    
+    enum Patterns: CaseIterable {
+        case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen
         
         var imageName: String {
             switch self {
@@ -29,7 +58,6 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             case .rose: return "rose"
             case .turquoiseBlue: return "turquoise_blue"
             case .yellowgreen: return "yellowgreen"
-            case .real: return "real"
             }
         }
         
@@ -43,7 +71,6 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             case .rose: return "ローズ"
             case .turquoiseBlue: return "ターコイズブルー"
             case .yellowgreen: return "イエローグリーン"
-            case .real: return "リアル"
             }
         }
     }
@@ -73,6 +100,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     @IBOutlet private weak var backButton: UIButton!
     /// 削除ボタン
     @IBOutlet private weak var removeButton: UIButton!
+    /// シャッターボタン
+    @IBOutlet private weak var shutterButton: UIButton!
     
     
     // MARK: - Override Methods
@@ -82,6 +111,16 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         setupLayout()
         setupSceneView()
         setupCoachingOverlay(.horizontalPlane)
+        
+        
+        let contextMenu = JonContextMenu()
+            .setItems(patterns)
+            .setItemsActiveColorTo(.white)
+            .setItemsTitleColorTo(.white)
+            .setItemsTitleSizeTo(40)
+            .setDelegate(self)
+            .build()
+        sceneView.addGestureRecognizer(contextMenu)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +141,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private func setupLayout() {
         backButton.cornerRadius = 16
         removeButton.cornerRadius = 16
+        shutterButton.imageView?.tintColor = .white
         putProductCollectionView.dataSource = self
         putProductCollectionView.delegate = self
         putProductCollectionView.register(cellType: ProductCell.self, bundle: nil)
@@ -208,5 +248,32 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         
         sceneView.session.pause()
     }
+    
+}
+
+// MARK: - JonContextMenuDelegate
+extension PutProductViewController: JonContextMenuDelegate {
+    
+    func menuOpened() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+    }
+    
+    func menuItemWasSelected(item: JonItem) {
+        guard let index = item.id else { return }
+        let pattern = Patterns.allCases[index].imageName
+        if let selectedObject = objectInteraction.selectedObject {
+            selectedObject.setTexture(pattern)
+        } else {
+            objectInteraction.selectedTexture = pattern
+        }
+    }
+    
+    func menuItemWasActivated(item: JonItem) {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+    }
+    
+    func menuClosed() {}
+    
+    func menuItemWasDeactivated(item: JonItem) {}
     
 }

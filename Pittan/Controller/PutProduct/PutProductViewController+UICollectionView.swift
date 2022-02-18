@@ -39,7 +39,11 @@ extension PutProductViewController: UICollectionViewDataSource {
             if selectTag == .put {
                 let productCell = collectionView.reusableCell(with: ProductCell.self, for: indexPath)
                 let product = Products.allCases[indexPath.item]
-                productCell.initialize(imageName: product.imageName, name: product.name)
+                if let selectedProduct = selectedProduct, selectedProduct == product  {
+                    productCell.initialize(imageName: product.imageName, name: product.name, isSelected: true)
+                } else {
+                    productCell.initialize(imageName: product.imageName, name: product.name, isSelected: false)
+                }
                 return productCell
             } else {
                 let sizeSliderCell = collectionView.reusableCell(with: SizeSliderCell.self, for: indexPath)
@@ -62,12 +66,8 @@ extension PutProductViewController: UICollectionViewDelegate {
             selectTag = .allCases[indexPath.item]
             putProductCollectionView.reloadData()
         case .product:
-            let product = Products.allCases[indexPath.item]
-            if let selectedObject = objectInteraction.selectedObject {
-                selectedObject.setTexture(product.imageName)
-            } else {
-                objectInteraction.selectedTexture = product.imageName
-            }
+            selectedProduct = Products.allCases[indexPath.item]
+            putProductCollectionView.reloadData()
         }
     }
     

@@ -7,6 +7,7 @@ target 'Pittan' do
 
   # Pods for Pittan
   pod 'RealmSwift', '~> 10.5.1'
+  pod 'JonContextMenu', :git => 'https://github.com/jonSurrey/JonContextMenu.git', :branch => 'master'
 
   target 'PittanTests' do
     inherit! :search_paths
