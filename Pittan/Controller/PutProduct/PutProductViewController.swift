@@ -158,6 +158,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         objectInteraction.selectedObject?.removeFromParentNode()
         sceneView.scene.rootNode.removeFromParentNode()
         objectInteraction.selectedObject = nil
+        selectedProduct = nil
+        putProductCollectionView.reloadData()
     }
     
     /// shutterボタンを押した時の処理
