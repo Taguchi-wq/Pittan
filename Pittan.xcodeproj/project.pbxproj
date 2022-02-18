@@ -233,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				7F0A491A27509E0300866926 /* App */,
+				7FBCCBD02757C10C000F9F06 /* Manager */,
+				7FBCCBCA275797AA000F9F06 /* Utility */,
 				7FD518832756422700C7642D /* Model */,
 				7F0A491C27509E2800866926 /* View */,
 				7F0A491B27509E0D00866926 /* Controller */,
@@ -485,8 +487,6 @@
 			children = (
 				7FEDAB0E27995E5900D5C449 /* Logic */,
 				7F8B6E862762FEED003C98D4 /* Error */,
-				7FBCCBD02757C10C000F9F06 /* Manager */,
-				7FBCCBCA275797AA000F9F06 /* Utility */,
 				7FBCCBCD2757A8A7000F9F06 /* Entity */,
 			);
 			path = Model;
