@@ -33,7 +33,7 @@ public enum ProductKind: CaseIterable {
     
     var material: String {
         switch self {
-        case .doubleCurtain: return "Mesh_11"
+        case .doubleCurtain: return "Mesh.001_11.001"
         case .singleCurtain: return "uploads_files_2420428_FA_Curtain_02_Default_OBJ"
         }
     }

@@ -45,7 +45,7 @@ public extension SCNNode {
     func setTexture(_ texture: String) {
         let materials = geometry!.materials
         let material1 = "Default_OBJ"
-        let material2 = "11"
+        let material2 = "11.001"
         for material in materials where material.name == material1 || material.name == material2 {
             material.diffuse.contents = UIImage(named: texture)
             material.roughness.contents = 1
