@@ -30,6 +30,8 @@
 		7F2EDDC027BF90CB008314D7 /* single_curtain.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7F2EDDBF27BF90CB008314D7 /* single_curtain.scn */; };
 		7F2EDDC227BF9101008314D7 /* double_curtain.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7F2EDDC127BF9101008314D7 /* double_curtain.scn */; };
 		7F2EDDC427BF937E008314D7 /* PutProductViewController+JonContextMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2EDDC327BF937E008314D7 /* PutProductViewController+JonContextMenuDelegate.swift */; };
+		7F2EDDC827BFE091008314D7 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2EDDC627BFE091008314D7 /* FocusSquare.swift */; };
+		7F2EDDC927BFE091008314D7 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2EDDC727BFE091008314D7 /* FocusSquareSegment.swift */; };
 		7F363D4B27B351E300EAF791 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F363D4A27B351E300EAF791 /* UITextField+Extension.swift */; };
 		7F42339A27AE9AEF00F764F8 /* PutProductViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42339927AE9AEF00F764F8 /* PutProductViewControllerDelegate.swift */; };
 		7F42339C27AE9D3700F764F8 /* AddPlaceViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42339B27AE9D3700F764F8 /* AddPlaceViewController+UITextFieldDelegate.swift */; };
@@ -130,6 +132,8 @@
 		7F2EDDBF27BF90CB008314D7 /* single_curtain.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = single_curtain.scn; sourceTree = "<group>"; };
 		7F2EDDC127BF9101008314D7 /* double_curtain.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = double_curtain.scn; sourceTree = "<group>"; };
 		7F2EDDC327BF937E008314D7 /* PutProductViewController+JonContextMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PutProductViewController+JonContextMenuDelegate.swift"; sourceTree = "<group>"; };
+		7F2EDDC627BFE091008314D7 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		7F2EDDC727BFE091008314D7 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		7F363D4A27B351E300EAF791 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		7F42339927AE9AEF00F764F8 /* PutProductViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProductViewControllerDelegate.swift; sourceTree = "<group>"; };
 		7F42339B27AE9D3700F764F8 /* AddPlaceViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddPlaceViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
@@ -345,6 +349,15 @@
 			path = TagCell;
 			sourceTree = "<group>";
 		};
+		7F2EDDC527BFE072008314D7 /* FocusSquare */ = {
+			isa = PBXGroup;
+			children = (
+				7F2EDDC627BFE091008314D7 /* FocusSquare.swift */,
+				7F2EDDC727BFE091008314D7 /* FocusSquareSegment.swift */,
+			);
+			path = FocusSquare;
+			sourceTree = "<group>";
+		};
 		7F49DAD127820F4700EEFDAE /* ProductCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +406,7 @@
 		7FBCCBCA275797AA000F9F06 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				7F2EDDC527BFE072008314D7 /* FocusSquare */,
 				7FBCCBCB275797E5000F9F06 /* AppImage.swift */,
 				7F8B6E7E2762F083003C98D4 /* Category.swift */,
 				7F8B6E842762FDC8003C98D4 /* Alert.swift */,
@@ -820,6 +834,7 @@
 				7F70711A275A140800849598 /* PlaceDetailViewController.swift in Sources */,
 				7F42339C27AE9D3700F764F8 /* AddPlaceViewController+UITextFieldDelegate.swift in Sources */,
 				7F363D4B27B351E300EAF791 /* UITextField+Extension.swift in Sources */,
+				7F2EDDC927BFE091008314D7 /* FocusSquareSegment.swift in Sources */,
 				7F1393FA27586599001910EB /* UIStoryboard+Extension.swift in Sources */,
 				7F0A48E827509B5B00866926 /* SceneDelegate.swift in Sources */,
 				7F2EDDB427BF825A008314D7 /* ProductKind.swift in Sources */,
@@ -840,6 +855,7 @@
 				7FC4B4F0279652B7008BC70C /* Tag.swift in Sources */,
 				7F42339A27AE9AEF00F764F8 /* PutProductViewControllerDelegate.swift in Sources */,
 				7F8B6E7F2762F083003C98D4 /* Category.swift in Sources */,
+				7F2EDDC827BFE091008314D7 /* FocusSquare.swift in Sources */,
 				7F102461279A442B00440600 /* HomeViewController+UICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

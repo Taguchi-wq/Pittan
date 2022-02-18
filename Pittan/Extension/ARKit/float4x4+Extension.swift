@@ -19,4 +19,8 @@ public extension float4x4 {
         }
     }
     
+    var orientation: simd_quatf {
+        return simd_quaternion(self)
+    }
+    
 }

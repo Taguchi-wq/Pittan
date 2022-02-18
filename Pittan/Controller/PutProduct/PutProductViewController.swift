@@ -33,6 +33,12 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private var snapshot: UIImage?
     /// スナップショットを表示するbackView
     private let backView = UIView()
+    /// コーチング
+    private var coachingOverlay: ARCoachingOverlayView?
+    /// カーソル
+    private let focusSquare = FocusSquare()
+    /// カーソルキュー
+    private let updateQueue = DispatchQueue(label: "focusSquareQueue")
     /// 柄
     private let patterns: [JonItem] = PatternKind.allCases.enumerated().map {
         JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
@@ -58,7 +64,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         
         setupLayout()
         setupSceneView()
-        setupCoachingOverlay(.horizontalPlane)
+        coachingOverlay = setupCoachingOverlay(.horizontalPlane)
         
         
         let contextMenu = JonContextMenu()
@@ -102,6 +108,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     /// SceneViewを設定する
     private func setupSceneView() {
         sceneView.session.delegate = self
+        sceneView.delegate = self
         sceneView.scene = SCNScene()
         sceneView.pointOfView?.addChildNode(DirectionalLightNode())
     }
@@ -112,6 +119,30 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         configuration.planeDetection = [.horizontal, .vertical]
         configuration.frameSemantics = [.personSegmentationWithDepth]
         sceneView.session.run(configuration)
+    }
+    
+    private func updateFocusSquare(isObjectVisible: Bool) {
+        guard let coachingOverlay = coachingOverlay else { return }
+        if isObjectVisible || coachingOverlay.isActive {
+            focusSquare.hide()
+        } else {
+            focusSquare.unhide()
+            if let camera = sceneView.session.currentFrame?.camera,
+               case .normal = camera.trackingState,
+               let query = sceneView.getRaycastQuery(from: sceneView.screenCenter),
+               let result = sceneView.castRay(for: query).first {
+                
+                updateQueue.async {
+                    self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
+                    self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
+                }
+            } else {
+                updateQueue.async {
+                    self.focusSquare.state = .initializing
+                    self.sceneView.pointOfView?.addChildNode(self.focusSquare)
+                }
+            }
+        }
     }
     
     /// AddImageButtonを押した時の処理
@@ -159,6 +190,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         sceneView.scene.rootNode.removeFromParentNode()
         objectInteraction.selectedObject = nil
         selectedProduct = nil
+        objectInteraction.isObjectVisible = false
         putProductCollectionView.reloadData()
     }
     
@@ -199,4 +231,14 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         sceneView.session.pause()
     }
     
+}
+
+// MARK: - ARSCNViewDelegate
+extension PutProductViewController: ARSCNViewDelegate {
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            self.updateFocusSquare(isObjectVisible: self.objectInteraction.isObjectVisible)
+        }
+    }
 }

@@ -17,6 +17,8 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     var selectedObject: SCNNode?
     /// 選択された柄
     var selectedPattern = "beige"
+    /// 3Dモデルが表示されているかどうか
+    var isObjectVisible = false
     
     
     // MARK: - Initialize
@@ -60,6 +62,7 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
                 selectedObject!.eulerAngles.y = camera.eulerAngles.y
             }
             sceneView.scene.rootNode.addChildNode(selectedObject!)
+            isObjectVisible = true
             return
         }
         
@@ -79,6 +82,7 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         self.selectedObject!.scale = object.scale
         self.selectedObject!.eulerAngles.y = object.eulerAngles.y
         sceneView.scene.rootNode.addChildNode(self.selectedObject!)
+        isObjectVisible = true
     }
     
     /// 柄を設定する

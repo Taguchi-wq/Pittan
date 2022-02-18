@@ -13,7 +13,7 @@ extension PutProductViewController: ARCoachingOverlayViewDelegate {
     
     /// コーチングを設定する
     /// - Parameter goal: コーチングのゴール
-    func setupCoachingOverlay(_ goal:  ARCoachingOverlayView.Goal) {
+    func setupCoachingOverlay(_ goal:  ARCoachingOverlayView.Goal) -> ARCoachingOverlayView {
         let coachingOverlay = ARCoachingOverlayView()
         coachingOverlay.session = sceneView.session
         coachingOverlay.delegate = self
@@ -28,6 +28,8 @@ extension PutProductViewController: ARCoachingOverlayViewDelegate {
             coachingOverlay.widthAnchor.constraint(equalTo: view.widthAnchor),
             coachingOverlay.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
+        
+        return coachingOverlay
     }
     
 }
