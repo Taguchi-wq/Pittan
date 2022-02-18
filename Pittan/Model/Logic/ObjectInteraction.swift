@@ -94,7 +94,7 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         let location = gesture.location(in: sceneView)
         switch gesture.state {
         case .began:
-            let hitObject = sceneView.getHitObject(location)
+            guard let hitObject = sceneView.getHitObject(location) else { return }
             selectedObject = hitObject
         case .changed:
             guard let query = sceneView.getRaycastQuery(from: location),
@@ -112,7 +112,7 @@ class ObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         let location = gesture.location(in: sceneView)
         switch gesture.state {
         case .began:
-            let hitObject = sceneView.getHitObject(location)
+            guard let hitObject = sceneView.getHitObject(location) else { return }
             selectedObject = hitObject
         case .changed:
             guard let selectedObject = selectedObject else { return }
