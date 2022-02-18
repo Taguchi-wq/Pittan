@@ -46,4 +46,13 @@ class Alert {
         viewController.present(alert, animated: true, completion: nil)
     }
     
+    /// 開発中アラートを表示する
+    /// - Parameters:
+    ///   - viewController: アラートを表示したいViewController
+    ///   - handler: OKボタンを押した時の処置
+    static func showInDevelopment(on viewController: UIViewController, handler: ((UIAlertAction) -> Void)?) {
+        let alert = configureBasicAlert(title: "大変申し訳ございません", message: "只今ラグは開発中でございます。楽しみにしていただいた方にはご迷惑をおかけしますが、ご理解のほどよろしくお願いいたします。", handler: handler)
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
 }

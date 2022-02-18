@@ -197,4 +197,13 @@ final class AddPlaceViewController: UIViewController {
         }
     }
     
+    /// カテゴリを選択したときに呼ばれる
+    @IBAction func selectedCategory(_ sender: UISegmentedControl) {
+        if sender.selectedCategory == .rug {
+            Alert.showInDevelopment(on: self) { _ in
+                self.categorySegmentedControl.selectedCategory = .curtain
+            }
+        }
+    }
+    
 }
