@@ -41,9 +41,12 @@ public extension SCNNode {
     // MARK: - Methods
     /// テクスチャを設定する
     /// - Parameter texture: テクスチャ
+    /// - Parameter product: 製品
     func setTexture(_ texture: String) {
         let materials = geometry!.materials
-        for material in materials where material.name == "Default_OBJ" {
+        let material1 = "Default_OBJ"
+        let material2 = "11"
+        for material in materials where material.name == material1 || material.name == material2 {
             material.diffuse.contents = UIImage(named: texture)
             material.roughness.contents = 1
         }

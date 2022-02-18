@@ -19,7 +19,7 @@ extension PutProductViewController: UICollectionViewDataSource {
         let section = Section.allCases[section]
         switch section {
         case .tag: return Tag.allCases.count
-        case .product: return selectTag == .put ? Products.allCases.count : 1
+        case .product: return selectTag == .put ? ProductKind.allCases.count : 1
         }
     }
     
@@ -38,7 +38,7 @@ extension PutProductViewController: UICollectionViewDataSource {
         case .product:
             if selectTag == .put {
                 let productCell = collectionView.reusableCell(with: ProductCell.self, for: indexPath)
-                let product = Products.allCases[indexPath.item]
+                let product = ProductKind.allCases[indexPath.item]
                 if let selectedProduct = selectedProduct, selectedProduct == product  {
                     productCell.initialize(imageName: product.imageName, name: product.name, isSelected: true)
                 } else {
@@ -66,8 +66,10 @@ extension PutProductViewController: UICollectionViewDelegate {
             selectTag = .allCases[indexPath.item]
             putProductCollectionView.reloadData()
         case .product:
-            selectedProduct = Products.allCases[indexPath.item]
+            selectedProduct = ProductKind.allCases[indexPath.item]
             putProductCollectionView.reloadData()
+            objectInteraction.putProduct(selectedProduct!)
+            objectInteraction.setPattern()
         }
     }
     

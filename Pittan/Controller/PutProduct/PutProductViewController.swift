@@ -11,68 +11,10 @@ import JonContextMenu
 
 final class PutProductViewController: UIViewController, ARSessionDelegate {
     
-    // MARK: - Properties
-    /// 柄
-    private let patterns: [JonItem] = Patterns.allCases.enumerated().map {
-        JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
-    }
-    
-    /// 選択されている製品
-    var selectedProduct: Products?
-    
-    
     // MARK: - Enums
     enum Section: CaseIterable {
         case tag
         case product
-    }
-    
-    enum Products: CaseIterable {
-        case doubleCurtain, singleCurtain
-        
-        var imageName: String {
-            switch self {
-            case .doubleCurtain: return "double_curtain"
-            case .singleCurtain: return "single_curtain"
-            }
-        }
-        
-        var name: String {
-            switch self {
-            case .doubleCurtain: return "両開き"
-            case .singleCurtain: return "片開き"
-            }
-        }
-    }
-    
-    enum Patterns: CaseIterable {
-        case beige, blue, brown, gray, navy, rose, turquoiseBlue, yellowgreen
-        
-        var imageName: String {
-            switch self {
-            case .beige: return "beige"
-            case .blue: return "blue"
-            case .brown: return "brown"
-            case .gray: return "gray"
-            case .navy: return "navy"
-            case .rose: return "rose"
-            case .turquoiseBlue: return "turquoise_blue"
-            case .yellowgreen: return "yellowgreen"
-            }
-        }
-        
-        var name: String {
-            switch self {
-            case .beige: return "ベージュ"
-            case .blue: return "ブルー"
-            case .brown: return "ブラウン"
-            case .gray: return "グレー"
-            case .navy: return "ネイビー"
-            case .rose: return "ローズ"
-            case .turquoiseBlue: return "ターコイズブルー"
-            case .yellowgreen: return "イエローグリーン"
-            }
-        }
     }
     
     
@@ -81,6 +23,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     weak var delegate: PutProductViewControllerDelegate?
     /// 選ばれているtag
     var selectTag: Tag = .put
+    /// 選択されている製品
+    var selectedProduct: ProductKind?
     /// 3Dオブジェクトに対してのジェスチャーをつける
     lazy var objectInteraction = ObjectInteraction(sceneView: sceneView)
     /// 作成した製品
@@ -89,6 +33,10 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private var snapshot: UIImage?
     /// スナップショットを表示するbackView
     private let backView = UIView()
+    /// 柄
+    private let patterns: [JonItem] = PatternKind.allCases.enumerated().map {
+        JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
+    }
     
 
     // MARK: - @IBOutlets
@@ -260,11 +208,10 @@ extension PutProductViewController: JonContextMenuDelegate {
     
     func menuItemWasSelected(item: JonItem) {
         guard let index = item.id else { return }
-        let pattern = Patterns.allCases[index].imageName
+        let pattern = PatternKind.allCases[index].imageName
         if let selectedObject = objectInteraction.selectedObject {
             selectedObject.setTexture(pattern)
-        } else {
-            objectInteraction.selectedTexture = pattern
+            objectInteraction.selectedPattern = pattern
         }
     }
     
