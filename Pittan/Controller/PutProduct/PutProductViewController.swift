@@ -67,16 +67,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         setupLayout()
         setupSceneView()
         coachingOverlay = setupCoachingOverlay(.horizontalPlane)
-        
-        
-        let contextMenu = JonContextMenu()
-            .setItems(patterns)
-            .setItemsActiveColorTo(.white)
-            .setItemsTitleColorTo(.white)
-            .setItemsTitleSizeTo(40)
-            .setDelegate(self)
-            .build()
-        sceneView.addGestureRecognizer(contextMenu)
+        setupJonContextMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -126,6 +117,19 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         sceneView.session.run(configuration)
     }
     
+    /// Pinterest風長押しジェスチャーを設定する
+    private func setupJonContextMenu() {
+        let contextMenu = JonContextMenu()
+            .setItems(patterns)
+            .setItemsActiveColorTo(.white)
+            .setItemsTitleColorTo(.white)
+            .setItemsTitleSizeTo(40)
+            .setDelegate(self)
+            .build()
+        sceneView.addGestureRecognizer(contextMenu)
+    }
+    
+    /// カーソルを更新する
     private func updateFocusSquare(isObjectVisible: Bool) {
         guard let coachingOverlay = coachingOverlay else { return }
         if isObjectVisible || coachingOverlay.isActive {
