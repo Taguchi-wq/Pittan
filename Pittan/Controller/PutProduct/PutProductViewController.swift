@@ -56,6 +56,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     @IBOutlet private weak var removeButton: UIButton!
     /// シャッターボタン
     @IBOutlet private weak var shutterButton: UIButton!
+    /// メッセージを表示するUILabel
+    @IBOutlet private weak var arMessageLabel: UILabel!
     
     
     // MARK: - Override Methods
@@ -96,6 +98,9 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         backButton.cornerRadius = 16
         removeButton.cornerRadius = 16
         shutterButton.imageView?.tintColor = .white
+        arMessageLabel.alpha = 0
+        arMessageLabel.cornerRadius = 16
+        arMessageLabel.clipsToBounds = true
         putProductCollectionView.dataSource = self
         putProductCollectionView.delegate = self
         putProductCollectionView.register(cellType: ProductCell.self, bundle: nil)
@@ -125,6 +130,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         guard let coachingOverlay = coachingOverlay else { return }
         if isObjectVisible || coachingOverlay.isActive {
             focusSquare.hide()
+            arMessageLabel.alpha = 0
         } else {
             focusSquare.unhide()
             if let camera = sceneView.session.currentFrame?.camera,
@@ -136,10 +142,17 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
                     self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                     self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
                 }
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+                    self.arMessageLabel.alpha = 0
+                }
             } else {
                 updateQueue.async {
                     self.focusSquare.state = .initializing
-                    self.sceneView.pointOfView?.addChildNode(self.focusSquare)
+                    DispatchQueue.main.async {
+                        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+                            self.arMessageLabel.alpha = 1
+                        }
+                    }
                 }
             }
         }

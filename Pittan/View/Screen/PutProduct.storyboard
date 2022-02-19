@@ -82,6 +82,16 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="床もしくは壁に向けてください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLv-6B-NyW">
+                                <rect key="frame" x="40" y="138" width="336" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T9s-VZ-myS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,15 +102,20 @@
                             <constraint firstItem="1jv-UH-37g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="8P1-9Q-uIQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1jv-UH-37g" secondAttribute="trailing" constant="20" id="8So-QI-LKW"/>
                             <constraint firstItem="G95-bF-oLx" firstAttribute="top" secondItem="L3r-7Z-6pV" secondAttribute="bottom" constant="10" id="DKK-1p-tqr"/>
+                            <constraint firstItem="MLv-6B-NyW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="EgB-jd-9dF"/>
                             <constraint firstItem="1jv-UH-37g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ExN-1v-XDl"/>
+                            <constraint firstItem="MLv-6B-NyW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KP0-qe-dJL"/>
                             <constraint firstItem="G95-bF-oLx" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="PNX-Ku-inE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L3r-7Z-6pV" secondAttribute="trailing" constant="16" id="T9F-GY-Xcc"/>
                             <constraint firstAttribute="bottom" secondItem="G95-bF-oLx" secondAttribute="bottom" id="dPq-Fg-IlX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="G95-bF-oLx" secondAttribute="trailing" id="fIH-Ul-Ro1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MLv-6B-NyW" secondAttribute="trailing" constant="40" id="lQd-ge-8rZ"/>
+                            <constraint firstItem="MLv-6B-NyW" firstAttribute="top" secondItem="1jv-UH-37g" secondAttribute="bottom" constant="20" id="oN3-Lp-Yd2"/>
                             <constraint firstItem="PWe-GY-Xkr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yQa-3E-eNW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="arMessageLabel" destination="MLv-6B-NyW" id="eAo-n3-iu2"/>
                         <outlet property="backButton" destination="Ogg-ho-gkx" id="kMp-c7-IyZ"/>
                         <outlet property="putProductCollectionView" destination="G95-bF-oLx" id="DzQ-Qh-VEt"/>
                         <outlet property="removeButton" destination="5pn-3G-s3Z" id="4pa-1F-X3y"/>
