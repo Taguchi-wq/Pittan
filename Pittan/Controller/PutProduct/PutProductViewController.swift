@@ -143,6 +143,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
                let result = sceneView.castRay(for: query).first {
                 
                 updateQueue.async {
+                    self.focusSquare.isHidden = false
                     self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                     self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
                 }
@@ -152,6 +153,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             } else {
                 updateQueue.async {
                     self.focusSquare.state = .initializing
+                    self.focusSquare.isHidden = true
                     DispatchQueue.main.async {
                         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
                             self.arMessageLabel.alpha = 1
