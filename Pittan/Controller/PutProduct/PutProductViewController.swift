@@ -218,7 +218,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         view.addSubview(backView)
         
         let imageView = UIImageView()
-        imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
+        imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height - 80)
         imageView.image = snapshot
         imageView.contentMode = .scaleAspectFit
         backView.addSubview(imageView)
