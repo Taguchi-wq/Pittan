@@ -55,4 +55,11 @@ class Alert {
         viewController.present(alert, animated: true, completion: nil)
     }
     
+    /// 3Dモデルが表示されてないことを知らせるアラートを表示する
+    /// - Parameters:
+    ///   - viewController: アラートを表示したいViewController
+    static func showObjectInvisible(on viewController: UIViewController) {
+        let alert = configureBasicAlert(title: "カーテンが設置されてません", message: "写真を撮るためにはカーテンを設置してください。", handler: nil)
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }

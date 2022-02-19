@@ -215,39 +215,43 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     
     /// shutterボタンを押した時の処理
     @IBAction private func tappedShutterButton(_ sender: UIButton) {
-        snapshot = sceneView.snapshot()
-        
-        let screen = UIScreen.main.bounds
-        
-        backView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
-        backView.backgroundColor = .appBackground
-        view.addSubview(backView)
-        
-        let imageView = UIImageView()
-        imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height - 80)
-        imageView.image = snapshot
-        imageView.contentMode = .scaleAspectFit
-        backView.addSubview(imageView)
-        
-        let addButton = UIButton()
-        addButton.frame = CGRect(x: (screen.width/2) - (150/2), y: screen.height - 120, width: 150, height: 70)
-        addButton.backgroundColor = .appMain
-        addButton.setTitle("追加", for: .normal)
-        addButton.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
-        addButton.cornerRadius = 20
-        addButton.addTarget(self, action: #selector(tappedAddImageButton(_:)), for: .touchUpInside)
-        backView.addSubview(addButton)
-        
-        let config = UIImage.SymbolConfiguration(pointSize: 32, weight: .medium, scale: .default)
-        let resnapshotButton = UIButton()
-        resnapshotButton.frame = CGRect(x: 15, y: screen.height - 120, width: 70, height: 70)
-        resnapshotButton.setImage(UIImage(systemName: "arrow.uturn.backward", withConfiguration: config),
-                                  for: .normal)
-        resnapshotButton.tintColor = .appText
-        resnapshotButton.addTarget(self, action: #selector(resnapshot(_:)), for: .touchUpInside)
-        backView.addSubview(resnapshotButton)
-        
-        sceneView.session.pause()
+        if objectInteraction.isObjectVisible {
+            snapshot = sceneView.snapshot()
+            
+            let screen = UIScreen.main.bounds
+            
+            backView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
+            backView.backgroundColor = .appBackground
+            view.addSubview(backView)
+            
+            let imageView = UIImageView()
+            imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height - 80)
+            imageView.image = snapshot
+            imageView.contentMode = .scaleAspectFit
+            backView.addSubview(imageView)
+            
+            let addButton = UIButton()
+            addButton.frame = CGRect(x: (screen.width/2) - (150/2), y: screen.height - 120, width: 150, height: 70)
+            addButton.backgroundColor = .appMain
+            addButton.setTitle("追加", for: .normal)
+            addButton.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
+            addButton.cornerRadius = 20
+            addButton.addTarget(self, action: #selector(tappedAddImageButton(_:)), for: .touchUpInside)
+            backView.addSubview(addButton)
+            
+            let config = UIImage.SymbolConfiguration(pointSize: 32, weight: .medium, scale: .default)
+            let resnapshotButton = UIButton()
+            resnapshotButton.frame = CGRect(x: 15, y: screen.height - 120, width: 70, height: 70)
+            resnapshotButton.setImage(UIImage(systemName: "arrow.uturn.backward", withConfiguration: config),
+                                      for: .normal)
+            resnapshotButton.tintColor = .appText
+            resnapshotButton.addTarget(self, action: #selector(resnapshot(_:)), for: .touchUpInside)
+            backView.addSubview(resnapshotButton)
+            
+            sceneView.session.pause()
+        } else {
+            Alert.showObjectInvisible(on: self)
+        }
     }
     
 }
