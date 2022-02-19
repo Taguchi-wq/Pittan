@@ -66,10 +66,12 @@ extension PutProductViewController: UICollectionViewDelegate {
             selectTag = .allCases[indexPath.item]
             putProductCollectionView.reloadData()
         case .product:
-            selectedProduct = ProductKind.allCases[indexPath.item]
-            putProductCollectionView.reloadData()
-            objectInteraction.putProduct(selectedProduct!)
-            objectInteraction.setPattern()
+            if !focusSquare.isHidden {
+                selectedProduct = ProductKind.allCases[indexPath.item]
+                putProductCollectionView.reloadData()
+                objectInteraction.putProduct(selectedProduct!)
+                objectInteraction.setPattern()
+            }
         }
     }
     

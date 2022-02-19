@@ -25,6 +25,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     var selectTag: Tag = .put
     /// 選択されている製品
     var selectedProduct: ProductKind?
+    /// カーソル
+    let focusSquare = FocusSquare()
     /// 3Dオブジェクトに対してのジェスチャーをつける
     lazy var objectInteraction = ObjectInteraction(sceneView: sceneView)
     /// 作成した製品
@@ -35,8 +37,6 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private let backView = UIView()
     /// コーチング
     private var coachingOverlay: ARCoachingOverlayView?
-    /// カーソル
-    private let focusSquare = FocusSquare()
     /// カーソルキュー
     private let updateQueue = DispatchQueue(label: "focusSquareQueue")
     /// 柄
