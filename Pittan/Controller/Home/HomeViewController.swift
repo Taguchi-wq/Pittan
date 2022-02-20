@@ -20,7 +20,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: - @IBOutlets
     /// 設置場所を表示するUICollectionView
-    @IBOutlet private weak var placeCollectionView: UICollectionView!
+    @IBOutlet weak var placeCollectionView: UICollectionView!
     /// 設置場所追加ボタン
     @IBOutlet private weak var addPlaceButton: UIButton!
     

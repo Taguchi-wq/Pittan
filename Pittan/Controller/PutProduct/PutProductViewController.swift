@@ -7,6 +7,7 @@
 
 import UIKit
 import ARKit
+import JonContextMenu
 
 final class PutProductViewController: UIViewController, ARSessionDelegate {
     
@@ -16,40 +17,16 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         case product
     }
     
-    enum Products: CaseIterable {
-        case beige, brown, gray, navy, rose, turquoiseBlue, yellowgreen
-        
-        var imageName: String {
-            switch self {
-            case .beige: return "beige"
-            case .brown: return "brown"
-            case .gray: return "gray"
-            case .navy: return "navy"
-            case .rose: return "rose"
-            case .turquoiseBlue: return "turquoise_blue"
-            case .yellowgreen: return "yellowgreen"
-            }
-        }
-        
-        var name: String {
-            switch self {
-            case .beige: return "ベージュ"
-            case .brown: return "ブラウン"
-            case .gray: return "グレー"
-            case .navy: return "ネイビー"
-            case .rose: return "ローズ"
-            case .turquoiseBlue: return "ターコイズブルー"
-            case .yellowgreen: return "イエローグリーン"
-            }
-        }
-    }
-    
     
     // MARK: - Properties
     /// PutProductViewControllerDelegate
     weak var delegate: PutProductViewControllerDelegate?
     /// 選ばれているtag
     var selectTag: Tag = .put
+    /// 選択されている製品
+    var selectedProduct: ProductKind?
+    /// カーソル
+    let focusSquare = FocusSquare()
     /// 3Dオブジェクトに対してのジェスチャーをつける
     lazy var objectInteraction = ObjectInteraction(sceneView: sceneView)
     /// 作成した製品
@@ -58,6 +35,14 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private var snapshot: UIImage?
     /// スナップショットを表示するbackView
     private let backView = UIView()
+    /// コーチング
+    private var coachingOverlay: ARCoachingOverlayView?
+    /// カーソルキュー
+    private let updateQueue = DispatchQueue(label: "focusSquareQueue")
+    /// 柄
+    private let patterns: [JonItem] = PatternKind.allCases.enumerated().map {
+        JonItem(id: $0.0, title: $0.1.name, icon: UIImage(named: $0.1.imageName))
+    }
     
 
     // MARK: - @IBOutlets
@@ -69,6 +54,10 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     @IBOutlet private weak var backButton: UIButton!
     /// 削除ボタン
     @IBOutlet private weak var removeButton: UIButton!
+    /// シャッターボタン
+    @IBOutlet private weak var shutterButton: UIButton!
+    /// メッセージを表示するUILabel
+    @IBOutlet private weak var arMessageLabel: UILabel!
     
     
     // MARK: - Override Methods
@@ -77,7 +66,8 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         
         setupLayout()
         setupSceneView()
-        setupCoachingOverlay(.horizontalPlane)
+        coachingOverlay = setupCoachingOverlay(.horizontalPlane)
+        setupJonContextMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +88,10 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     private func setupLayout() {
         backButton.cornerRadius = 16
         removeButton.cornerRadius = 16
+        shutterButton.imageView?.tintColor = .white
+        arMessageLabel.alpha = 0
+        arMessageLabel.cornerRadius = 16
+        arMessageLabel.clipsToBounds = true
         putProductCollectionView.dataSource = self
         putProductCollectionView.delegate = self
         putProductCollectionView.register(cellType: ProductCell.self, bundle: nil)
@@ -110,6 +104,7 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
     /// SceneViewを設定する
     private func setupSceneView() {
         sceneView.session.delegate = self
+        sceneView.delegate = self
         sceneView.scene = SCNScene()
         sceneView.pointOfView?.addChildNode(DirectionalLightNode())
     }
@@ -122,16 +117,69 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         sceneView.session.run(configuration)
     }
     
+    /// Pinterest風長押しジェスチャーを設定する
+    private func setupJonContextMenu() {
+        let contextMenu = JonContextMenu()
+            .setItems(patterns)
+            .setItemsActiveColorTo(.white)
+            .setItemsTitleColorTo(.white)
+            .setItemsTitleSizeTo(40)
+            .setDelegate(self)
+            .build()
+        sceneView.addGestureRecognizer(contextMenu)
+    }
+    
+    /// カーソルを更新する
+    private func updateFocusSquare(isObjectVisible: Bool) {
+        guard let coachingOverlay = coachingOverlay else { return }
+        if isObjectVisible || coachingOverlay.isActive {
+            focusSquare.hide()
+            arMessageLabel.alpha = 0
+        } else {
+            focusSquare.unhide()
+            if let camera = sceneView.session.currentFrame?.camera,
+               case .normal = camera.trackingState,
+               let query = sceneView.getRaycastQuery(from: sceneView.screenCenter),
+               let result = sceneView.castRay(for: query).first {
+                
+                updateQueue.async {
+                    self.focusSquare.isHidden = false
+                    self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
+                    self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
+                }
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+                    self.arMessageLabel.alpha = 0
+                }
+            } else {
+                updateQueue.async {
+                    self.focusSquare.state = .initializing
+                    self.focusSquare.isHidden = true
+                    DispatchQueue.main.async {
+                        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+                            self.arMessageLabel.alpha = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /// AddImageButtonを押した時の処理
     @objc
     private func tappedAddImageButton(_ sender: UIButton) {
-        Alert.showSize(on: self, height: 1000, width: 2000) { _ in
+        guard let object = objectInteraction.selectedObject else { return }
+        let height = object.millimeterHeight
+        let width = object.millimeterWidth
+        Alert.showSize(on: self, height: height, width: width) { _ in
             guard let snapshot = self.snapshot else { return }
             if let delegate = self.delegate {
                 delegate.putProductViewController(snapshot: snapshot)
+                delegate.putProductViewController(height: height, width: width)
                 self.dismiss(animated: true)
             } else {
                 guard let addPlaceVC = self.storyboard?.instantiateViewController(with: AddPlaceViewController.self) else { return }
+                self.product.height = height
+                self.product.width = width
                 addPlaceVC.modalPresentationStyle = .fullScreen
                 addPlaceVC.initialize(product: self.product, snapshot: snapshot)
                 self.present(addPlaceVC, animated: true) {
@@ -139,6 +187,13 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
                 }
             }
         }
+    }
+    
+    /// スナップショットを撮り直す
+    @objc
+    private func resnapshot(_ sender: UIButton) {
+        backView.removeFromSuperview()
+        trackingConfiguration()
     }
     
     
@@ -153,34 +208,69 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
         objectInteraction.selectedObject?.removeFromParentNode()
         sceneView.scene.rootNode.removeFromParentNode()
         objectInteraction.selectedObject = nil
+        selectedProduct = nil
+        objectInteraction.isObjectVisible = false
+        putProductCollectionView.reloadData()
     }
     
     /// shutterボタンを押した時の処理
     @IBAction private func tappedShutterButton(_ sender: UIButton) {
-        snapshot = sceneView.snapshot()
-        
-        let screen = UIScreen.main.bounds
-        
-        backView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
-        backView.backgroundColor = .appBackground
-        view.addSubview(backView)
-        
-        let imageView = UIImageView()
-        imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
-        imageView.image = snapshot
-        imageView.contentMode = .scaleAspectFit
-        backView.addSubview(imageView)
-        
-        let button = UIButton()
-        button.frame = CGRect(x: (screen.width/2) - (170/2), y: screen.height - 120, width: 170, height: 70)
-        button.backgroundColor = .appMain
-        button.setTitle("追加", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
-        button.cornerRadius = 20
-        button.addTarget(self, action: #selector(tappedAddImageButton(_:)), for: .touchUpInside)
-        backView.addSubview(button)
-        
-        sceneView.session.pause()
+        if objectInteraction.isObjectVisible {
+            snapshot = sceneView.snapshot()
+            
+            let screen = UIScreen.main.bounds
+            
+            backView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
+            backView.backgroundColor = .appBackground
+            view.addSubview(backView)
+            
+            let imageView = UIImageView()
+            imageView.frame = CGRect(x: 0, y: 80, width: screen.width, height: screen.height - 210)
+            imageView.image = snapshot
+            imageView.contentMode = .scaleToFill
+            backView.addSubview(imageView)
+            
+            let addButton = UIButton()
+            addButton.frame = CGRect(x: (screen.width/2) - (150/2), y: screen.height - 120, width: 150, height: 70)
+            addButton.backgroundColor = .appMain
+            addButton.setTitle("追加", for: .normal)
+            addButton.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
+            addButton.cornerRadius = 20
+            addButton.addTarget(self, action: #selector(tappedAddImageButton(_:)), for: .touchUpInside)
+            backView.addSubview(addButton)
+            
+            let config = UIImage.SymbolConfiguration(pointSize: 32, weight: .medium, scale: .default)
+            let resnapshotButton = UIButton()
+            resnapshotButton.frame = CGRect(x: 15, y: screen.height - 120, width: 70, height: 70)
+            resnapshotButton.setImage(UIImage(systemName: "arrow.uturn.backward", withConfiguration: config),
+                                      for: .normal)
+            resnapshotButton.tintColor = .appText
+            resnapshotButton.addTarget(self, action: #selector(resnapshot(_:)), for: .touchUpInside)
+            backView.addSubview(resnapshotButton)
+            
+            sceneView.session.pause()
+        } else {
+            Alert.showObjectInvisible(on: self)
+        }
     }
     
+}
+
+// MARK: - ARSCNViewDelegate
+extension PutProductViewController: ARSCNViewDelegate {
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            self.updateFocusSquare(isObjectVisible: self.objectInteraction.isObjectVisible)
+            if self.focusSquare.isHidden {
+                self.putProductCollectionView.alpha = 0.5
+                self.shutterButton.alpha = 0.5
+                self.shutterButton.isEnabled = false
+            } else {
+                self.putProductCollectionView.alpha = 1
+                self.shutterButton.alpha = 1
+                self.shutterButton.isEnabled = true
+            }
+        }
+    }
 }

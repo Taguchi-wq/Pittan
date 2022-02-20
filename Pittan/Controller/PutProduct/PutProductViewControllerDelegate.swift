@@ -9,4 +9,5 @@ import UIKit
 
 public protocol PutProductViewControllerDelegate: AnyObject {
     func putProductViewController(snapshot: UIImage)
+    func putProductViewController(height: Int, width: Int)
 }

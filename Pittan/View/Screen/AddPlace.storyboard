@@ -92,6 +92,9 @@
                                                                     <segment title="ラグ"/>
                                                                 </segments>
                                                                 <color key="selectedSegmentTintColor" name="appMain"/>
+                                                                <connections>
+                                                                    <action selector="selectedCategory:" destination="Y6W-OH-hqX" eventType="valueChanged" id="64O-wt-fg2"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                         </subviews>
                                                     </stackView>

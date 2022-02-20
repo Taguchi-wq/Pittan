@@ -31,12 +31,21 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_check" translatesAutoresizingMaskIntoConstraints="NO" id="1Cq-5k-YEu">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="1Cq-5k-YEu" secondAttribute="height" multiplier="1:1" id="gfP-qR-mOc"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="1Cq-5k-YEu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6pN-Q2-7fh"/>
                 <constraint firstItem="OPV-Kc-zk3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FTd-HJ-wAa"/>
+                <constraint firstAttribute="trailing" secondItem="1Cq-5k-YEu" secondAttribute="trailing" id="Lin-zQ-oT4"/>
                 <constraint firstItem="OPV-Kc-zk3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eb9-6f-ZhO"/>
+                <constraint firstItem="1Cq-5k-YEu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fW4-d5-Fih"/>
                 <constraint firstAttribute="trailing" secondItem="OPV-Kc-zk3" secondAttribute="trailing" id="geY-RY-SiZ"/>
                 <constraint firstItem="qqq-qX-t0B" firstAttribute="top" secondItem="OPV-Kc-zk3" secondAttribute="bottom" id="nYu-Cd-lc3"/>
                 <constraint firstItem="qqq-qX-t0B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xMQ-sg-YIp"/>
@@ -47,11 +56,13 @@
             <connections>
                 <outlet property="imageView" destination="OPV-Kc-zk3" id="xuB-y9-gwy"/>
                 <outlet property="nameLabel" destination="qqq-qX-t0B" id="sfp-ZA-XXi"/>
+                <outlet property="selectCheckImageView" destination="1Cq-5k-YEu" id="ZnE-oo-luZ"/>
             </connections>
             <point key="canvasLocation" x="218.84057971014494" y="143.30357142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="select_check" width="62" height="62"/>
         <namedColor name="appText">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

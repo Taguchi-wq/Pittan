@@ -11,9 +11,9 @@ final class AddPlaceViewController: UIViewController {
     
     // MARK: - Properties
     /// 設置場所
-    private var place: Place?
+    var place: Place?
     /// 製品
-    private var product: Product?
+    var product: Product?
     /// スナップショット
     var snapshot: UIImage?
     
@@ -54,9 +54,20 @@ final class AddPlaceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let snapshot = snapshot {
+        if let product = product, let snapshot = snapshot {
+            heightTextField.text = String(product.height)
+            widthTextField.text = String(product.width)
             imageView.cornerRadius = 10
             imageView.image = snapshot
+        } else if let place = place {
+            placeNameTextField.text = place.name
+            guard let product = place.product else { return }
+            guard let category = Category(rawValue: product.category) else { return }
+            imageView.image = UIImage(imagePath: product.imagePath)
+            heightTextField.text = String(product.height)
+            widthTextField.text = String(product.width)
+            commentTextView.text = product.comment
+            categorySegmentedControl.selectedCategory = category
         }
     }
     
@@ -92,27 +103,6 @@ final class AddPlaceViewController: UIViewController {
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedImageView(_:))))
         categorySegmentedControl.setTitle(state: .selected)
         categorySegmentedControl.setTitle(state: .normal)
-        inputPlace(place)
-    }
-    
-    /// 受け取った設置場所を入力する
-    /// - Parameter place: 設置場所
-    private func inputPlace(_ place: Place?) {
-        guard let place = place else { return }
-        placeNameTextField.text = place.name
-        inputProduct(place)
-    }
-    
-    /// 受け取ったモノを入力する
-    /// - Parameter place: モノ
-    private func inputProduct(_ place: Place) {
-        guard let product = place.product else { return }
-        guard let category = Category(rawValue: product.category) else { return }
-        imageView.image = UIImage(imagePath: product.imagePath)
-        heightTextField.text = String(product.height)
-        widthTextField.text = String(product.width)
-        commentTextView.text = product.comment
-        categorySegmentedControl.selectedCategory = category
     }
     
     /// 場所を保存する
@@ -124,21 +114,20 @@ final class AddPlaceViewController: UIViewController {
         let comment = commentTextView.text ?? ""
         
         if height.isInt && width.isInt {
-            do {
+            if let place = place {
+                guard let imagePath = place.product?.imagePath else { return }
+                RealmManager.shared.updatePlace(place.id,
+                                                name: placeName,
+                                                imagePath: imagePath,
+                                                category: category.name,
+                                                height: Int(height)!,
+                                                width: Int(width)!,
+                                                comment: comment)
+                dismiss(animated: true)
+            } else if let product = product {
                 guard let pngImageData = snapshot?.pngData() else { return }
-                if let place = place {
-                    guard let imagePath = place.product?.imagePath else { return }
-                    try pngImageData.write(to: URL(string: imagePath)!)
-                    RealmManager.shared.updatePlace(place.id,
-                                                    name: placeName,
-                                                    imagePath: imagePath,
-                                                    category: category.name,
-                                                    height: Int(height)!,
-                                                    width: Int(width)!,
-                                                    comment: comment)
-                    dismiss(animated: true)
-                } else if let product = product {
-                    guard let filePath = createFilePathURL() else { return }
+                guard let filePath = createFilePathURL() else { return }
+                do {
                     try pngImageData.write(to: filePath)
                     product.imagePath = filePath.absoluteString
                     RealmManager.shared.savePlace(name: placeName,
@@ -150,12 +139,12 @@ final class AddPlaceViewController: UIViewController {
                                                   comment: comment,
                                                   height: Int(height)!,
                                                   width: Int(width)!)
-                    presentingViewController?
-                        .presentingViewController?
-                        .dismiss(animated: true, completion: nil)
+                } catch {
+                    print("Failed to save the snapshot.")
                 }
-            } catch {
-                print("Failed to save the snapshot.")
+                presentingViewController?
+                    .presentingViewController?
+                    .dismiss(animated: true, completion: nil)
             }
         } else {
             Alert.showError(on: self, message: .pleaseEnterNumber)
@@ -205,6 +194,15 @@ final class AddPlaceViewController: UIViewController {
             Alert.showError(on: self, message: .pleaseFillAllFields)
         } else {
             savePlace()
+        }
+    }
+    
+    /// カテゴリを選択したときに呼ばれる
+    @IBAction func selectedCategory(_ sender: UISegmentedControl) {
+        if sender.selectedCategory == .rug {
+            Alert.showInDevelopment(on: self) { _ in
+                self.categorySegmentedControl.selectedCategory = .curtain
+            }
         }
     }
     

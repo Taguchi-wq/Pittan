@@ -19,7 +19,7 @@ extension PutProductViewController: UICollectionViewDataSource {
         let section = Section.allCases[section]
         switch section {
         case .tag: return Tag.allCases.count
-        case .product: return selectTag == .put ? Products.allCases.count : 1
+        case .product: return selectTag == .put ? ProductKind.allCases.count : 1
         }
     }
     
@@ -38,8 +38,12 @@ extension PutProductViewController: UICollectionViewDataSource {
         case .product:
             if selectTag == .put {
                 let productCell = collectionView.reusableCell(with: ProductCell.self, for: indexPath)
-                let product = Products.allCases[indexPath.item]
-                productCell.initialize(imageName: product.imageName, name: product.name)
+                let product = ProductKind.allCases[indexPath.item]
+                if let selectedProduct = selectedProduct, selectedProduct == product  {
+                    productCell.initialize(imageName: product.imageName, name: product.name, isSelected: true)
+                } else {
+                    productCell.initialize(imageName: product.imageName, name: product.name, isSelected: false)
+                }
                 return productCell
             } else {
                 let sizeSliderCell = collectionView.reusableCell(with: SizeSliderCell.self, for: indexPath)
@@ -59,14 +63,16 @@ extension PutProductViewController: UICollectionViewDelegate {
         let section = Section.allCases[indexPath.section]
         switch section {
         case .tag:
-            selectTag = .allCases[indexPath.item]
-            putProductCollectionView.reloadData()
+            if !focusSquare.isHidden {
+                selectTag = .allCases[indexPath.item]
+                putProductCollectionView.reloadData()
+            }
         case .product:
-            let product = Products.allCases[indexPath.item]
-            if let selectedObject = objectInteraction.selectedObject {
-                selectedObject.setTexture(product.imageName)
-            } else {
-                objectInteraction.selectedTexture = product.imageName
+            if !focusSquare.isHidden {
+                selectedProduct = ProductKind.allCases[indexPath.item]
+                putProductCollectionView.reloadData()
+                objectInteraction.putProduct(selectedProduct!)
+                objectInteraction.setPattern()
             }
         }
     }

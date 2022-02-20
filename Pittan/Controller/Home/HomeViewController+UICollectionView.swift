@@ -42,4 +42,32 @@ extension HomeViewController: UICollectionViewDelegate {
         navigationController?.pushViewController(placeDetailVC, animated: true)
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        contextMenuConfigurationForItemAt indexPath: IndexPath,
+                        point: CGPoint) -> UIContextMenuConfiguration? {
+        configureContextMenu(index: indexPath.item)
+    }
+    
+    func configureContextMenu(index: Int) -> UIContextMenuConfiguration {
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
+            let delete = UIAction(title: "削除",
+                                  image: UIImage(systemName: "trash"),
+                                  identifier: nil,
+                                  discoverabilityTitle: nil,
+                                  attributes: .destructive,
+                                  state: .off) { _ in
+                let place = self.places[index]
+                RealmManager.shared.deletePlace(place.id)
+                self.places = RealmManager.shared.fetch(Place.self)
+                self.placeCollectionView.reloadData()
+            }
+            return UIMenu(title: "",
+                          image: nil,
+                          identifier: nil,
+                          options: .displayInline,
+                          children: [delete])
+        }
+        return context
+    }
+
 }
