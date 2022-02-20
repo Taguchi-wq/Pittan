@@ -147,4 +147,19 @@ final class RealmManager {
         }
     }
     
+    /// 設置場所と製品を削除する
+    /// - Parameter id: 設置場所のid
+    func deletePlace(_ id: String) {
+        guard let place = fetchPlace(by: id) else { return }
+        guard let product = place.product else { return }
+        do {
+            try realm.write {
+                realm.delete(place)
+                realm.delete(product)
+            }
+        } catch {
+            
+        }
+    }
+    
 }
