@@ -225,9 +225,9 @@ final class PutProductViewController: UIViewController, ARSessionDelegate {
             view.addSubview(backView)
             
             let imageView = UIImageView()
-            imageView.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height - 80)
+            imageView.frame = CGRect(x: 0, y: 80, width: screen.width, height: screen.height - 210)
             imageView.image = snapshot
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleToFill
             backView.addSubview(imageView)
             
             let addButton = UIButton()
@@ -262,6 +262,15 @@ extension PutProductViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
             self.updateFocusSquare(isObjectVisible: self.objectInteraction.isObjectVisible)
+            if self.focusSquare.isHidden {
+                self.putProductCollectionView.alpha = 0.5
+                self.shutterButton.alpha = 0.5
+                self.shutterButton.isEnabled = false
+            } else {
+                self.putProductCollectionView.alpha = 1
+                self.shutterButton.alpha = 1
+                self.shutterButton.isEnabled = true
+            }
         }
     }
 }

@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-GY-Xkr">
-                                <rect key="frame" x="0.0" y="0.0" width="416" height="696"/>
+                                <rect key="frame" x="0.0" y="0.0" width="416" height="896"/>
                             </arscnView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="196" translatesAutoresizingMaskIntoConstraints="NO" id="1jv-UH-37g">
                                 <rect key="frame" x="20" y="64" width="376" height="54"/>
@@ -96,11 +96,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="G95-bF-oLx" firstAttribute="top" secondItem="PWe-GY-Xkr" secondAttribute="bottom" id="3d6-1P-KjF"/>
-                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="3sr-aN-3yS"/>
-                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="6D6-sb-eEN"/>
                             <constraint firstItem="1jv-UH-37g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="8P1-9Q-uIQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1jv-UH-37g" secondAttribute="trailing" constant="20" id="8So-QI-LKW"/>
+                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BsL-mz-CaG"/>
                             <constraint firstItem="G95-bF-oLx" firstAttribute="top" secondItem="L3r-7Z-6pV" secondAttribute="bottom" constant="10" id="DKK-1p-tqr"/>
                             <constraint firstItem="MLv-6B-NyW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="EgB-jd-9dF"/>
                             <constraint firstItem="1jv-UH-37g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ExN-1v-XDl"/>
@@ -108,10 +106,12 @@
                             <constraint firstItem="G95-bF-oLx" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="PNX-Ku-inE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L3r-7Z-6pV" secondAttribute="trailing" constant="16" id="T9F-GY-Xcc"/>
                             <constraint firstAttribute="bottom" secondItem="G95-bF-oLx" secondAttribute="bottom" id="dPq-Fg-IlX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PWe-GY-Xkr" secondAttribute="trailing" id="dlA-Dk-f5C"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="G95-bF-oLx" secondAttribute="trailing" id="fIH-Ul-Ro1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MLv-6B-NyW" secondAttribute="trailing" constant="40" id="lQd-ge-8rZ"/>
                             <constraint firstItem="MLv-6B-NyW" firstAttribute="top" secondItem="1jv-UH-37g" secondAttribute="bottom" constant="20" id="oN3-Lp-Yd2"/>
-                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yQa-3E-eNW"/>
+                            <constraint firstAttribute="bottom" secondItem="PWe-GY-Xkr" secondAttribute="bottom" id="r5o-az-DF1"/>
+                            <constraint firstItem="PWe-GY-Xkr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ymg-FP-bGL"/>
                         </constraints>
                     </view>
                     <connections>

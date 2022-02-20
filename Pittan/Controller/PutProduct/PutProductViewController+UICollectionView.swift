@@ -63,8 +63,10 @@ extension PutProductViewController: UICollectionViewDelegate {
         let section = Section.allCases[indexPath.section]
         switch section {
         case .tag:
-            selectTag = .allCases[indexPath.item]
-            putProductCollectionView.reloadData()
+            if !focusSquare.isHidden {
+                selectTag = .allCases[indexPath.item]
+                putProductCollectionView.reloadData()
+            }
         case .product:
             if !focusSquare.isHidden {
                 selectedProduct = ProductKind.allCases[indexPath.item]
