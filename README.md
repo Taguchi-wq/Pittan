@@ -35,5 +35,5 @@
 
 ## 開発言語・環境
 - 開発言語: Swift
-- ライブラリ: Realm
+- ライブラリ: Realm, JonContextMenu
 - 開発環境: Xcode13
