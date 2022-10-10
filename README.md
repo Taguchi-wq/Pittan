@@ -3,6 +3,9 @@
 ## 概要
 カーテン・ラグのサイズや見た目での失敗を減らすアプリ
 
+## イメージ
+<img src="https://user-images.githubusercontent.com/70731936/194920431-8602c9d9-f6ae-4ddb-b8ea-6d5e53704d93.PNG" width="200px"> <img src="https://user-images.githubusercontent.com/70731936/194920490-30bafe63-48c5-46db-8e76-1112fc7dcefe.PNG" width="200px"> <img src="https://user-images.githubusercontent.com/70731936/194920471-ad8bdac6-8f8d-499a-9a12-b9972f9e3452.PNG" width="200px"> <img src="https://user-images.githubusercontent.com/70731936/194920476-ee277f8c-1d54-4c82-a513-b937aca59870.PNG" width="200px">
+
 ## 開発背景
 カーテン・ラグを買い替えたい時、困ることが2つある。
 - 1つ目はサイズを測るということだ。サイズを測らないと窓に合わないカーテンを選んでしまうかもしれないし、思いのほか大きいラグが届くかもしれない。なにより測るのが難しい。
